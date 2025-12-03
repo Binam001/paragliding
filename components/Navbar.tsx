@@ -1,44 +1,82 @@
 "use client";
 
 import { navLists } from "@/constants";
-import { Menu03Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { li } from "framer-motion/client";
+import { motion } from "framer-motion"; // Corrected import
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Using 50px gives a bit more breathing room before the animation triggers
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav
       id="navbarSection"
-      className="fixed top-0 left-0 w-full py-4 px-16 flex justify-center rounded-full z-100"
+      // Added pointer-events-none to outer nav so clicks pass through on the sides when centered
+      className="fixed top-0 left-0 w-full flex justify-center py-4 px-4 z-100 pointer-events-none"
     >
-      <div className="flex gap-4 items-center bg-(--color-primary) w-max px-4">
+      <motion.div
+        layout // This is the magic prop that makes width animate smoothly
+        transition={{ type: "tween", stiffness: 300, damping: 30 }}
+        initial={{ width: "100%", y: 0 }}
+        animate={{
+          width: scrolled ? "fit-content" : "100%", // Smoothly shrinks width
+          // borderRadius: scrolled ? "9999px" : "12px", // Morphs corners
+          y: scrolled ? 10 : 0, // Adds a slight float effect when scrolled
+          // padding: scrolled ? "0.75rem 2rem" : "1rem 3rem", // Shrinks padding slightly
+        }}
+        className={`
+          pointer-events-auto flex items-center justify-between gap-12 py-2 px-8 
+          border border-(--color-primary)/20 rounded-full
+          bg-white/10 backdrop-blur-md shadow-lg
+          whitespace-nowrap overflow-hidden
+        `}
+      >
+        {/* Logo */}
         <div>
           <Link href="/">
-            <img src="/images/logo.png" alt="logo" className="w-24" />
+            <img
+              src="/images/logo.png"
+              alt="logo"
+              className="w-24 object-contain"
+            />
           </Link>
         </div>
-        {/* <div>
-        <button onClick={() => setOpen(!open)}>
-          <HugeiconsIcon icon={Menu03Icon} />
-        </button>
-      </div> */}
-        {/* {open && (
-        <div className="bg-red-500 absolute top-15 left-0 w-full"> */}
-        <ul className="flex justify-between gap-4">
-          {navLists.map((navItems) => (
-            <li key={navItems.id}>
-              <Link href={navItems.href} className="uppercase text-white">
-                {navItems.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        {/* </div>
-      )} */}
-      </div>
+
+        {/* Navigation Links */}
+        <motion.ul
+          layout="position"
+          className="flex justify-between gap-8 items-center"
+        >
+          {navLists.map((navItems) => {
+            const isActive = pathname === navItems.href;
+            return (
+              <li key={navItems.id}>
+                <Link
+                  href={navItems.href}
+                  className={`uppercase text-sm font-medium tracking-wide hover:text-blue-500 transition-colors ${
+                    isActive ? "text-blue-500" : ""
+                  }`}
+                >
+                  {navItems.name}
+                </Link>
+              </li>
+            );
+          })}
+        </motion.ul>
+      </motion.div>
     </nav>
   );
 };

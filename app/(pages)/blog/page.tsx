@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div>
       <HeroSection />
-      <SecondSection />
+      {/* <SecondSection /> */}
       <GallerySection />
     </div>
   );

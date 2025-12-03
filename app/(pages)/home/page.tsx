@@ -53,47 +53,17 @@ const page = () => {
       return;
     }
     let ctx = gsap.context(() => {
-      // gsap.from(modelRef.current, {
-      //   xPercent: -100,
-      //   duration: 5,
-      // });
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: mainRef.current,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 2,
-            onUpdate: (self) => {
-              setProgress(self.progress);
-            },
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: mainRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 2,
+          onUpdate: (self) => {
+            setProgress(self.progress);
           },
-        })
-
-        .to(modelRef.current, {
-          x: "70vw",
-          y: "20vh",
-        })
-        .to(modelRef.current, {
-          x: "0vw",
-          // y: "20vh",
-        })
-        .to(modelRef.current, {
-          x: "10vw",
-          // y: "20vh",
-        })
-        .to(modelRef.current, {
-          x: "10vw",
-          // y: "20vh",
-        })
-        .to(modelRef.current, {
-          x: "10vw",
-          // y: "20vh",
-        })
-        .to(modelRef.current, {
-          x: "10vw",
-          // y: "20vh",
-        });
+        },
+      });
     }, mainRef);
 
     return () => ctx.revert();
@@ -105,7 +75,7 @@ const page = () => {
         <HeroSection />
         <div
           ref={modelRef}
-          className="fixed -top-[10%] -left-[40%] w-screen h-screen z-999 pointer-events-none"
+          className="fixed top-0 w-screen h-screen z-999 pointer-events-none"
         >
           <Paraglider progress={progress} />
         </div>
@@ -130,7 +100,7 @@ const page = () => {
         </div>
         <div style={{ height: `${sections.length * 100}vh` }} />
 
-        <div className="px-16 w-full h-dv overflow-x-hidden">
+        <div className="px-16 w-full overflow-x-hidden">
           {/* <p className="text-center text-6xl font-bold mb-8">
             Book a Paragliding Tandem Flight
           </p> */}

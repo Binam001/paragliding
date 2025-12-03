@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 // --- The ArcGalleryHero Component ---
@@ -127,15 +128,20 @@ export const ArcGalleryHero: React.FC<ArcGalleryHeroProps> = ({
           style={{ animationDelay: "800ms", animationFillMode: "forwards" }}
         >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
-            Sky Diaries: Pokhara Paragliding Blog
+            Sky Diaries:
+          </h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
+            Sunrise Paragliding Blog
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             Discover tips, stories, and guides about paragliding in Pokhara.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto px-6 py-3 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-              Explore more
-            </button>
+            <Link href={"#gallerySection"}>
+              <button className="w-full sm:w-auto px-6 py-3 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer">
+                Explore more
+              </button>
+            </Link>
             {/* <button className="w-full sm:w-auto px-6 py-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-all duration-200">
               How It Works
             </button> */}
