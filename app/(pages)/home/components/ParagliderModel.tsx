@@ -26,14 +26,14 @@ export const ParagliderModel = forwardRef<ParagliderModelProps>(
     return (
       <group scale={0.15} {...props} dispose={null}>
         <mesh
-          geometry={nodes.Mesh_0.geometry}
+          geometry={(nodes.Mesh_0 as THREE.Mesh).geometry}
           material={materials["Material.001"]}
           position={[-1.044, -8.672, -0.12]}
           rotation={[0, 1.509, 0]}
           scale={3}
         />
         <mesh
-          geometry={nodes.Parachute_skinnedmo.geometry}
+          geometry={(nodes.Parachute_skinnedmo as THREE.Mesh).geometry}
           material={materials.Material}
           position={[-1.178, -8.358, -0.15]}
           scale={[0.045, 0.045, 0.063]}

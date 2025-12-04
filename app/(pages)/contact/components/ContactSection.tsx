@@ -3,7 +3,7 @@
 import { socialLinkLists } from "@/constants";
 import Link from "next/link";
 import React, { useState } from "react";
-// import Select from "react-select";
+import { SingleValue } from "react-select";
 import Select from "@/components/ReactSelectNoSSR";
 import { Datepicker } from "flowbite-react";
 
@@ -27,6 +27,22 @@ const noOfPeopleOptions = [
 
 const ContactSection = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+
+  // State for the floating label on the "No. of people" Select component
+  const [isPackageFocused, setIsPackageFocused] = useState(false);
+  const [packageValue, setPackageValue] = useState<
+    SingleValue<{
+      value: string;
+      label: string;
+    }>
+  >(null);
+  const [isPeopleFocused, setIsPeopleFocused] = useState(false);
+  const [peopleValue, setPeopleValue] = useState<
+    SingleValue<{
+      value: string;
+      label: string;
+    }>
+  >(null);
   return (
     <div className="h-full px-4 md:px-8 lg:px-16">
       <p className="text-center text-6xl font-bold mb-8">Get in touch</p>
@@ -39,46 +55,63 @@ const ContactSection = () => {
             <p className="text-center text-2xl font-semibold">Booking Form</p>
 
             <div className="flex justify-between gap-2 w-full">
-              <div className="flex flex-col w-full">
-                <label htmlFor="name">
-                  Name<span className="text-red-500 text-lg">*</span>
-                </label>
+              <div className="relative w-full flex justify-center">
                 <input
                   type="text"
                   id="name"
-                  className="p-2 rounded-lg border border-(--color-accent)"
+                  className="w-full p-2 text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
                   required
                 />
-              </div>
-              <div className="flex flex-col w-full">
-                <label htmlFor="contact">
-                  Contact<span className="text-red-500 text-lg">*</span>
+                <label
+                  htmlFor="name"
+                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
+                >
+                  Name<span className="text-red-500">*</span>
                 </label>
+              </div>
+
+              <div className="relative w-full flex flex-col justify-center">
                 <input
                   type="text"
                   id="contact"
-                  className="p-2 rounded-lg border border-(--color-accent)"
+                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
                   required
                 />
+                <label
+                  htmlFor="contact"
+                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
+                >
+                  Contact<span className="text-red-500 text-lg">*</span>
+                </label>
               </div>
             </div>
 
-            <div className="flex flex-col">
-              <label htmlFor="email">Email</label>
+            <div className="relative w-full flex flex-col justify-center">
               <input
                 type="email"
                 id="email"
-                className="p-2 rounded-lg border border-(--color-accent)"
+                className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" "
               />
+              <label
+                htmlFor="email"
+                className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
+              >
+                Email
+              </label>
             </div>
 
             <div className="flex justify-between gap-2 w-full">
-              <div className="flex flex-col w-full">
-                <label htmlFor="package">
-                  Package<span className="text-red-500 text-lg">*</span>
-                </label>
+              <div className="relative w-full flex flex-col justify-center">
                 <Select
                   id="package"
+                  placeholder=" " // The space is important for styling
+                  onFocus={() => setIsPackageFocused(true)}
+                  onBlur={() => setIsPackageFocused(false)}
+                  onChange={(value) => setPackageValue(value)}
+                  classNamePrefix="react-select" // Used for more specific styling if needed
                   options={packageOptions}
                   styles={{
                     control: (provided, state) => ({
@@ -86,15 +119,15 @@ const ContactSection = () => {
                       // 1. Remove the box-shadow (blue glow) when focused
                       boxShadow: state.isFocused ? "none" : provided.boxShadow,
 
-                      // 2. Set the border color when focused (e.g., to match your accent border)
+                      // 2. Set the border color
                       borderColor: state.isFocused
-                        ? "var(--color-accent)"
-                        : provided.borderColor,
+                        ? "var(--color-blue-600)" // Match focus color of other inputs
+                        : "var(--color-accent)",
 
                       // Optional: Ensure the border radius and padding match your other inputs
                       borderRadius: "0.5rem",
-                      minHeight: "42px",
-                      padding: "0 8px",
+                      minHeight: "40px", // Adjusted height for floating label
+                      backgroundColor: "transparent",
 
                       // Match hover behavior
                       "&:hover": {
@@ -147,11 +180,28 @@ const ContactSection = () => {
                     }),
                   }}
                 />
+                <label
+                  htmlFor="package"
+                  className={`absolute text-sm text-gray-500 duration-300 transform origin-left bg-white px-2 start-2.5 z-10
+                    ${
+                      isPackageFocused || packageValue
+                        ? "top-2 scale-75 -translate-y-5 text-blue-600"
+                        : "top-1/2 scale-100 -translate-y-1/2"
+                    }
+                  `}
+                >
+                  Package<span className="text-red-500 text-lg">*</span>
+                </label>
               </div>
-              <div className="flex flex-col w-full">
-                <label htmlFor="people">No. of people</label>
+              {/* Floating label for "No. of people" Select */}
+              <div className="relative w-full flex flex-col justify-center">
                 <Select
                   id="people"
+                  placeholder=" " // The space is important for styling
+                  onFocus={() => setIsPeopleFocused(true)}
+                  onBlur={() => setIsPeopleFocused(false)}
+                  onChange={(value) => setPeopleValue(value)}
+                  classNamePrefix="react-select" // Used for more specific styling if needed
                   options={noOfPeopleOptions}
                   styles={{
                     control: (provided, state) => ({
@@ -159,15 +209,15 @@ const ContactSection = () => {
                       // 1. Remove the box-shadow (blue glow) when focused
                       boxShadow: state.isFocused ? "none" : provided.boxShadow,
 
-                      // 2. Set the border color when focused (e.g., to match your accent border)
+                      // 2. Set the border color
                       borderColor: state.isFocused
-                        ? "var(--color-accent)"
-                        : provided.borderColor,
+                        ? "var(--color-blue-600)" // Match focus color of other inputs
+                        : "var(--color-accent)",
 
                       // Optional: Ensure the border radius and padding match your other inputs
                       borderRadius: "0.5rem",
-                      minHeight: "42px",
-                      padding: "0 8px",
+                      minHeight: "40px", // Adjusted height for floating label
+                      backgroundColor: "transparent",
 
                       // Match hover behavior
                       "&:hover": {
@@ -220,22 +270,43 @@ const ContactSection = () => {
                     }),
                   }}
                 />
+                <label
+                  htmlFor="people"
+                  className={`absolute text-sm text-gray-500 duration-300 transform origin-left bg-white px-2 start-2.5 z-10
+                    ${
+                      isPeopleFocused || peopleValue
+                        ? "top-2 scale-75 -translate-y-4 text-blue-600"
+                        : "top-1/2 scale-100 -translate-y-1/2"
+                    }
+                  `}
+                >
+                  No. of people
+                </label>
               </div>
             </div>
 
-            <div className="light">
-              <label htmlFor="date">
+            <div className="relative w-full flex flex-col justify-center">
+              <Datepicker id="date" />
+              <label
+                htmlFor="date"
+                className="absolute scale-75 text-sm text-gray-500 transform -translate-y-5 bg-white px-2"
+              >
                 Select Date<span className="text-red-500 text-lg">*</span>
               </label>
-              <Datepicker id="date" />
             </div>
 
-            <div className="flex flex-col">
-              <label htmlFor="message">Message</label>
+            <div className="relative w-full flex flex-col justify-center">
               <textarea
                 id="message"
-                className="p-2 rounded-lg border border-(--color-accent)"
+                className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" "
               />
+              <label
+                htmlFor="message"
+                className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
+              >
+                Message
+              </label>
             </div>
 
             <div className="">
@@ -283,7 +354,7 @@ const ContactSection = () => {
                           : socialItem.icon
                       }
                       alt={socialItem.title}
-                      className="size-6 hover:scale-[1.3] transition-all"
+                      className="size-6 hover:scale-[1.3] duration-200 transition-all"
                     />
                   </Link>
                 ))}
@@ -291,7 +362,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="h-full flex-1 relative min-h-[300px]">
+          <div className="h-full flex-1 relative min-h-[250px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.0135214614056!2d83.95600477427296!3d28.206901775899837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995951e3d520047%3A0x8731ef408affb9c0!2sSunrise%20Paragliding!5e0!3m2!1sen!2snp!4v1764331279344!5m2!1sen!2snp"
               // width={400}
