@@ -105,7 +105,7 @@ const ContactSection = () => {
 
             <div className="flex justify-between gap-2 w-full">
               <div className="relative w-full flex flex-col justify-center">
-                <Select
+                <Select<{ value: string; label: string; }>
                   id="package"
                   placeholder=" " // The space is important for styling
                   onFocus={() => setIsPackageFocused(true)}
@@ -195,7 +195,7 @@ const ContactSection = () => {
               </div>
               {/* Floating label for "No. of people" Select */}
               <div className="relative w-full flex flex-col justify-center">
-                <Select
+                <Select<{ value: string; label: string; }>
                   id="people"
                   placeholder=" " // The space is important for styling
                   onFocus={() => setIsPeopleFocused(true)}
