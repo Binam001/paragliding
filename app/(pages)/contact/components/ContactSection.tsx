@@ -7,6 +7,8 @@ import { SingleValue } from "react-select";
 import Select from "@/components/ReactSelectNoSSR";
 import { Datepicker } from "flowbite-react";
 
+type OptionType = { value: string; label: string };
+
 const packageOptions = [
   { value: "Cloud Buster", label: "Cloud Buster" },
   { value: "Cross Country", label: "Cross Country" },
@@ -30,19 +32,10 @@ const ContactSection = () => {
 
   // State for the floating label on the "No. of people" Select component
   const [isPackageFocused, setIsPackageFocused] = useState(false);
-  const [packageValue, setPackageValue] = useState<
-    SingleValue<{
-      value: string;
-      label: string;
-    }>
-  >(null);
+  const [packageValue, setPackageValue] =
+    useState<SingleValue<OptionType>>(null);
   const [isPeopleFocused, setIsPeopleFocused] = useState(false);
-  const [peopleValue, setPeopleValue] = useState<
-    SingleValue<{
-      value: string;
-      label: string;
-    }>
-  >(null);
+  const [peopleValue, setPeopleValue] = useState<SingleValue<OptionType>>(null);
   return (
     <div className="h-full px-4 md:px-8 lg:px-16">
       <p className="text-center text-6xl font-bold mb-8">Get in touch</p>
@@ -110,7 +103,9 @@ const ContactSection = () => {
                   placeholder=" " // The space is important for styling
                   onFocus={() => setIsPackageFocused(true)}
                   onBlur={() => setIsPackageFocused(false)}
-                  onChange={(value) => setPackageValue(value)}
+                  onChange={(
+                    value: SingleValue<{ value: string; label: string }>
+                  ) => setPackageValue(value)}
                   classNamePrefix="react-select" // Used for more specific styling if needed
                   options={packageOptions}
                   styles={{
@@ -200,7 +195,9 @@ const ContactSection = () => {
                   placeholder=" " // The space is important for styling
                   onFocus={() => setIsPeopleFocused(true)}
                   onBlur={() => setIsPeopleFocused(false)}
-                  onChange={(value) => setPeopleValue(value)}
+                  onChange={(
+                    value: SingleValue<{ value: string; label: string }>
+                  ) => setPeopleValue(value)}
                   classNamePrefix="react-select" // Used for more specific styling if needed
                   options={noOfPeopleOptions}
                   styles={{

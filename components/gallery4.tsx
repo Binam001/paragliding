@@ -151,10 +151,13 @@ const Gallery4 = ({
             {testimonialLists.map((item) => (
               <CarouselItem
                 key={item.id}
-                className="max-w-[320px] lg:max-w-[360px] bg-(--color-accent) p-4 rounded-xl space-y-4"
+                className="max-w-[320px] lg:max-w-[360px]"
               >
-                <div className="line-clamp-4">{item.content}</div>
-                <div className="">
+                <div className="bg-(--color-accent) p-4 rounded-xl h-32">
+                  <p className="line-clamp-4">{item.content}</p>
+                </div>
+
+                <div className="px-4">
                   <div className="">{item.name}</div>
                   <div className="">{item.date}</div>
                 </div>
