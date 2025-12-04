@@ -2,6 +2,7 @@
 
 import React, {
   CSSProperties,
+  JSX,
   ReactNode,
   useEffect,
   useMemo,
