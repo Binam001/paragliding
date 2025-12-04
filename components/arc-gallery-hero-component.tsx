@@ -131,7 +131,7 @@ export const ArcGalleryHero: React.FC<ArcGalleryHeroProps> = ({
             Sky Diaries:
           </h1>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
-            Sunrise Paragliding Blog
+            Sunrise Paragliding Gallery
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             Discover tips, stories, and guides about paragliding in Pokhara.

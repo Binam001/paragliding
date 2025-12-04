@@ -1,10 +1,11 @@
 import React from "react";
 import ContactSection from "./components/ContactSection";
+import HeroSection from "@/components/HeroSection";
 
 const page = () => {
   return (
-    <div>
-      <div className="h-screen"></div>
+    <div className="space-y-8 md:space-y-16">
+      <HeroSection />
       <div className="h-full">
         <ContactSection />
       </div>

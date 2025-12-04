@@ -38,7 +38,7 @@ const ContactSection = () => {
   const [peopleValue, setPeopleValue] = useState<SingleValue<OptionType>>(null);
   return (
     <div className="h-full px-4 md:px-8 lg:px-16">
-      <p className="text-center text-6xl font-bold mb-8">Get in touch</p>
+      <p className="text-center text-6xl font-bold mb-8">Make a Booking</p>
       <div className="w-full h-full flex gap-4">
         <div className="w-2/3">
           <form
@@ -98,7 +98,7 @@ const ContactSection = () => {
 
             <div className="flex justify-between gap-2 w-full">
               <div className="relative w-full flex flex-col justify-center">
-                <Select<{ value: string; label: string; }>
+                <Select<{ value: string; label: string }>
                   id="package"
                   placeholder=" " // The space is important for styling
                   onFocus={() => setIsPackageFocused(true)}
@@ -190,7 +190,7 @@ const ContactSection = () => {
               </div>
               {/* Floating label for "No. of people" Select */}
               <div className="relative w-full flex flex-col justify-center">
-                <Select<{ value: string; label: string; }>
+                <Select<{ value: string; label: string }>
                   id="people"
                   placeholder=" " // The space is important for styling
                   onFocus={() => setIsPeopleFocused(true)}
@@ -314,64 +314,63 @@ const ContactSection = () => {
           </form>
         </div>
         <div className="w-1/3 h-full space-y-4">
-          <div className="bg-(--color-accent) p-4 rounded-2xl space-y-4">
-            <div className="">
-              <div className="font-semibold text-lg">Address</div>
-              <p className="text-(--color-muted)">Baidam Rd, Pokhara</p>
+          <div className="bg-(--color-accent) p-2 rounded-2xl space-y-2">
+            <div className="bg-white rounded-xl flex flex-col items-center justify-center py-4 font-medium">
+              <p>Get in touch with us!</p>
+              <p>Lets talk!</p>
             </div>
 
-            <div className="">
-              <div className="mt-4 font-semibold text-lg">Contact</div>
+            <div className="p-2">
               <div className="flex gap-2 items-center">
                 <img
                   src="/images/social/phone.svg"
                   alt="contact icon"
-                  className="size-4"
+                  className="size-8 p-1.5 bg-(--color-secondary) rounded-full"
                 />
-                <span className="text-(--color-muted)">
+                <span className="text-sm">
                   +977 61 453174, +977 98171 98617
                 </span>
               </div>
-            </div>
 
-            <div className="">
-              <div className="mb-2 font-semibold text-lg">Stay Connected</div>
-              <div className="flex gap-8">
-                {socialLinkLists.map((socialItem) => (
-                  <Link
-                    key={socialItem.id}
-                    href={socialItem.link}
-                    onMouseEnter={() => setHoveredId(socialItem.id)}
-                    onMouseLeave={() => setHoveredId(null)}
-                  >
-                    <img
-                      src={
-                        hoveredId === socialItem.id
-                          ? socialItem.fillIcon
-                          : socialItem.icon
-                      }
-                      alt={socialItem.title}
-                      className="size-6 hover:scale-[1.3] duration-200 transition-all"
-                    />
-                  </Link>
-                ))}
+              <div className="mt-4">
+                <div className="flex flex-col gap-4">
+                  {socialLinkLists.map((socialItem) => (
+                    <Link
+                      key={socialItem.id}
+                      href={socialItem.link}
+                      onMouseEnter={() => setHoveredId(socialItem.id)}
+                      onMouseLeave={() => setHoveredId(null)}
+                      className="flex items-center gap-2 w-max"
+                    >
+                      <img
+                        src={
+                          hoveredId === socialItem.id
+                            ? socialItem.fillIcon
+                            : socialItem.icon
+                        }
+                        alt={socialItem.title}
+                        className="size-8 p-1.5 bg-(--color-secondary) rounded-full duration-200 transition-all"
+                      />
+                      <span className="text-sm">{socialItem.title}</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-
-          <div className="h-full flex-1 relative min-h-[250px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.0135214614056!2d83.95600477427296!3d28.206901775899837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995951e3d520047%3A0x8731ef408affb9c0!2sSunrise%20Paragliding!5e0!3m2!1sen!2snp!4v1764331279344!5m2!1sen!2snp"
-              // width={400}
-              // height={300}
-              className="w-full h-full rounded-2xl absolute inset-0"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
         </div>
+      </div>
+      <div className="h-full flex-1 relative min-h-[500px] mt-16">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.0135214614056!2d83.95600477427296!3d28.206901775899837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995951e3d520047%3A0x8731ef408affb9c0!2sSunrise%20Paragliding!5e0!3m2!1sen!2snp!4v1764331279344!5m2!1sen!2snp"
+          // width={400}
+          // height={300}
+          className="w-full h-full rounded-2xl absolute inset-0"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   );

@@ -149,7 +149,7 @@ const Paraglider = ({ progress }: ParagliderProps) => {
           intensity={4}
           color={"#ffffff"}
         />
-        <axesHelper args={[500]} />
+        {/* <axesHelper args={[500]} /> */}
 
         <AnimatedModel progress={progress} />
       </Canvas>

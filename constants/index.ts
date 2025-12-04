@@ -16,11 +16,16 @@ const navLists = [
   },
   {
     id: 4,
+    name: "gallery",
+    href: "/gallery",
+  },
+  {
+    id: 5,
     name: "services",
     href: "/services",
   },
   {
-    id: 5,
+    id: 6,
     name: "contact",
     href: "/contact",
   },
@@ -210,6 +215,7 @@ const socialLinkLists = [
     icon: "/images/social/facebook.svg",
     fillIcon: "/images/social/facebook-fill.png",
     link: "https://www.facebook.com/sunriseparaglidingpokhara#",
+    username: "#sunriseparaglidingpokhara",
   },
   {
     id: 2,
@@ -217,6 +223,7 @@ const socialLinkLists = [
     icon: "/images/social/instagram.svg",
     fillIcon: "/images/social/instagram-fill.png",
     link: "https://www.instagram.com/sunriseparaglidingnepal/",
+    username: "@sunriseparaglidingnepal",
   },
   {
     id: 3,
@@ -224,6 +231,7 @@ const socialLinkLists = [
     icon: "/images/social/mail.svg",
     fillIcon: "/images/social/mail-fill.png",
     link: "mailto:info@sunrise-paragliding.com",
+    username: "info@sunrise-paragliding.com",
   },
   {
     id: 4,
@@ -231,6 +239,7 @@ const socialLinkLists = [
     icon: "/images/social/youtube.svg",
     fillIcon: "/images/social/youtube-fill.svg",
     link: "https://www.youtube.com/channel/UCuAW_Yl3GQ0W0vMZfbxwVjw",
+    username: "@SunriseParagliding",
   },
   {
     id: 5,
@@ -238,6 +247,7 @@ const socialLinkLists = [
     icon: "/images/social/google.svg",
     fillIcon: "/images/social/google-fill.svg",
     link: "https://www.google.com/search?q=sunrise+paragliding+google+reviews&rlz=1C5CHFA_enES919ES920&oq=sun&aqs=chrome.0.69i59l2j69i57j69i59j46i67j0i20i263i433i512j0i67l2j46i67i199i291j46i67i199i465.1213j0j15&sourceid=chrome&ie=UTF-8#lrd=0x3995951e3d520047:0x8731ef408affb9c0,1,,,",
+    username: "@SunriseParagliding",
   },
   {
     id: 6,
@@ -245,6 +255,7 @@ const socialLinkLists = [
     icon: "/images/social/tripadvisor.svg",
     fillIcon: "/images/social/tripadvisor-fill.svg",
     link: "https://www.tripadvisor.co.uk/Attraction_Review-g293891-d3682719-Reviews-Sunrise_Paragliding-Pokhara_Gandaki_Zone_Western_Region.html",
+    username: "@SunriseParagliding",
   },
   // {
   //   id: 4,
@@ -254,5 +265,86 @@ const socialLinkLists = [
   //   desc: "+977 61 453174, +977 98171 98617",
   // },
 ];
+const articleLists = [
+  {
+    id: 1,
+    src: "/images/blog/blog1.jpg",
+    slug: "phewa-lake",
+    title: "Phewa Lake",
+    desc: "A wide-angle shot showing the iconic lake dotted with colorful boats (doongas) and water lilies, framed by mountains. This is Pokhara's centerpiece, often the landing spot for paragliders.",
+    span: "col-span-1",
+  },
+  {
+    id: 2,
+    src: "/images/blog/blog2.jpg",
+    slug: "sunrise",
+    title: "Sunrise",
+    desc: "A classic view of the Annapurna range (likely from Sarangkot or another viewpoint) bathed in the warm light of dawn, with traditional mountain homes in the foreground. This captures the serene beauty of the region.",
+    span: "sm:col-span-2",
+  },
+  {
+    id: 3,
+    src: "/images/blog/blog3.jpg",
+    slug: "machapuchare-mountain",
+    title: "Machapuchare Mountain",
+    desc: "A close-up of the distinctive, 'fishtail' peak, a sacred and prominent landmark of Pokhara. Its unique shape is visible from almost everywhere in the city, providing a stunning backdrop for activities like paragliding.",
+    span: "col-span-1",
+  },
+  {
+    id: 4,
+    src: "/images/blog/blog4.avif",
+    slug: "lakeside-night-view",
+    title: "LakeSide night view",
+    desc: "A captivating nighttime shot of the vibrant Lakeside area reflecting on the water, highlighting the Ferris wheel and the area's lively atmosphere after dark.",
+    span: "col-span-2",
+  },
+  {
+    id: 5,
+    src: "/images/blog/blog5.webp",
+    slug: "white-gumba",
+    title: "White Gumba",
+    desc: "A photo of a prominent white Buddhist stupa (Gumba or Gompa), likely the World Peace Pagoda (Shanti Stupa) located on a hilltop. This offers panoramic views of the lake and mountains, including the typical take-off and landing zones.",
+    span: "sm:col-span-1",
+  },
+  {
+    id: 6,
+    src: "/images/blog/blog14.jpg",
+    slug: "pilot",
+    title: "Pilot",
+    desc: "A selfie or close-up of a paragliding tandem pilot and a client, both wearing helmets and gear, smiling against the mountain backdrop. This humanizes the experience and builds trust.",
+    span: "col-span-1",
+  },
+  {
+    id: 7,
+    src: "/images/blog/blog7.webp",
+    slug: "paragliding",
+    title: "Paragliding",
+    desc: "Two action shots showing paragliders in flight. One highlights the vast, green landscape below, and the other shows a pair of gliders soaring over distinct terraced farmlands, illustrating the exhilarating experience and the scenic flight path.",
+    span: "col-span-1",
+  },
+  {
+    id: 8,
+    src: "/images/blog/blog15.jpg",
+    slug: "paragliding-second",
+    title: "Paragliding",
+    desc: "Two action shots showing paragliders in flight. One highlights the vast, green landscape below, and the other shows a pair of gliders soaring over distinct terraced farmlands, illustrating the exhilarating experience and the scenic flight path.",
+    span: "col-span-1",
+  },
+  {
+    id: 9,
+    src: "/images/blog/blog10.jpg",
+    slug: "mountain-range",
+    title: "Mountain Range",
+    desc: "A reflection shot across a body of water (likely Phewa Lake) showing the majestic Annapurna and Machhapuchhare peaks clearly defined in the distance. This summarizes the stunning scenery travelers come to enjoy.",
+    span: "sm:col-span-2",
+  },
+];
 
-export { navLists, whyUs, packageLists, testimonialLists, socialLinkLists };
+export {
+  navLists,
+  whyUs,
+  packageLists,
+  testimonialLists,
+  socialLinkLists,
+  articleLists,
+};
