@@ -157,7 +157,7 @@ const Gallery4 = ({
                   <p className="line-clamp-4">{item.content}</p>
                 </div>
 
-                <div className="px-4">
+                <div className="">
                   <div className="">{item.name}</div>
                   <div className="">{item.date}</div>
                 </div>
