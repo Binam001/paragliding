@@ -2,8 +2,8 @@ import SecondSection from "./components/SecondSection";
 
 const page = () => {
   return (
-    <div>
-      <div className="h-screen"></div>
+    <div className="mt-16">
+      {/* <div className="h-screen"></div> */}
       <SecondSection />
     </div>
   );

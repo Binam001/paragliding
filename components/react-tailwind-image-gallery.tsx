@@ -75,7 +75,7 @@ export function ImageModal({ data, onClose }: ImageModalProps) {
       <img
         src={data.src}
         alt={data.title}
-        className="rounded-lg w-[90%] h-[90%]"
+        className="rounded-lg w-[70%] h-[90%]"
         onClick={(e) => e.stopPropagation()}
       />
       {/* <div className="text-white">

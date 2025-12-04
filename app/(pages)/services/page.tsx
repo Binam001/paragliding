@@ -1,10 +1,11 @@
 import React from "react";
-import ServiceSelector from "./components/ServiceSelector";
+import Package from "./components/Package";
 
 const page = () => {
   return (
-    <div>
-      <ServiceSelector />
+    <div className="space-y-8 md:space-y-16">
+      {/* <div className="h-screen"></div> */}
+      <Package />
     </div>
   );
 };

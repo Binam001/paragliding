@@ -53,6 +53,7 @@ const packageLists = [
   {
     id: 1,
     title: "Cloud Buster",
+    href: "cloud-buster",
     image: "/images/package/package1.jpg",
     time: "9.30am, 11.30am, 1.30pm",
     duration: "20-30",
@@ -63,6 +64,7 @@ const packageLists = [
   {
     id: 2,
     title: "Cross Country",
+    href: "cross-country",
     image: "/images/package/package2.jpg",
     time: "9.30am, 11.30am, 1.30pm",
     duration: "50-60",
@@ -73,6 +75,7 @@ const packageLists = [
   {
     id: 3,
     title: "Hike & Fly",
+    href: "hike-fly",
     image: "/images/package/package3.jpg",
     cost: "29,500",
     desc: "This trip offers an excellent get away from the hustle of the city and experience the beautiful outskirts of Pokhara, meanwhile enjoying magnificent sunrise and sunset views over the Annapurnas from your tented accommodation. A scenic two and half hours of walk through ruins of the most beautiful villages and lush nature gets us to our takeoff at around 2000 meters overlooking Pokhara valley and the majestic Annapurna range. From here we aim to fly back to Pokhara.",

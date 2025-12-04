@@ -1,7 +1,7 @@
 import React from "react";
 import HeroSection from "./components/HeroSection";
 import GallerySection from "./components/GallerySection";
-import { VideoSection } from "./components/VideoSection";
+import VideoSection from "./components/VideoSection";
 
 const page = () => {
   return (
