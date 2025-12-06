@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { ParagliderModel } from "./ParagliderModel";
+// import { ParagliderModel } from "./ParagliderModel";
 import { PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
+import { ParagliderModel } from "./Paraglider-orange";
 
 interface ParagliderProps {
   progress: number;
@@ -16,25 +17,28 @@ const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
   const positions = [
     // new THREE.Vector3(14, 2, 3),
     new THREE.Vector3(10, 2, 0),
-    new THREE.Vector3(8, 1, 0),
-    new THREE.Vector3(7, -2, 0),
-    new THREE.Vector3(9, 2, -3),
+    new THREE.Vector3(8, 3, 0),
+    new THREE.Vector3(7, -2, -6),
+    new THREE.Vector3(9, 3, 6),
 
     // new THREE.Vector3(15, 3, -10),
-    new THREE.Vector3(9, 2, -3),
-    new THREE.Vector3(8, 1, 3),
+    new THREE.Vector3(9, 3, 6),
+    new THREE.Vector3(9, 2, -6),
 
-    new THREE.Vector3(5, 3, 10),
+    new THREE.Vector3(9, 2, 6),
+    new THREE.Vector3(8, 1, 5),
+
+    new THREE.Vector3(8, 3, -5),
+    new THREE.Vector3(7, 0, -8),
+    new THREE.Vector3(9, 0, 5),
+
     new THREE.Vector3(7, 0, 5),
-    new THREE.Vector3(9, 0, -5),
+    new THREE.Vector3(6, 0, 5),
+    new THREE.Vector3(4, 1, 6),
 
-    new THREE.Vector3(7, 0, 1),
-    new THREE.Vector3(10, 0, 5),
-    new THREE.Vector3(10, 1, 10),
-
-    new THREE.Vector3(8, 1, 4),
-    new THREE.Vector3(8, 3, 6),
-    new THREE.Vector3(8, 0, 8),
+    new THREE.Vector3(4, 1, 7),
+    new THREE.Vector3(4, 3, 6),
+    new THREE.Vector3(7, 0, 8),
 
     new THREE.Vector3(-1, 1, 8),
     new THREE.Vector3(-1, 1, 8),
@@ -103,14 +107,14 @@ const Paraglider = ({ progress }: ParagliderProps) => {
   return (
     <div className="w-full h-full pointer-events-none! relative">
       {/* Display the camera position on screen */}
-      {cameraPosition && (
+      {/* {cameraPosition && (
         <div className="fixed top-1/2 left-1/2 text-white bg-black/50 p-2 rounded z-50">
           <p>Camera Position:</p>
           <p>x: {cameraPosition.x.toFixed(2)}</p>
           <p>y: {cameraPosition.y.toFixed(2)}</p>
           <p>z: {cameraPosition.z.toFixed(2)}</p>
         </div>
-      )}
+      )} */}
       <Canvas className="pointer-events-none!">
         <CameraController
           progress={progress}

@@ -103,7 +103,7 @@ const HeroSection = () => {
           className="cloud4 absolute top-20 -left-50 w-40"
         />
 
-        <div className="absolute bottom-14 font-bold text-7xl text-center text-black text-shadow-lg text-shadow-black w-full z-50">
+        <div className="absolute bottom-14 font-bold text-7xl text-center text-black w-full z-50">
           <p>Experience the Sky</p>
         </div>
 

@@ -91,7 +91,11 @@ const page = () => {
           // y: "20vh",
         })
         .to(modelRef.current, {
-          x: "-45vw",
+          x: "40vw",
+          // y: "20vh",
+        })
+        .to(modelRef.current, {
+          x: "-40vw",
           // y: "20vh",
         })
         .to(modelRef.current, {

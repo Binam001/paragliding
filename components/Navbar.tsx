@@ -1,26 +1,64 @@
 "use client";
 
 import { navLists } from "@/constants";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsap";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
+
+  // useGSAP(() => {
+  //   // Animate logo from center to top-left
+  //   gsap.from("#logo-container", {
+  //     position: "fixed",
+  //     top: "50%",
+  //     left: "50%",
+  //     xPercent: -50,
+  //     yPercent: -50,
+  //     scale: 4, // Optional: make it start larger
+  //     scrollTrigger: {
+  //       trigger: document.body,
+  //       start: "top top",
+  //       end: "+=300", // Animate over the first 300px of scroll
+  //       scrub: 1.5,
+  //     },
+  //   });
+  // }, []);
+
   return (
     <nav
       id="navbarSection"
-      // Added pointer-events-none to outer nav so clicks pass through on the sides when centered
-      className="fixed top-0 left-0 w-full flex justify-center py-2 px-4 md:px-8 lg:px-16 z-100"
+      className={`fixed top-0 left-0 w-full flex justify-center py-2 px-4 md:px-8 lg:px-16 z-100 transition-all duration-300 
+       
+      `}
     >
       <div
-        className={`w-full flex items-center justify-between py-2 whitespace-nowrap overflow-hidden
+        className={`w-full flex items-center justify-between py-2 whitespace-nowrap
         `}
       >
         {/* Logo */}
-        <div>
-          <Link href="/">
+        <div id="logo-container">
+          <Link href="/" className="">
             <img
-              src="/images/logo.png"
+              src={scrolled ? "/images/light-logo.svg" : "/images/logo.png"}
+              // src="/images/logo.png"
               alt="logo"
-              className="w-16 object-contain"
+              className={`w-16 object-contain transition-all duration-300`}
             />
           </Link>
         </div>
@@ -30,7 +68,12 @@ const Navbar = () => {
           {navLists.map((navItems) => {
             return (
               <li key={navItems.id}>
-                <Link href={navItems.href} className={`text-sm font-medium`}>
+                <Link
+                  href={navItems.href}
+                  className={`text-sm font-medium transition-colors duration-300 ${
+                    scrolled ? "text-black" : "text-white"
+                  }`}
+                >
                   {navItems.name}
                 </Link>
               </li>
