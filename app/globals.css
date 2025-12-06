@@ -29,7 +29,8 @@ body {
 }
 
 :root {
-  --primary: #3e3edd;
+  --primary: RGB(215, 31, 39);
+  /* --primary: #3e3edd; */
   --primary-foreground: #7777f7;
   --secondary: #b4b4fd;
   --accent: #dedefa;

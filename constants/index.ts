@@ -1,32 +1,32 @@
 const navLists = [
   {
     id: 1,
-    name: "home",
+    name: "Home",
     href: "/",
   },
   {
     id: 2,
-    name: "about",
+    name: "About",
     href: "/about",
   },
   {
     id: 3,
-    name: "blog",
+    name: "Blog",
     href: "/blog",
   },
   {
     id: 4,
-    name: "gallery",
+    name: "Gallery",
     href: "/gallery",
   },
   {
     id: 5,
-    name: "services",
+    name: "Services",
     href: "/services",
   },
   {
     id: 6,
-    name: "contact",
+    name: "Contact",
     href: "/contact",
   },
 ];
@@ -82,68 +82,6 @@ const packageLists = [
     subDesc: "A premium adventure trip in the Himalayas !",
   },
 ];
-
-// const packageLists = [
-//   {
-//     id: 1,
-//     front: {
-//       title: "Cloud Buster",
-//       imageSrc: "/images/package/package1.jpg",
-//       imageAlt: "cloud buster image",
-//       description:
-//         "Ride warm mid-day thermals, soar high with eagles and vultures, and land near a Lakeside bar.",
-//       cost: "8500",
-//     },
-//     back: {
-//       title: "Cloud Buster",
-//       time: "9.30am, 11.30am, 1.30pm",
-//       duration: "20-30",
-//       cost: "8500",
-//       optional: "2000",
-//       description:
-//         "This mid day flight gives you the thrill of flying in rising currents of warm air in order to stay aloft in the air, and soar all the way up to clouds accompanied by eagles and vultures. And we come to land by one of the bars very close to Lakeside.",
-//     },
-//   },
-//   {
-//     id: 2,
-//     front: {
-//       title: "Cross Country",
-//       imageSrc: "/images/package/package2.jpg",
-//       imageAlt: "cross country image",
-//       description:
-//         "Fly north along the Sarangkot ridge with stunning Annapurna views, gliding silently over timeless villages before returning to land near Lakeside.",
-//       cost: "11500",
-//     },
-//     back: {
-//       title: "Cross Country",
-//       time: "9.30am, 11.30am, 1.30pm",
-//       duration: "50-60",
-//       cost: "11500",
-//       optional: "2000",
-//       description:
-//         "We take you on an unforgettable journey towards the north of Sarangkot ridge overlooking an amazing backdrop of the Annapurnas while silently gliding over villages forgotten by time. We aim to fly as far as possible using thermals to our advantage and return to land by Lakeside the same afternoon.",
-//     },
-//   },
-//   {
-//     id: 3,
-//     front: {
-//       title: "Hike & Fly",
-//       imageSrc: "/images/package/package3.webp",
-//       imageAlt: "hike & fly image",
-//       description: "A premium adventure trip in the Himalayas!",
-//       cost: "29500",
-//     },
-//     back: {
-//       title: "Hike & Fly",
-//       time: "9.30am, 11.30am, 1.30pm",
-//       duration: "20-30",
-//       cost: "29500",
-//       optional: "2000",
-//       description:
-//         "This trip offers an excellent get away from the hustle of the city and experience the beautiful outskirts of Pokhara, meanwhile enjoying magnificent sunrise and sunset views over the Annapurnas from your tented accommodation. A scenic two and half hours of walk through ruins of the most beautiful villages and lush nature gets us to our takeoff at around 2000 meters overlooking Pokhara valley and the majestic Annapurna range. From here we aim to fly back to Pokhara.",
-//     },
-//   },
-// ];
 
 const testimonialLists = [
   {
@@ -343,6 +281,33 @@ const articleLists = [
   },
 ];
 
+const aboutUs = [
+  {
+    id: 1,
+    title: "safety",
+    icon: "material-symbols:health-and-safety-outline-rounded",
+    desc: "Certified gear, daily checks, and strict safety protocols are our top priority.",
+  },
+  {
+    id: 2,
+    title: "trust",
+    icon: "codicon:workspace-trusted",
+    desc: "Certified gear, daily checks, and strict safety protocols are our top priority.",
+  },
+  {
+    id: 3,
+    title: "care",
+    icon: "healthicons:palliative-care-outline-24px",
+    desc: "Personalized attention, including complimentary photo/video packages.",
+  },
+  {
+    id: 4,
+    title: "adventure",
+    icon: "fluent-emoji-high-contrast:parachute",
+    desc: "The ultimate thrill of soaring with unrivaled views of the Himalayas.",
+  },
+];
+
 export {
   navLists,
   whyUs,
@@ -350,4 +315,5 @@ export {
   testimonialLists,
   socialLinkLists,
   articleLists,
+  aboutUs,
 };

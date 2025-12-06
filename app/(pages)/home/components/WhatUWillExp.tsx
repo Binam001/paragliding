@@ -1,44 +1,22 @@
-import { FullScreenScrollFX } from "@/components/full-screen-scroll-fx";
+import { CardsParallax, type iCardItem } from "@/components/ui/scroll-cards";
 import React from "react";
 
-// What You’ll Experience
-// Short points:
-// Breathtaking views of Phewa Lake
-// Clear panorama of Annapurna & Machhapuchhre
-// Smooth takeoff from Sarangkot
-// Peaceful gliding above Pokhara Valley
-// Safe landing with a certified pilot
-// 👉 This creates emotional connection before showing packages.
-
-const sections = [
+const cardItems: iCardItem[] = [
   {
-    // leftLabel: "Silence",
-    title: <></>,
-    rightLabel: "Smooth takeoff from Sarangkot",
-    background: "images/image1.jpg",
+    title: "Smooth takeoff from Sarangkot",
+    src: "/images/home/image1.jpg",
   },
   {
-    // leftLabel: "Essence",
-    title: <></>,
-    rightLabel: "Clear panorama of Annapurna & Machhapuchhre",
-    background:
-      "https://images.pexels.com/photos/163790/at-night-under-a-lantern-guy-night-city-163790.jpeg",
-    audioSrc: "/sfx/whoosh-02.mp3",
+    title: "Clear panorama of Annapurna & Machhapuchhre",
+    src: "/images/blog/blog11.jpg",
   },
   {
-    // leftLabel: "Rebirth",
-    title: <></>,
-    rightLabel: "Breathtaking views of Phewa Lake",
-    background: "https://images.pexels.com/photos/9817/pexels-photo-9817.jpeg",
-    audioSrc: "/sfx/whoosh-02.mp3",
+    title: "Breathtaking views of Phewa Lake",
+    src: "/images/blog/blog1.jpg",
   },
   {
-    // leftLabel: "Change",
-    title: <></>,
-    rightLabel: "Peaceful gliding above Pokhara Valley",
-    background:
-      "https://images.pexels.com/photos/939807/pexels-photo-939807.jpeg",
-    audioSrc: "/sfx/whoosh-02.mp3",
+    title: "Peaceful gliding above Pokhara Valley",
+    src: "/images/home/image2.jpg",
   },
 ];
 const WhatUWillExp = () => {
@@ -67,18 +45,7 @@ const WhatUWillExp = () => {
     // </div>
 
     <div className="">
-      <FullScreenScrollFX
-        sections={sections}
-        header={
-          <>
-            <div>You Will Experience</div>
-          </>
-        }
-        footer={<div></div>}
-        showProgress
-        durations={{ change: 0.7, snap: 800 }}
-      />
-      <div style={{ height: `${(sections.length + 1) * 100}vh` }} />
+      <CardsParallax items={cardItems} />
     </div>
   );
 };

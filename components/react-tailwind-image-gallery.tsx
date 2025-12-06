@@ -21,9 +21,9 @@ interface ImageModalProps {
 
 export function Gallery({ data, onImageClick }: GalleryProps) {
   return (
-    <section id="portfolio" className="py-20">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12">Gallery</h2>
+    <section id="portfolio" className="py-8 md:py-16">
+      <div className="">
+        <h2 className="text-4xl font-bold text-center mb-8">Gallery</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {data.map((img) => (
             <div

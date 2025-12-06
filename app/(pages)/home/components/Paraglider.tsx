@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { ParagliderModel } from "./ParagliderModel";
 import { PerspectiveCamera } from "@react-three/drei";
@@ -6,142 +6,116 @@ import * as THREE from "three";
 
 interface ParagliderProps {
   progress: number;
+  // Add a callback to pass the position up
+  setCameraPosition?: (position: THREE.Vector3) => void;
 }
 
-// --- Camera Animation Data ---
-// const cameraPositions = [
-//   new THREE.Vector3(14, 2, 3),
-//   new THREE.Vector3(8, 1, 6),
-//   new THREE.Vector3(7, -2, -3),
-//   new THREE.Vector3(7, 4, -6),
+const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
+  const cameraRef = useRef<THREE.PerspectiveCamera>(null!);
 
-//   new THREE.Vector3(15, 3, -10),
-//   new THREE.Vector3(6, 5, 4),
-//   new THREE.Vector3(2, 0, 15),
+  const positions = [
+    // new THREE.Vector3(14, 2, 3),
+    new THREE.Vector3(10, 2, 0),
+    new THREE.Vector3(8, 1, 0),
+    new THREE.Vector3(7, -2, 0),
+    new THREE.Vector3(9, 2, -3),
 
-//   new THREE.Vector3(9, 0, 7),
-//   new THREE.Vector3(10, 0, 0),
-//   new THREE.Vector3(3, 0, 7),
+    // new THREE.Vector3(15, 3, -10),
+    new THREE.Vector3(9, 2, -3),
+    new THREE.Vector3(8, 1, 3),
 
-//   new THREE.Vector3(0, 0, 7),
-//   new THREE.Vector3(3, 0, 7),
-//   new THREE.Vector3(3, 0, 7),
+    new THREE.Vector3(5, 3, 10),
+    new THREE.Vector3(7, 0, 5),
+    new THREE.Vector3(9, 0, -5),
 
-//   new THREE.Vector3(3, 0, 7),
-//   new THREE.Vector3(3, 0, 7),
-//   new THREE.Vector3(3, 0, 7),
-// ];
+    new THREE.Vector3(7, 0, 1),
+    new THREE.Vector3(10, 0, 5),
+    new THREE.Vector3(10, 1, 10),
 
-// const CameraController = ({ progress }: ParagliderProps) => {
-//   const cameraRef = useRef<THREE.PerspectiveCamera>(null!);
+    new THREE.Vector3(8, 1, 4),
+    new THREE.Vector3(8, 3, 6),
+    new THREE.Vector3(8, 0, 8),
 
-//   useFrame(() => {
-//     cameraRef.current?.lookAt(0, 0, 0);
-//   });
+    new THREE.Vector3(-1, 1, 8),
+    new THREE.Vector3(-1, 1, 8),
+    new THREE.Vector3(-1, 1, 8),
 
-//   useEffect(() => {
-//     if (!cameraRef.current) return;
+    // new THREE.Vector3(10, 2, -2),
+    // new THREE.Vector3(8, 0, -5),
+    // new THREE.Vector3(8, 0, 7),
 
-//     const segmentCount = cameraPositions.length - 1;
-//     const segmentProgress = 1 / segmentCount;
+    // new THREE.Vector3(3, 0, 7),
+    // new THREE.Vector3(3, 0, 7),
+    // new THREE.Vector3(3, 0, 7),
 
-//     let segmentIndex = Math.floor(progress * segmentCount);
-//     segmentIndex = Math.min(segmentIndex, segmentCount - 1);
-//     const localProgress =
-//       (progress - segmentIndex * segmentProgress) / segmentProgress;
+    // new THREE.Vector3(3, 0, 7),
+    // new THREE.Vector3(3, 0, 7),
+    // new THREE.Vector3(3, 0, 7),
 
-//     const startPos = cameraPositions[segmentIndex];
-//     const endPos = cameraPositions[segmentIndex + 1];
-
-//     const newPos = startPos.clone().lerp(endPos, localProgress);
-
-//     cameraRef.current.position.copy(newPos);
-
-//     // console.log(cameraRef.current.position);
-//   }, [progress]);
-
-//   return (
-//     <PerspectiveCamera
-//       ref={cameraRef}
-//       fov={45}
-//       near={0.1}
-//       far={10000}
-//       makeDefault
-//       position={[8, 2, 3]}
-//     />
-//   );
-// };
-
-// --- Model Animation Data ---
-// Example: A simple bank and turn animation
-const modelPositions = [
-  new THREE.Vector3(-10, 0, -5),
-  new THREE.Vector3(0, 0, -8),
-  new THREE.Vector3(0.5, 0.1, 0),
-  new THREE.Vector3(0, 0, 0),
-  new THREE.Vector3(10, 0, 0),
-];
-
-const modelRotations = [
-  new THREE.Euler(0, 0, 0),
-  new THREE.Euler(0, 0, -0.2), // Bank left
-  new THREE.Euler(0, -0.5, 0.3), // Turn right and bank
-  new THREE.Euler(0, 0, 0), // Level out
-];
-
-const AnimatedModel = ({ progress }: ParagliderProps) => {
-  const groupRef = useRef<THREE.Group>(null!);
+    // new THREE.Vector3(3, 0, 7),
+    // new THREE.Vector3(3, 0, 7),
+    // new THREE.Vector3(3, 0, 7),
+  ];
+  useFrame(() => {
+    cameraRef.current?.lookAt(0, 0, 0);
+  });
 
   useEffect(() => {
-    if (!groupRef.current) return;
+    if (!cameraRef.current) return;
 
-    // --- Position Animation ---
-    const posSegmentCount = modelPositions.length - 1;
-    const posSegmentProgress = 1 / posSegmentCount;
-    let posSegmentIndex = Math.floor(progress * posSegmentCount);
-    posSegmentIndex = Math.min(posSegmentIndex, posSegmentCount - 1);
-    const posLocalProgress =
-      (progress - posSegmentIndex * posSegmentProgress) / posSegmentProgress;
-    const startPos = modelPositions[posSegmentIndex];
-    const endPos = modelPositions[posSegmentIndex + 1];
-    groupRef.current.position.copy(
-      startPos.clone().lerp(endPos, posLocalProgress)
-    );
-    console.log(groupRef.current.position);
+    const segmentCount = positions.length - 1;
+    const segmentProgress = 1 / segmentCount;
 
-    // --- Rotation Animation ---
-    const rotSegmentCount = modelRotations.length - 1;
-    const rotSegmentProgress = 1 / rotSegmentCount;
-    let rotSegmentIndex = Math.floor(progress * rotSegmentCount);
-    rotSegmentIndex = Math.min(rotSegmentIndex, rotSegmentCount - 1);
-    const rotLocalProgress =
-      (progress - rotSegmentIndex * rotSegmentProgress) / rotSegmentProgress;
-    const startRot = modelRotations[rotSegmentIndex];
-    const endRot = modelRotations[rotSegmentIndex + 1];
+    let segmentIndex = Math.floor(progress * segmentCount);
+    segmentIndex = Math.min(segmentIndex, segmentCount - 1);
+    const localProgress =
+      (progress - segmentIndex * segmentProgress) / segmentProgress;
 
-    // Convert Euler rotations to Quaternions for smooth interpolation
-    const startQuaternion = new THREE.Quaternion().setFromEuler(startRot);
-    const endQuaternion = new THREE.Quaternion().setFromEuler(endRot);
+    const startPos = positions[segmentIndex];
+    const endPos = positions[segmentIndex + 1];
 
-    // Interpolate between the quaternions
-    // Set the group's quaternion to the start and slerp to the end
-    groupRef.current.quaternion
-      .copy(startQuaternion)
-      .slerp(endQuaternion, rotLocalProgress);
-  }, [progress]);
+    const newPos = startPos.clone().lerp(endPos, localProgress);
+
+    cameraRef.current.position.copy(newPos);
+
+    // Pass the position to the parent component
+    if (setCameraPosition) {
+      setCameraPosition(cameraRef.current.position.clone());
+    }
+  }, [progress, positions, setCameraPosition]);
 
   return (
-    <group ref={groupRef}>
-      <ParagliderModel />
-    </group>
+    <PerspectiveCamera
+      ref={cameraRef}
+      fov={45}
+      near={0.1}
+      far={10000}
+      makeDefault
+      position={[8, 2, 3]}
+    />
   );
 };
 
 const Paraglider = ({ progress }: ParagliderProps) => {
+  const [cameraPosition, setCameraPosition] = useState<THREE.Vector3 | null>(
+    null
+  );
   return (
-    <div className="w-full h-full pointer-events-none!">
+    <div className="w-full h-full pointer-events-none! relative">
+      {/* Display the camera position on screen */}
+      {cameraPosition && (
+        <div className="fixed top-1/2 left-1/2 text-white bg-black/50 p-2 rounded z-50">
+          <p>Camera Position:</p>
+          <p>x: {cameraPosition.x.toFixed(2)}</p>
+          <p>y: {cameraPosition.y.toFixed(2)}</p>
+          <p>z: {cameraPosition.z.toFixed(2)}</p>
+        </div>
+      )}
       <Canvas className="pointer-events-none!">
-        {/* <CameraController progress={progress} /> */}
+        <CameraController
+          progress={progress}
+          setCameraPosition={setCameraPosition}
+        />
 
         <ambientLight intensity={2} />
         <directionalLight
@@ -151,7 +125,7 @@ const Paraglider = ({ progress }: ParagliderProps) => {
         />
         {/* <axesHelper args={[500]} /> */}
 
-        <AnimatedModel progress={progress} />
+        <ParagliderModel />
       </Canvas>
     </div>
   );

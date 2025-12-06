@@ -1,0 +1,99 @@
+"use client";
+
+import React from "react";
+import { Testimonial, TestimonialCarousel } from "@/components/ui/testimonial";
+import { Play } from "lucide-react";
+import { motion } from "motion/react";
+import Link from "next/link";
+import { testimonialLists } from "@/constants";
+
+const TestimonialsSections = () => {
+  const testimonialData: Testimonial[] = testimonialLists.map((t) => ({
+    id: t.id,
+    name: t.name,
+    description: t.content,
+    // Generating a placeholder avatar from the name
+    avatar: `https://api.dicebear.com/8.x/initials/svg?seed=${t.name}`,
+  }));
+
+  return (
+    <section className=" h-full my-8 md:my-16 mb-16">
+      <div className="grid grid-cols-2 lg:grid-cols-8 gap-1 md:gap-2 px-4 md:px-8 lg:px-16 py-8 pt-8">
+        {[
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+          "/images/blog/blog10.jpg",
+        ].map((src, index) => (
+          <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              duration: 0.3,
+              delay: index * 0.05,
+              ease: "easeInOut",
+            }}
+            key={index}
+            className={`col-span-1 rounded-xl w-full h-[220px] relative ${
+              index % 2 == 0 ? " lg:translate-y-14" : ""
+            }
+          ${index > 1 && index < 6 ? "md:row-span-2" : ""}
+          `}
+          >
+            <img
+              src={src}
+              alt={`Testimonial ${index + 1}`}
+              className="w-full h-full object-cover object-center rounded-[2px]"
+            />
+          </motion.div>
+        ))}
+      </div>
+      <div className="flex flex-col gap-6 justify-center lg:-translate-y-44 items-center">
+        <span className="bg-zinc-100 px-4 text-zinc-800 rounded-full">
+          Testimonials
+        </span>
+        <h2 className="text-2xl md:text-4xl text-center font-semibold  sm:max-w-xl uppercase">
+          <span className="bg-orange-500 text-white px-2">Preferred</span> by
+          thousands around the{" "}
+          <span className="bg-orange-500 text-white px-2">world</span>
+        </h2>
+        <p className="max-w-[45rem] text-center px-4 xl:px-0">
+          Over the years, Real Himalaya has become the trusted choice of
+          trekkers and climbers from across the globe. Our commitment to safety,
+          authentic experiences, and expert guidance has earned us the loyalty
+          of thousands who return to the Himalayas with us time and again. Each
+          journey is crafted with care, ensuring that every traveler takes home
+          not just memories, but a lifelong connection to the mountains.
+        </p>
+        <Link
+          href={
+            "https://www.tripadvisor.com/Attraction_Review-g293890-d10100922-Reviews-Real_Himalaya_Private_Day_Tour-Kathmandu_Kathmandu_Valley_Bagmati_Zone_Central_R.html"
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="flex w-fit h-fit gap-2 items-center">
+            <span className="bg-amber-600 flex justify-center items-center text-white size-10 md:size-12 rounded-full">
+              <Play className="fill-white " />
+            </span>
+            <span className="text-left  leading-4 uppercase font-semibold">
+              View <br /> More
+            </span>
+          </button>
+        </Link>
+        {/* <TestimonialCarousel testimonials={testimonialData} /> */}
+      </div>
+    </section>
+  );
+};
+// export default TestimonialsSections;
+export { TestimonialsSections, type Testimonial };

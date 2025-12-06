@@ -5,7 +5,7 @@ import VideoSection from "./components/VideoSection";
 
 const page = () => {
   return (
-    <div>
+    <div className="px-4 md:px-8 lg:px-16">
       <HeroSection />
       <GallerySection />
       <VideoSection />

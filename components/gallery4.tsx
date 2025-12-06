@@ -102,11 +102,11 @@ const Gallery4 = ({
   }, [carouselApi]);
 
   return (
-    <section className="py-16">
+    <section className="">
       <div className="mx-auto">
         <div className="mb-8 flex items-end justify-between px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-4 justify-center items-center w-full">
-            <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-semibold md:text-4xl lg:text-6xl">
               {title}
             </h2>
             <p className="max-w-lg text-muted-foreground">{description}</p>
@@ -188,7 +188,7 @@ const Gallery4 = ({
           {items.map((_, index) => (
             <button
               key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${
+              className={`h-2 w-2 rounded-full transition-colors cursor-pointer ${
                 currentSlide === index ? "bg-primary" : "bg-primary/20"
               }`}
               onClick={() => carouselApi?.scrollTo(index)}

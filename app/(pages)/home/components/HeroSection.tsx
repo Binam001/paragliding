@@ -70,12 +70,20 @@ const HeroSection = () => {
   }, []);
   return (
     <div>
-      <div className="w-full relative">
-        <img
-          src="/images/mountains/mountains3.jpg"
+      <div
+        className="w-screen h-screen relative"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at top center,#fde047 0%,#ef4444 50%,#991b1b 80%, #ffffff 100%)",
+        }}
+      >
+        {/* <div className="static-screen z-10" /> */}
+        {/* <img
+          src="/images/mountains/vector-mountain.png"
+          // src="/images/mountains/mountains3.jpg"
           alt="mountain"
-          className=""
-        />
+          className="w-full h-full absolute bottom-0"
+        /> */}
         {/* <img src="/images/clouds/clouds10.jpg" alt="clouds" className="" />
         <img
           src="/images/mountains/mountains-cropped.png"
@@ -95,8 +103,8 @@ const HeroSection = () => {
           className="cloud4 absolute top-20 -left-50 w-40"
         />
 
-        <div className="absolute top-1/2 left-0 font-bold text-5xl text-center text-white text-shadow-lg text-shadow-black w-full">
-          <p>Experience the Sky Above Pokhara</p>
+        <div className="absolute bottom-14 font-bold text-7xl text-center text-black text-shadow-lg text-shadow-black w-full z-50">
+          <p>Experience the Sky</p>
         </div>
 
         {paragliderImages.map((src, idx) => (
