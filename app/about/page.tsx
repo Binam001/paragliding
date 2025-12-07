@@ -1,14 +1,14 @@
 import React from "react";
-import HeroSection from "../../components/about/HeroSection";
-import Team from "../../components/about/Team";
 
-const page = () => {
+const AboutPage = () => {
   return (
-    <div>
-      <HeroSection />
-      <Team />
+    <div className="min-h-screen px-4 md:px-8 lg:px-16 pt-24">
+      <h1 className="text-4xl font-bold text-center mb-8">About Us</h1>
+      <p className="text-center text-lg">
+        Welcome to Sunrise Paragliding - your gateway to adventure in the skies of Pokhara.
+      </p>
     </div>
   );
 };
 
-export default page;
+export default AboutPage;

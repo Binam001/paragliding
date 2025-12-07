@@ -106,17 +106,8 @@ const Paraglider = ({ progress }: ParagliderProps) => {
     null
   );
   return (
-    <div className="w-full h-full pointer-events-none! relative">
-      {/* Display the camera position on screen */}
-      {/* {cameraPosition && (
-        <div className="fixed top-1/2 left-1/2 text-white bg-black/50 p-2 rounded z-50">
-          <p>Camera Position:</p>
-          <p>x: {cameraPosition.x.toFixed(2)}</p>
-          <p>y: {cameraPosition.y.toFixed(2)}</p>
-          <p>z: {cameraPosition.z.toFixed(2)}</p>
-        </div>
-      )} */}
-      <Canvas className="pointer-events-none!">
+    <div className="w-full h-full relative" style={{ pointerEvents: "none" }}>
+      <Canvas style={{ pointerEvents: "none" }}>
         <CameraController
           progress={progress}
           setCameraPosition={setCameraPosition}
@@ -128,7 +119,6 @@ const Paraglider = ({ progress }: ParagliderProps) => {
           intensity={4}
           color={"#ffffff"}
         />
-        {/* <axesHelper args={[500]} /> */}
 
         {/* <ParagliderModel /> */}
         <ParagliderModel />
