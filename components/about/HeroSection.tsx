@@ -59,7 +59,7 @@ const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
   const currentMedia = sampleMediaContent[mediaType];
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="">
       <h2 className="text-3xl font-bold mb-6 text-black">About Us</h2>
       <p className="text-lg mb-8 text-black">{currentMedia.about.overview}</p>
 

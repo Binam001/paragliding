@@ -9,6 +9,8 @@ import Packages from "@/components/home/Packages";
 import Testimonials from "@/components/home/Testimonials";
 import AboutUsSection from "@/components/home/AboutUsSection";
 import { TestimonialsSections } from "@/components/home/GallerySection";
+import Stats from "@/components/home/Stats";
+import FooterText from "@/components/home/FooterText";
 
 // Lazy load the 3D Paraglider component to prevent blocking navigation
 const Paraglider = dynamic(() => import("@/components/home/Paraglider"), {
@@ -27,7 +29,7 @@ const Page = () => {
 
   useEffect(() => {
     setMounted(true);
-    
+
     // Delay loading the 3D component to allow navigation to work smoothly
     const timer = setTimeout(() => {
       setLoad3D(true);
@@ -54,11 +56,12 @@ const Page = () => {
           },
         })
         .to(modelRef.current, { x: "40vw", y: "20vh" })
-        .to(modelRef.current, { x: "-45vw" })
         .to(modelRef.current, { x: "40vw" })
         .to(modelRef.current, { x: "-45vw" })
+        .to(modelRef.current, { x: "-45vw" })
         .to(modelRef.current, { x: "40vw" })
-        .to(modelRef.current, { x: "-40vw" })
+        .to(modelRef.current, { x: "40vw" })
+        .to(modelRef.current, { x: "-45vw" })
         .to(modelRef.current, { x: "100vw", delay: 2 });
     }, mainRef);
 
@@ -69,11 +72,11 @@ const Page = () => {
     <div ref={mainRef} className="relative overflow-hidden">
       <div id="next-section" className="w-screen relative">
         <HeroSection />
-        
+
         {mounted && load3D && (
           <div
             ref={modelRef}
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-screen z-40"
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-screen z-100"
             style={{ pointerEvents: "none" }}
           >
             <Suspense fallback={null}>
@@ -82,8 +85,16 @@ const Page = () => {
           </div>
         )}
 
+        {/* <div className="z-40 relative px-4 md:px-8 lg:px-16 mt-8">
+          <Stats />
+        </div> */}
+
         <div className="w-full h-dvh">
           <AboutUsSection />
+        </div>
+
+        <div className="mt-8">
+          <Stats />
         </div>
 
         <div className="w-full overflow-x-hidden">
@@ -98,8 +109,8 @@ const Page = () => {
           <Testimonials />
         </div>
 
-        <div className="h-dvh">
-          <p className="text-6xl font-semibold text-center">SEE YOU SOON...</p>
+        <div>
+          <FooterText />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -81,6 +81,45 @@ const Gallery4 = ({
   items = data,
 }) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [groupedItems, setGroupedItems] = useState<any[][]>([]);
+  const [selectedTestimonial, setSelectedTestimonial] = useState<any | null>(
+    null
+  );
+
+  useEffect(() => {
+    const itemsPerSlide = 6; // 2 rows * 3 columns
+    const result = [];
+    for (let i = 0; i < testimonialLists.length; i += itemsPerSlide) {
+      result.push(testimonialLists.slice(i, i + itemsPerSlide));
+    }
+    setGroupedItems(result);
+  }, []);
+
+  const getGridCols = (index: number) => {
+    if (index === groupedItems.length - 1) {
+      const lastGroupSize = groupedItems[index].length;
+      if (lastGroupSize <= 3) return `lg:grid-cols-${lastGroupSize}`;
+    }
+    return "lg:grid-cols-3";
+  };
+
+  const getInitials = (name: string) => {
+    if (!name) return "";
+    const nameParts = name.trim().split(" ");
+    if (nameParts.length === 1 && nameParts[0]) {
+      return nameParts[0].charAt(0).toUpperCase();
+    }
+    if (
+      nameParts.length > 1 &&
+      nameParts[0] &&
+      nameParts[nameParts.length - 1]
+    ) {
+      const firstNameInitial = nameParts[0].charAt(0);
+      const lastNameInitial = nameParts[nameParts.length - 1].charAt(0);
+      return `${firstNameInitial}${lastNameInitial}`.toUpperCase();
+    }
+    return "";
+  };
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -105,13 +144,13 @@ const Gallery4 = ({
     <section className="">
       <div className="mx-auto">
         <div className="mb-8 flex items-end justify-between px-4 md:px-8 lg:px-16">
-          <div className="flex flex-col gap-4 justify-center items-center w-full">
+          <div className="flex flex-col gap-4 justify-center items-center w-full text-white">
             <h2 className="text-3xl font-semibold md:text-4xl lg:text-6xl">
               {title}
             </h2>
             <p className="max-w-lg text-muted-foreground">{description}</p>
           </div>
-          {/* <div className="hidden shrink-0 gap-2 md:flex">
+          <div className="hidden shrink-0 gap-2 md:flex">
             <Button
               size="icon"
               variant="ghost"
@@ -121,7 +160,7 @@ const Gallery4 = ({
               disabled={!canScrollPrev}
               className="disabled:pointer-events-auto"
             >
-              <ArrowLeft className="size-5" />
+              <ArrowLeft className="size-5 text-white" />
             </Button>
             <Button
               size="icon"
@@ -132,59 +171,62 @@ const Gallery4 = ({
               disabled={!canScrollNext}
               className="disabled:pointer-events-auto"
             >
-              <ArrowRight className="size-5" />
+              <ArrowRight className="size-5 text-white" />
             </Button>
-          </div> */}
+          </div>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full select-none">
         <Carousel
           setApi={setCarouselApi}
           opts={{
             breakpoints: {
-              "(max-width: 768px)": {
-                dragFree: true,
-              },
+              // No specific breakpoints needed here as we control slides manually
             },
           }}
         >
-          <CarouselContent className="p-4 space-x-4">
-            {testimonialLists.map((item) => (
-              <CarouselItem
-                key={item.id}
-                className="max-w-[320px] lg:max-w-[360px]"
-              >
-                <div className="bg-(--color-accent) rounded-xl h-32 py-4">
-                  <p className="line-clamp-4 relative px-8">
-                    <span className="absolute left-1 -top-1">
-                      <Icon icon="ri:double-quotes-l" className="size-6" />
-                    </span>
-                    {item.content}
-                    <span className="absolute bottom-1 right-3">
-                      <Icon icon="ri:double-quotes-r" className="size-6" />
-                    </span>
-                  </p>
-                  <div
-                    className="absolute bottom-8 transform translate-x-10 -translate-y-full bg-(--color-accent) size-8"
-                    style={{ clipPath: "polygon(0 0, 0% 100%, 100% 0)" }}
-                  ></div>
-                </div>
-
-                <div className="mt-8 flex items-center gap-2">
-                  <Icon
-                    icon="mdi:user"
-                    className="size-10 border rounded-full"
-                  />
-                  <div className="">
-                    <div className="">{item.name}</div>
-                    <div className="text-xs text-gray-500">{item.date}</div>
-                  </div>
+          <CarouselContent>
+            {groupedItems.map((group, index) => (
+              <CarouselItem key={index}>
+                <div
+                  className={`grid grid-cols-1 md:grid-cols-2 text-white ${getGridCols(
+                    index
+                  )} gap-4 p-1`}
+                >
+                  {group.map((item) => (
+                    <div
+                      key={item.id}
+                      className="bg-white/20 backdrop-blur-2xl flex p-4 h-full rounded-lg cursor-pointer hover:bg-white/30 transition-colors"
+                      onClick={() => setSelectedTestimonial(item)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) =>
+                        e.key === "Enter" && setSelectedTestimonial(item)
+                      }
+                    >
+                      <div
+                        className="shrink-0 size-10 border rounded-full flex items-center justify-center bg-white/20 backdrop-blur-2xl font-semibold"
+                        aria-hidden="true"
+                      >
+                        {getInitials(item.name)}
+                      </div>
+                      <div className="pl-4">
+                        <div className="">
+                          <div className="">{item.name}</div>
+                          <div className="text-xs text-gray-400">
+                            {item.date}
+                          </div>
+                        </div>
+                        <p className="line-clamp-3 pr-4">{item.content}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="mt-8 flex justify-center gap-2">
+        {/* <div className="mt-8 flex justify-center gap-2">
           {items.map((_, index) => (
             <button
               key={index}
@@ -195,8 +237,47 @@ const Gallery4 = ({
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
+
+      {selectedTestimonial && (
+        <div
+          className="fixed inset-0 bg-black/70 z-80 flex items-center justify-center p-4 text-white"
+          onClick={() => setSelectedTestimonial(null)}
+        >
+          <div
+            className="bg-white/20 backdrop-blur-2xl rounded-xl p-6 md:p-8 max-w-2xl w-full relative animate-in fade-in-90 zoom-in-95"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setSelectedTestimonial(null)}
+              className="absolute top-2 right-2 rounded-full"
+            >
+              <X className="size-5" />
+              <span className="sr-only">Close</span>
+            </Button>
+            <div className="flex items-center mb-4">
+              <div
+                className="shrink-0 size-12 border rounded-full flex items-center justify-center bg-white/20 backdrop-blur-2xl font-semibold text-lg"
+                aria-hidden="true"
+              >
+                {getInitials(selectedTestimonial.name)}
+              </div>
+              <div className="pl-4">
+                <div className="font-semibold text-lg">
+                  {selectedTestimonial.name}
+                </div>
+                <div className="text-sm text-gray-400">
+                  {selectedTestimonial.date}
+                </div>
+              </div>
+            </div>
+            <p className="whitespace-pre-wrap">{selectedTestimonial.content}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

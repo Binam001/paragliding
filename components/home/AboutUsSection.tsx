@@ -5,13 +5,19 @@ import React from "react";
 
 const AboutUsSection = () => {
   return (
-    <div className="px-4 md:px-8 lg:px-16 w-full h-full relative">
+    <div
+      className="px-4 md:px-8 lg:px-16 w-full h-full relative"
+      style={{
+        clipPath:
+          "polygon(67% 3%, 74% 0, 79% 4%, 100% 0, 100% 100%, 0 100%, 0 4%, 14% 0, 26% 3%, 43% 0)",
+      }}
+    >
       {/* <img
         src="/images/clouds/clouds13.png"
         alt="cloud"
         className="absolute z-20 -top-[75%] w-screen"
       /> */}
-      <img
+      {/* <img
         src="/images/clouds/clouds12.png"
         alt="cloud"
         className="absolute z-20 -top-[35%]"
@@ -25,14 +31,22 @@ const AboutUsSection = () => {
         src="/images/clouds/clouds12.png"
         alt="cloud"
         className="absolute z-20 -top-[35%] -right-[40%]"
+      /> */}
+
+      <img
+        src="/images/blog/blog10.jpg"
+        alt="pokhara"
+        className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="w-full h-full z-50 relative flex flex-col gap-4 md:gap-8 justify-center">
+      <div className="absolute inset-0 w-full h-full bg-black/60" />
+      <div className="w-full h-full z-40 relative flex flex-col gap-4 md:gap-8 justify-center">
         {/* <div className="w-[40%] h-full flex flex-col justify-between"> */}
         {/* <p className="text-6xl font-bold">
           The <span className="text-[#ea6520]">Adventure</span> Awaits
         </p> */}
         {/* <div className=""> */}
-        <div className="bg-(--color-primary) rounded-lg py-4 px-8">
+
+        {/* <div className="bg-(--color-primary) rounded-lg py-4 px-8">
           <div className="flex justify-between">
             {[
               {
@@ -64,8 +78,8 @@ const AboutUsSection = () => {
               </div>
             ))}
           </div>
-        </div>
-        <div className="text-3xl font-medium space-y-2 md:space-y-4">
+        </div> */}
+        <div className="text-3xl font-medium space-y-2 md:space-y-4 text-white">
           <p className="">
             Sunrise Paragliding is a family run company and has been offering
             tandem flights in the Annapurna region of Nepal{" "}

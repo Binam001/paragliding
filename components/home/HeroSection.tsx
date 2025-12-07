@@ -67,15 +67,25 @@ const HeroSection = () => {
       delay: 1,
       ease: "linear",
     });
+
+    gsap.to(".cloud-screen", {
+      top: 0,
+      scrollTrigger: {
+        trigger: ".cloud-screen",
+        start: "center bottom",
+        end: "bottom top",
+        scrub: 2,
+      },
+    });
   }, []);
   return (
     <div>
       <div
-        className="w-screen h-screen relative"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at top center,#fde047 0%,#ef4444 50%,#991b1b 80%, #ffffff 100%)",
-        }}
+        className="w-screen h-[80vh] relative"
+        // style={{
+        //   backgroundImage:
+        //     "radial-gradient(circle at top center,#fde047 0%,#ef4444 50%,#991b1b 80%, #ffffff 100%)",
+        // }}
       >
         {/* <div className="static-screen z-10" /> */}
         {/* <img
@@ -90,7 +100,8 @@ const HeroSection = () => {
           alt="cropped mountain"
           className="absolute bottom-0 w-full"
         /> */}
-        <img
+
+        {/* <img
           ref={cloud2Ref}
           src="/images/clouds/clouds2.png"
           alt="clouds2"
@@ -101,13 +112,69 @@ const HeroSection = () => {
           src="/images/clouds/clouds4.png"
           alt="clouds4"
           className="cloud4 absolute top-20 -left-50 w-40"
+        /> */}
+
+        {/* <img
+          id=""
+          src="/images/clouds/clouds15.png"
+          alt="clouds"
+          className="cloud-screen absolute -bottom-full right-0 w-full h-[80%] z-60"
+        /> */}
+        <img
+          id=""
+          src="/images/clouds/clouds17.png"
+          alt="clouds"
+          className="cloud-screen absolute -bottom-1/2 right-0 w-[40%] z-60"
+        />
+        <img
+          id=""
+          src="/images/clouds/clouds18.png"
+          alt="clouds"
+          className="cloud-screen absolute -bottom-1/2 right-[20%] w-[40%] z-60"
+        />
+        <img
+          id=""
+          src="/images/clouds/clouds18.png"
+          alt="clouds"
+          className="cloud-screen absolute -bottom-1/2 right-[40%] w-[40%] z-60"
+        />
+        <img
+          id=""
+          src="/images/clouds/clouds17.png"
+          alt="clouds"
+          className="cloud-screen absolute -bottom-1/2 left-0 w-[40%] z-60"
         />
 
-        <div className="absolute bottom-14 font-bold text-7xl text-center text-black w-full z-50">
+        <img
+          id=""
+          src="/images/clouds/clouds17.png"
+          alt="clouds"
+          className="cloud-screen absolute -bottom-full right-0 w-[40%] z-60"
+        />
+        <img
+          id=""
+          src="/images/clouds/clouds18.png"
+          alt="clouds"
+          className="cloud-screen absolute -bottom-full right-[20%] w-[40%] z-60"
+        />
+        <img
+          id=""
+          src="/images/clouds/clouds18.png"
+          alt="clouds"
+          className="cloud-screen absolute -bottom-full right-[40%] w-[40%] z-60"
+        />
+        <img
+          id=""
+          src="/images/clouds/clouds17.png"
+          alt="clouds"
+          className="cloud-screen absolute -bottom-full left-0 w-[40%] z-60"
+        />
+
+        <div className="absolute bottom-14 font-bold text-7xl text-center text-black w-full z-40">
           <p>Experience the Sky</p>
         </div>
 
-        {paragliderImages.map((src, idx) => (
+        {/* {paragliderImages.map((src, idx) => (
           <img
             key={idx}
             //@ts-ignore
@@ -116,7 +183,7 @@ const HeroSection = () => {
             alt={`Paraglider ${idx}`}
             className="absolute top-10 -left-20 w-16"
           />
-        ))}
+        ))} */}
       </div>
     </div>
   );

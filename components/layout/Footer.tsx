@@ -1,87 +1,102 @@
 "use client";
 
-import { packageLists, socialLinkLists } from "@/constants";
+import { navLists, packageLists, socialLinkLists } from "@/constants";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="py-4 mt-8 md:mt-16 relative h-[50vh]">
-      <div className="h-full flex items-end">
-        {/* <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#9898983a_1px,transparent_1px),linear-gradient(to_bottom,#9898983a_1px,transparent_1px)] bg-size-[14px_24px]" /> */}
+    <div
+      className="pt-20 pb-4 px-4 md:px-8 lg:px-16 mt-8 md:mt-16 relative h-[70vh] text-white"
+      style={{
+        clipPath:
+          "polygon(67% 3%, 74% 0, 79% 4%, 100% 0, 100% 100%, 0 100%, 0 4%, 14% 0, 26% 3%, 43% 0)",
+      }}
+    >
+      <div className="absolute inset-0 w-full h-full -z-10">
+        <video
+          src="/videos/SUNRISE-PARAGLIDING-NEPAL.mp4"
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+        />
+      </div>
+      <div className="absolute inset-0 w-full h-full bg-black/50 -z-10" />
 
-        <div className="h-full flex flex-col justify-between gap-4 px-4 md:px-8 lg:px-16">
-          <div className="w-full flex justify-between">
-            <div className="w-1/3 space-y-2">
-              <div className="flex w-full">
-                <img src="/images/logo.png" alt="logo" className="w-24" />
-              </div>
-              <p className="text-xs text-(--color-muted) w-[80%]">
-                Sunrise Paragliding is a family run company and has been
-                offering tandem flights in the Annapurna region of Nepal since
-                1996. As the most experienced paragliding company in Nepal, we
-                are unrivaled in our knowledge of paragliding conditions, sites
-                and local cultures.
-              </p>
-            </div>
-            <div className="w-1/3 space-y-2">
-              <div className="flex flex-col items-center">
-                <div className="text-xl font-semibold">Tandam Flights</div>
-                <div className="flex flex-col gap-2">
-                  {packageLists.map((packageItem) => (
-                    <Link
-                      href={`/services`}
-                      // href={`#${packageItem.href}`}
-                      key={packageItem.id}
-                      className="text-sm"
-                    >
-                      {packageItem.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="w-1/3 space-y-2">
-              <div className="flex flex-col items-end gap-2">
-                <div className="text-xl font-semibold">Contact Us</div>
-                <div className="flex gap-4">
-                  {socialLinkLists.map((socialLinkItem) => (
-                    <div key={socialLinkItem.id} className="">
-                      <Link
-                        key={socialLinkItem.id}
-                        href={socialLinkItem.link}
-                        className="group flex items-center"
-                      >
-                        <img
-                          src={socialLinkItem.fillIcon}
-                          alt={socialLinkItem.title}
-                          className="size-4"
-                        />
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-                <div className="text-sm text-(--color-muted)">
-                  Baidam Rd, Pokhara
-                </div>
-                <div className="text-sm text-(--color-muted)">
-                  +977 61 453174, +977 98171 98617
-                </div>
-              </div>
+      <div className="w-full flex flex-col justify-between h-full z-50">
+        <div className="flex items-center">
+          <div className="w-1/2 h-full flex flex-col justify-between">
+            <p className="text-4xl">Join us for an adventure</p>
+            <div className="flex items-center gap-2">
+              <input
+                type="email"
+                placeholder="Email"
+                className="px-3 py-1 border-b-2 placeholder:text-white focus:border-b focus:outline-none w-full md:w-1/2"
+              />
+              <button className="cursor-pointer">
+                <Icon
+                  icon="tabler:send"
+                  className="size-10 bg-white rounded-full p-2 text-black"
+                />
+              </button>
             </div>
           </div>
 
-          <div className="flex gap-2 flex-col items-center justify-between w-full text-gray-500">
-            <hr className="h-2px text-(--color-secondary) w-full" />
-            <div className="flex justify-between w-full">
-              <div className="text-xs">
-                Copyright © 2025 Sunrise Paragliding
+          <div className="w-1/2 flex justify-evenly">
+            <div className="">
+              <p className="text-xl font-medium border-b-2 mb-2">
+                Tandem Flights
+              </p>
+              <div className="flex flex-col gap-2">
+                {packageLists.map((packageItem) => (
+                  <Link key={packageItem.id} href={packageItem}>
+                    {packageItem.title}
+                  </Link>
+                ))}
               </div>
-
-              <Link href="#navbarSection">
-                <Icon icon="ei:arrow-up" className="size-8" />
-              </Link>
             </div>
+
+            <div className="">
+              <p className="text-xl font-medium border-b-2 mb-2 w-max">Links</p>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                {navLists.map((navItem) => (
+                  <Link key={navItem.id} href={navItem.href}>
+                    {navItem.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="">
+          <div className="flex gap-2">
+            {socialLinkLists.map((socialLink) => (
+              <Link key={socialLink.id} href={socialLink.link}>
+                <img
+                  src={socialLink.icon}
+                  alt={socialLink.title}
+                  className="size-8 bg-white rounded-full p-1.5"
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex justify-between items-center">
+          <div className="">
+            <p>General Inquiry</p>
+            <Link
+              href="mailto:info@sunrise-paragliding.com"
+              className="hover:underline"
+            >
+              info@sunrise-paragliding.com
+            </Link>
+          </div>
+          <div className="text-right">
+            <div className="">© 2025 Sunrise Paragliding</div>
+            <Link href="">Privacy Policy</Link>
           </div>
         </div>
       </div>

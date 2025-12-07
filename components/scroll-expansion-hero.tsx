@@ -326,7 +326,7 @@ const ScrollExpandMedia = ({
               </div>
             </div>
 
-            <section className="flex flex-col w-full px-8 py-10 md:px-16 lg:py-20">
+            <section className="flex flex-col w-full lg:py-16">
               {children}
             </section>
             {/* <motion.section

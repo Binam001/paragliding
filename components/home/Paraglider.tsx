@@ -19,22 +19,28 @@ const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
     // new THREE.Vector3(14, 2, 3),
     new THREE.Vector3(10, 2, 0),
     new THREE.Vector3(8, 3, 0),
-    new THREE.Vector3(7, -2, -6),
-    new THREE.Vector3(9, 3, 6),
+    new THREE.Vector3(8, 3, -3),
+    new THREE.Vector3(8, 3, -3),
+    // new THREE.Vector3(7, -2, -6),
+    // new THREE.Vector3(9, 3, 6),
 
     // new THREE.Vector3(15, 3, -10),
-    new THREE.Vector3(9, 3, 6),
-    new THREE.Vector3(9, 2, -6),
+    new THREE.Vector3(8, 3, -2),
+    // new THREE.Vector3(9, 3, 6),
+    new THREE.Vector3(9, 2, 4),
 
-    new THREE.Vector3(9, 2, 6),
-    new THREE.Vector3(8, 1, 5),
+    new THREE.Vector3(9, 2, 4),
+    new THREE.Vector3(8, 1, 6),
 
     new THREE.Vector3(8, 3, -5),
-    new THREE.Vector3(7, 0, -8),
-    new THREE.Vector3(9, 0, 5),
+    new THREE.Vector3(7, 0, -6),
+    new THREE.Vector3(8, 0, -3),
+    // new THREE.Vector3(9, 0, 5),
 
-    new THREE.Vector3(7, 0, 5),
-    new THREE.Vector3(6, 0, 5),
+    new THREE.Vector3(8, 0, 4),
+    new THREE.Vector3(9, 0, 6),
+    // new THREE.Vector3(7, 0, 5),
+    // new THREE.Vector3(6, 0, 5),
     new THREE.Vector3(4, 1, 6),
 
     new THREE.Vector3(4, 1, 7),
@@ -44,22 +50,6 @@ const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
     new THREE.Vector3(-1, 1, 8),
     new THREE.Vector3(-1, 1, 8),
     new THREE.Vector3(-1, 1, 8),
-
-    // new THREE.Vector3(10, 2, -2),
-    // new THREE.Vector3(8, 0, -5),
-    // new THREE.Vector3(8, 0, 7),
-
-    // new THREE.Vector3(3, 0, 7),
-    // new THREE.Vector3(3, 0, 7),
-    // new THREE.Vector3(3, 0, 7),
-
-    // new THREE.Vector3(3, 0, 7),
-    // new THREE.Vector3(3, 0, 7),
-    // new THREE.Vector3(3, 0, 7),
-
-    // new THREE.Vector3(3, 0, 7),
-    // new THREE.Vector3(3, 0, 7),
-    // new THREE.Vector3(3, 0, 7),
   ];
   useFrame(() => {
     cameraRef.current?.lookAt(0, 0, 0);
@@ -106,7 +96,15 @@ const Paraglider = ({ progress }: ParagliderProps) => {
     null
   );
   return (
-    <div className="w-full h-full relative" style={{ pointerEvents: "none" }}>
+    <div className="w-full h-full relative pointer-events-none">
+      {/* {cameraPosition && (
+        <div className="fixed top-0 left-1/2 text-white bg-black p-2 rounded z-50">
+          <p>Camera Position:</p>
+          <p>x: {cameraPosition.x.toFixed(2)}</p>
+          <p>y: {cameraPosition.y.toFixed(2)}</p>
+          <p>z: {cameraPosition.z.toFixed(2)}</p>
+        </div>
+      )} */}
       <Canvas style={{ pointerEvents: "none" }}>
         <CameraController
           progress={progress}

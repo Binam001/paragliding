@@ -6,7 +6,7 @@ import React from "react";
 const Packages = () => {
   return (
     // <div className="w-screen flex justify-end relative py-4 md:py-8">
-    <div className="w-full flex relative py-4 md:py-8 px-4 md:px-8 lg:px-16">
+    <div className="w-full flex relative py-4 md:py-8 px-4 md:px-8 lg:px-16 md:mt-8">
       <div className="w-full z-10">
         <div id="packageSection">
           <div className="">
@@ -20,8 +20,8 @@ const Packages = () => {
                   key={packageItem.id}
                   className={`group h-96 cursor-pointer relative overflow-hidden rounded-lg`}
                 >
-                  <div className="absolute inset-0 w-full h-full bg-linear-to-b from-black/70 via-transparent to-black/70 hover:bg-black/30 duration-300 transition-colors" />
-                  <div className="absolute right-3 top-3">
+                  <div className="absolute inset-0 w-full h-full bg-linear-to-b from-black/70 via-transparent to-black/70 group-hover:bg-black/30 duration-300 transition-colors z-10" />
+                  <div className="absolute right-3 top-3 z-10">
                     <Icon
                       icon="solar:arrow-right-up-outline"
                       className="size-8 text-black group-hover:size-9 transition-all duration-300 ease-in-out bg-gray-300 rounded-full p-1"
@@ -30,12 +30,12 @@ const Packages = () => {
                   <img
                     src={packageItem.image}
                     alt={packageItem.title}
-                    className="gallery-article w-full h-full object-cover"
+                    className="gallery-article w-full h-full object-cover group-hover:scale-[1.1] transition-transform duration-500 ease-in-out z-0"
                   />
-                  <div className="absolute top-4 left-4 flex items-end text-white text-lg font-medium">
+                  <div className="absolute top-4 left-4 flex items-end text-white text-lg font-medium z-10">
                     NRs. {packageItem.cost}
                   </div>
-                  <div className="absolute bottom-4 left-4 flex items-end text-white text-lg font-medium">
+                  <div className="absolute bottom-4 left-4 flex items-end text-white text-lg font-medium z-10">
                     {packageItem.title}
                   </div>
                   {/* <div className="absolute bottom-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
