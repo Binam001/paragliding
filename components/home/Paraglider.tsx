@@ -3,6 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 // import { ParagliderModel } from "./ParagliderModel";
 import { PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
+// import { ParagliderModel } from "./ParagliderModel";
 import { ParagliderModel } from "./Paraglider-orange";
 
 interface ParagliderProps {
@@ -129,6 +130,7 @@ const Paraglider = ({ progress }: ParagliderProps) => {
         />
         {/* <axesHelper args={[500]} /> */}
 
+        {/* <ParagliderModel /> */}
         <ParagliderModel />
       </Canvas>
     </div>
