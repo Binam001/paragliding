@@ -2,7 +2,6 @@
 
 import { packageLists, socialLinkLists } from "@/constants";
 import { Icon } from "@iconify/react";
-import { CircleArrowUp } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
