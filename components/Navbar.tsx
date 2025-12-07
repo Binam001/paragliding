@@ -58,7 +58,7 @@ const Navbar = () => {
               src={scrolled ? "/images/light-logo.svg" : "/images/logo.png"}
               // src="/images/logo.png"
               alt="logo"
-              className={`w-16 object-contain transition-all duration-300`}
+              className={`w-24 object-contain transition-all duration-300`}
             />
           </Link>
         </div>
@@ -70,9 +70,10 @@ const Navbar = () => {
               <li key={navItems.id}>
                 <Link
                   href={navItems.href}
-                  className={`text-sm font-medium transition-colors duration-300 ${
-                    scrolled ? "text-black" : "text-white"
-                  }`}
+                  className={`text-sm font-medium transition-colors duration-300`}
+                  // className={`text-sm font-medium transition-colors duration-300 ${
+                  //   scrolled ? "text-black" : "text-white"
+                  // }`}
                 >
                   {navItems.name}
                 </Link>

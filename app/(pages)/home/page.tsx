@@ -3,19 +3,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import IntroVideo from "./components/IntroVideo";
-import IntroVideo1 from "./components/IntroVideo1";
+import IntroVideo from "../../../components/home/IntroVideo";
+import IntroVideo1 from "../../../components/home/IntroVideo1";
 
-import HeroSection from "./components/HeroSection";
-import WhyUsSection from "./components/WhyUsSection";
-import Paraglider from "./components/Paraglider";
+import HeroSection from "../../../components/home/HeroSection";
+import WhyUsSection from "../../../components/home/WhyUsSection";
+import Paraglider from "../../../components/home/Paraglider";
 import { Canvas } from "@react-three/fiber";
-import Packages from "./components/Packages";
-import WhatUWillExp from "./components/WhatUWillExp";
+import Packages from "../../../components/home/Packages";
+import WhatUWillExp from "../../../components/home/WhatUWillExp";
 // import { FullScreenScrollFX } from "@/components/full-screen-scroll-fx";
-import Testimonials from "./components/Testimonials";
-import AboutUsSection from "./components/AboutUsSection";
-import { TestimonialsSections } from "./components/GallerySection";
+import Testimonials from "../../../components/home/Testimonials";
+import AboutUsSection from "../../../components/home/AboutUsSection";
+import { TestimonialsSections } from "../../../components/home/GallerySection";
 
 const sections = [
   {

@@ -1,6 +1,6 @@
 import React from "react";
-import HeroSection from "./components/HeroSection";
-import Team from "./components/Team";
+import HeroSection from "../../components/about/HeroSection";
+import Team from "../../components/about/Team";
 
 const page = () => {
   return (
