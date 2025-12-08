@@ -47,28 +47,28 @@ body {
     }
   }
   @keyframes accordion-down {
-  from {
-    height: 0;
+    from {
+      height: 0;
     }
-  to {
-    height: var(--radix-accordion-content-height);
+    to {
+      height: var(--radix-accordion-content-height);
     }
   }
   @keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
+    from {
+      height: var(--radix-accordion-content-height);
     }
-  to {
-    height: 0;
+    to {
+      height: 0;
     }
   }
 }
 
 :root {
-  --primary: #ec4b25;
+  --primary: #f7901e;
   /* --primary: #3e3edd; */
-  --primary-foreground: #7777f7;
-  --secondary: #b4b4fd;
+  /* --primary-foreground: #7777f7; */
+  --secondary: #fcb017;
   --accent: #dedefa;
   --muted: #676767;
 }
@@ -181,11 +181,11 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 } */
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
+} */

@@ -7,7 +7,7 @@ import ScrollFloat from "../WaveAnimation";
 const Packages = () => {
   return (
     // <div className="w-screen flex justify-end relative py-4 md:py-8">
-    <div className="w-full flex relative py-4 md:py-8 px-4 md:px-8 lg:px-16 md:mt-8">
+    <div className="w-full flex relative py-4 md:py-8 px-4 md:px-8 lg:px-16">
       <div className="w-full z-10">
         <div id="packageSection">
           <div className="">

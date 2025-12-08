@@ -5,7 +5,6 @@ import HeroSection from "@/components/HeroSection";
 const page = () => {
   return (
     <div className="space-y-8 md:space-y-16 mt-24">
-      <HeroSection />
       <div className="h-full">
         <ContactSection />
       </div>

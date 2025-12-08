@@ -17,7 +17,7 @@ const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
 
   const positions = [
     // new THREE.Vector3(14, 2, 3),
-    new THREE.Vector3(10, 2, 0),
+    new THREE.Vector3(10, 2, -4),
     new THREE.Vector3(8, 3, 0),
     new THREE.Vector3(8, 3, -3),
     new THREE.Vector3(8, 3, -3),

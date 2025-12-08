@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav
       id="navbarSection"
       className={`fixed top-0 left-0 w-full flex justify-center py-2 px-4 md:px-8 lg:px-16 z-70 transition-all duration-300 ${
-        scrolled ? "bg-white/90 shadow-md backdrop-blur-md" : "bg-transparent"
+        scrolled ? "bg-white/90 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="w-full flex items-center justify-between py-2 whitespace-nowrap">
@@ -38,6 +38,9 @@ const Navbar = () => {
           <Link href="/">
             <img
               src={"/images/light-logo.svg"}
+              // src={`${
+              //   scrolled ? "/images/light-logo.svg" : "/images/logo.png"
+              // }`}
               alt="logo"
               className={`object-contain transition-all duration-500 ease-in-out ${
                 scrolled ? "w-16" : "w-24"
@@ -52,11 +55,12 @@ const Navbar = () => {
             <li key={navItems.id}>
               <Link
                 href={navItems.href}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-[#991b1b] ${
+                className={`text-sm font-medium transition-colors duration-300 hover:text-[#f7901e] ${
                   pathname === navItems.href
-                    ? "text-[#991b1b] border-b-2 border-[#991b1b]"
-                    : "text-black"
+                    ? "text-[#f7901e] border-b-2 border-[#f7901e]"
+                    : ""
                 }
+              
                 `}
                 // className={`text-sm font-medium transition-colors duration-300 hover:text-[#991b1b] ${
                 //   pathname === navItems.href

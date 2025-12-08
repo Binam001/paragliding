@@ -13,6 +13,7 @@ import Stats from "@/components/home/Stats";
 import FooterText from "@/components/home/FooterText";
 import Instruction from "@/components/home/Instruction";
 import FAQs from "@/components/home/FAQs";
+import VideoSection from "@/components/home/VideoSection";
 
 // Lazy load the 3D Paraglider component to prevent blocking navigation
 const Paraglider = dynamic(() => import("@/components/home/Paraglider"), {
@@ -57,7 +58,7 @@ const Page = () => {
             },
           },
         })
-        .to(modelRef.current, { x: "40vw", y: "20vh" })
+        .to(modelRef.current, { x: "40vw", y: "50vh" })
         .to(modelRef.current, { x: "40vw" })
         .to(modelRef.current, { x: "-45vw", duration: 1.5 })
         .to(modelRef.current, { x: "-45vw" })
@@ -71,64 +72,63 @@ const Page = () => {
   }, [mounted, load3D]);
 
   return (
-    <div ref={mainRef} className="relative overflow-hidden">
+    <div>
       <div id="next-section" className="w-screen relative">
         <HeroSection />
 
-        {mounted && load3D && (
-          <div
-            ref={modelRef}
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-screen z-100"
-            style={{ pointerEvents: "none" }}
-          >
-            <Suspense fallback={null}>
-              <Paraglider progress={progress} />
-            </Suspense>
+        <div className="">
+          <Stats />
+        </div>
+
+        <div ref={mainRef} className="relative overflow-hidden">
+          {mounted && load3D && (
+            <div
+              ref={modelRef}
+              className="absolute top-0 -right-0 transform translate-x-[30%] w-screen h-screen z-100 pointer-events-none"
+            >
+              <Suspense fallback={null}>
+                <Paraglider progress={progress} />
+              </Suspense>
+            </div>
+          )}
+          <div className="w-full">
+            <AboutUsSection />
           </div>
-        )}
 
-        <div className="">
-          <Stats />
-        </div>
+          <div className="relative w-full h-screen">
+            <img
+              src="/images/blog/blog10.jpg"
+              alt="pokhara"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 w-full h-full bg-black/60" />
+            <div className="absolute inset-0 w-full h-screen bg-linear-to-b from-white to-60% to-transparent z-60" />
+          </div>
 
-        <div className="w-full h-[150vh]">
-          <AboutUsSection />
-        </div>
+          <div className="">
+            <Instruction />
+          </div>
 
-        <div className="">
-          <Instruction />
-        </div>
-        {/* <div className="">
-          <Stats />
-        </div> */}
+          <div className="w-full overflow-x-hidden">
+            <Packages />
+          </div>
 
-        <div className="w-full overflow-x-hidden">
-          <Packages />
-        </div>
+          <VideoSection />
 
-        <div className="">
-          <video
-            src="/videos/SUNRISE-PARAGLIDING-NEPAL.mp4"
-            className="w-full h-full object-cover"
-            autoPlay
-            loop
-            preload="auto"
-          />
-        </div>
+          <div className="w-full">
+            <TestimonialsSections />
+          </div>
 
-        <div className="w-full">
-          <TestimonialsSections />
-        </div>
+          <div className="w-full h-screen">
+            <Testimonials />
+          </div>
+          <div className="w-full h-screen">
+            <FAQs />
+          </div>
 
-        <div className="w-full h-screen">
-          <Testimonials />
-        </div>
-        <div className="w-full h-screen">
-          <FAQs />
-        </div>
-
-        <div>
-          <FooterText />
+          <div>
+            <FooterText />
+          </div>
         </div>
       </div>
     </div>

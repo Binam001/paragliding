@@ -82,19 +82,28 @@ const HeroSection = () => {
   return (
     <div>
       <div
-        className="w-screen h-[60vh] relative"
+        className="w-screen h-[100vh] relative"
         // style={{
         //   backgroundImage:
         //     "radial-gradient(circle at top center,#fde047 0%,#ef4444 50%,#991b1b 80%, #ffffff 100%)",
         // }}
       >
         {/* <div className="static-screen z-10" /> */}
-        <img
+        {/* <img
           src="/images/mountains/sunrise-mountain-no-bg.png"
           // src="/images/mountains/mountains3.jpg"
           alt="mountain"
-          className="w-full h-full absolute bottom-0"
+          className="w-full h-full absolute bottom-0 object-cover"
+        /> */}
+
+        <video
+          src="/videos/video1.mp4"
+          className="w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
         />
+
         {/* <img src="/images/clouds/clouds10.jpg" alt="clouds" className="" />
         <img
           src="/images/mountains/mountains-cropped.png"
@@ -113,13 +122,6 @@ const HeroSection = () => {
           src="/images/clouds/clouds4.png"
           alt="clouds4"
           className="cloud4 absolute top-20 -left-50 w-40"
-        /> */}
-
-        {/* <video
-          src="/videos/SUNRISE-PARAGLIDING-NEPAL.mp4"
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
         /> */}
 
         {/* <div className="absolute inset-0 w-full h-full bg-linear-to-b from-blue-600 via-white/50 to-white z-30" /> */}

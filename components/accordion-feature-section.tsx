@@ -67,6 +67,13 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
     <section className="py-16 w-full px-4 md:px-8 lg:px-16">
       <div className="">
         <div className="flex w-full h-full justify-center items-center gap-8">
+          <div className="relative m-auto hidden w-1/2 overflow-hidden md:block">
+            <img
+              src={activeImage}
+              alt="Feature preview"
+              className="w-full h-full object-cover pl-4"
+            />
+          </div>
           <div className="w-full md:w-1/2 h-full flex flex-col items-center justify-center">
             <div className="">
               <ScrollFloat
@@ -114,13 +121,6 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </div>
-          <div className="relative m-auto hidden w-1/2 overflow-hidden rounded-xl md:block">
-            <img
-              src={activeImage}
-              alt="Feature preview"
-              className="w-full h-full rounded-md object-cover pl-4"
-            />
           </div>
         </div>
       </div>

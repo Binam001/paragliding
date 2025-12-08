@@ -88,7 +88,7 @@ const Gallery4 = ({
   );
 
   useEffect(() => {
-    const itemsPerSlide = 6; // 2 rows * 3 columns
+    const itemsPerSlide = 2; // 2 rows * 3 columns
     const result = [];
     for (let i = 0; i < testimonialLists.length; i += itemsPerSlide) {
       result.push(testimonialLists.slice(i, i + itemsPerSlide));
@@ -144,8 +144,8 @@ const Gallery4 = ({
   return (
     <section className="">
       <div className="mx-auto">
-        <div className="mb-8 flex items-end justify-between px-4 md:px-8 lg:px-16">
-          <div className="flex flex-col gap-4 justify-center items-center w-full text-white">
+        <div className="mb-4 flex items-end justify-between px-4 md:px-8 lg:px-16">
+          <div className="flex flex-col gap-4 justify-center items-center w-full">
             {/* <h2 className="text-3xl font-semibold md:text-4xl lg:text-6xl">
               
             </h2> */}
@@ -171,7 +171,7 @@ const Gallery4 = ({
                 {description}
               </ScrollFloat>
             </div> */}
-            <p className="max-w-lg text-muted-foreground">{description}</p>
+            <p className="max-w-lg">{description}</p>
           </div>
           <div className="hidden shrink-0 gap-2 md:flex">
             <Button
@@ -183,7 +183,7 @@ const Gallery4 = ({
               disabled={!canScrollPrev}
               className="disabled:pointer-events-auto"
             >
-              <ArrowLeft className="size-5 text-white" />
+              <ArrowLeft className="size-5 " />
             </Button>
             <Button
               size="icon"
@@ -194,7 +194,7 @@ const Gallery4 = ({
               disabled={!canScrollNext}
               className="disabled:pointer-events-auto"
             >
-              <ArrowRight className="size-5 text-white" />
+              <ArrowRight className="size-5" />
             </Button>
           </div>
         </div>
@@ -211,15 +211,11 @@ const Gallery4 = ({
           <CarouselContent>
             {groupedItems.map((group, index) => (
               <CarouselItem key={index}>
-                <div
-                  className={`grid grid-cols-1 md:grid-cols-2 text-white ${getGridCols(
-                    index
-                  )} gap-4 p-1`}
-                >
+                <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 p-1`}>
                   {group.map((item) => (
                     <div
                       key={item.id}
-                      className="bg-white/20 backdrop-blur-2xl flex p-4 h-full rounded-lg cursor-pointer hover:bg-white/30 transition-colors"
+                      className="bg-black/50 text-white backdrop-blur-2xl flex p-4 h-full rounded-lg cursor-pointer hover:bg-black/40 transition-colors"
                       onClick={() => setSelectedTestimonial(item)}
                       role="button"
                       tabIndex={0}
@@ -236,11 +232,11 @@ const Gallery4 = ({
                       <div className="pl-4">
                         <div className="">
                           <div className="">{item.name}</div>
-                          <div className="text-xs text-gray-400">
+                          <div className="text-xs text-gray-300">
                             {item.date}
                           </div>
                         </div>
-                        <p className="line-clamp-3 pr-4">{item.content}</p>
+                        <p className="line-clamp-4 pr-4">{item.content}</p>
                       </div>
                     </div>
                   ))}
@@ -269,7 +265,7 @@ const Gallery4 = ({
           onClick={() => setSelectedTestimonial(null)}
         >
           <div
-            className="bg-white/20 backdrop-blur-2xl rounded-xl p-6 md:p-8 max-w-2xl w-full relative animate-in fade-in-90 zoom-in-95"
+            className="bg-black/50 backdrop-blur-2xl rounded-xl p-6 md:p-8 max-w-2xl w-full relative animate-in fade-in-90 zoom-in-95"
             onClick={(e) => e.stopPropagation()}
           >
             <Button

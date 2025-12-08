@@ -6,5 +6,6 @@ remove whatwuwillexp.tsx
 remove ImageParallaxZoom.tsx
 remove FullScreenScrollFX.tsx
 remove gallery4.tsx
+remove flow-react
 change testimonial contents from this link: 
 https://www.google.com/search?q=sunrise+paragliding+google+reviews&rlz=1C5CHFA_enES919ES920&oq=sun&aqs=chrome.0.69i59l2j69i57j69i59j46i67j0i20i263i433i512j0i67l2j46i67i199i291j46i67i199i465.1213j0j15&sourceid=chrome&ie=UTF-8#lrd=
