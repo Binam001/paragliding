@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import { testimonialLists } from "@/constants";
 import { Icon } from "@iconify/react";
+import ScrollFloat from "./WaveAnimation";
 
 // export interface Gallery4Item {
 //   id: string;
@@ -145,9 +146,31 @@ const Gallery4 = ({
       <div className="mx-auto">
         <div className="mb-8 flex items-end justify-between px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-4 justify-center items-center w-full text-white">
-            <h2 className="text-3xl font-semibold md:text-4xl lg:text-6xl">
-              {title}
-            </h2>
+            {/* <h2 className="text-3xl font-semibold md:text-4xl lg:text-6xl">
+              
+            </h2> */}
+            <div className="">
+              <ScrollFloat
+                animationDuration={1}
+                ease="back.inOut(2)"
+                scrollStart="center bottom+=30%"
+                scrollEnd="bottom bottom-=40%"
+                stagger={0.03}
+              >
+                {title}
+              </ScrollFloat>
+            </div>
+            {/* <div className="text-sm">
+              <ScrollFloat
+                animationDuration={1}
+                ease="back.inOut(2)"
+                scrollStart="center bottom+=0%"
+                scrollEnd="bottom bottom-=40%"
+                stagger={0.03}
+              >
+                {description}
+              </ScrollFloat>
+            </div> */}
             <p className="max-w-lg text-muted-foreground">{description}</p>
           </div>
           <div className="hidden shrink-0 gap-2 md:flex">

@@ -26,7 +26,9 @@ const Navbar = () => {
   return (
     <nav
       id="navbarSection"
-      className="fixed top-0 left-0 w-full flex justify-center py-2 px-4 md:px-8 lg:px-16 z-50 transition-all duration-300 bg-white"
+      className={`fixed top-0 left-0 w-full flex justify-center py-2 px-4 md:px-8 lg:px-16 z-70 transition-all duration-300 ${
+        scrolled ? "bg-white/90 shadow-md backdrop-blur-md" : "bg-transparent"
+      }`}
     >
       <div className="w-full flex items-center justify-between py-2 whitespace-nowrap">
         <div
@@ -53,8 +55,14 @@ const Navbar = () => {
                 className={`text-sm font-medium transition-colors duration-300 hover:text-[#991b1b] ${
                   pathname === navItems.href
                     ? "text-[#991b1b] border-b-2 border-[#991b1b]"
-                    : "text-[#ef4444]"
-                }`}
+                    : "text-black"
+                }
+                `}
+                // className={`text-sm font-medium transition-colors duration-300 hover:text-[#991b1b] ${
+                //   pathname === navItems.href
+                //     ? "text-[#991b1b] border-b-2 border-[#991b1b]"
+                //     : "text-[#ef4444]"
+                // }`}
               >
                 {navItems.name}
               </Link>

@@ -2,6 +2,7 @@ import { articleLists, packageLists } from "@/constants";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import React from "react";
+import ScrollFloat from "../WaveAnimation";
 
 const Packages = () => {
   return (
@@ -10,9 +11,20 @@ const Packages = () => {
       <div className="w-full z-10">
         <div id="packageSection">
           <div className="">
-            <h2 className="text-4xl font-bold text-center mb-12">
+            <div className="text-center">
+              <ScrollFloat
+                animationDuration={1}
+                ease="back.inOut(2)"
+                scrollStart="center bottom+=30%"
+                scrollEnd="bottom bottom-=40%"
+                stagger={0.03}
+              >
+                Tandem Flights
+              </ScrollFloat>
+            </div>
+            {/* <h2 className="text-4xl font-bold text-center mb-12">
               Tandem Flights
-            </h2>
+            </h2> */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {packageLists.map((packageItem) => (
                 <Link

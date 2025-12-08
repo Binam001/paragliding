@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import SplitText from "../TitleAnimation";
 
 const paragliderImages = [
   "/images/paraglider/paraglider1.png",
@@ -81,19 +82,19 @@ const HeroSection = () => {
   return (
     <div>
       <div
-        className="w-screen h-[80vh] relative"
+        className="w-screen h-[60vh] relative"
         // style={{
         //   backgroundImage:
         //     "radial-gradient(circle at top center,#fde047 0%,#ef4444 50%,#991b1b 80%, #ffffff 100%)",
         // }}
       >
         {/* <div className="static-screen z-10" /> */}
-        {/* <img
-          src="/images/mountains/vector-mountain.png"
+        <img
+          src="/images/mountains/sunrise-mountain-no-bg.png"
           // src="/images/mountains/mountains3.jpg"
           alt="mountain"
           className="w-full h-full absolute bottom-0"
-        /> */}
+        />
         {/* <img src="/images/clouds/clouds10.jpg" alt="clouds" className="" />
         <img
           src="/images/mountains/mountains-cropped.png"
@@ -114,64 +115,23 @@ const HeroSection = () => {
           className="cloud4 absolute top-20 -left-50 w-40"
         /> */}
 
-        {/* <img
-          id=""
-          src="/images/clouds/clouds15.png"
-          alt="clouds"
-          className="cloud-screen absolute -bottom-full right-0 w-full h-[80%] z-60"
+        {/* <video
+          src="/videos/SUNRISE-PARAGLIDING-NEPAL.mp4"
+          className="w-full h-full object-cover"
+          autoPlay
+          loop
         /> */}
-        <img
-          id=""
-          src="/images/clouds/clouds17.png"
-          alt="clouds"
-          className="cloud-screen absolute -bottom-1/2 right-0 w-[40%] z-60"
-        />
-        <img
-          id=""
-          src="/images/clouds/clouds18.png"
-          alt="clouds"
-          className="cloud-screen absolute -bottom-1/2 right-[20%] w-[40%] z-60"
-        />
-        <img
-          id=""
-          src="/images/clouds/clouds18.png"
-          alt="clouds"
-          className="cloud-screen absolute -bottom-1/2 right-[40%] w-[40%] z-60"
-        />
-        <img
-          id=""
-          src="/images/clouds/clouds17.png"
-          alt="clouds"
-          className="cloud-screen absolute -bottom-1/2 left-0 w-[40%] z-60"
-        />
 
-        <img
-          id=""
-          src="/images/clouds/clouds17.png"
-          alt="clouds"
-          className="cloud-screen absolute -bottom-full right-0 w-[40%] z-60"
-        />
-        <img
-          id=""
-          src="/images/clouds/clouds18.png"
-          alt="clouds"
-          className="cloud-screen absolute -bottom-full right-[20%] w-[40%] z-60"
-        />
-        <img
-          id=""
-          src="/images/clouds/clouds18.png"
-          alt="clouds"
-          className="cloud-screen absolute -bottom-full right-[40%] w-[40%] z-60"
-        />
-        <img
-          id=""
-          src="/images/clouds/clouds17.png"
-          alt="clouds"
-          className="cloud-screen absolute -bottom-full left-0 w-[40%] z-60"
-        />
+        {/* <div className="absolute inset-0 w-full h-full bg-linear-to-b from-blue-600 via-white/50 to-white z-30" /> */}
 
         <div className="absolute bottom-14 font-bold text-7xl text-center text-black w-full z-40">
-          <p>Experience the Sky</p>
+          {/* <p>Experience the Sky</p> */}
+          {/* <SplitText
+            text="Experience the Sky"
+            delay={100}
+            ease="elastic.out(1, 0.3)"
+            duration={2.5}
+          /> */}
         </div>
 
         {/* {paragliderImages.map((src, idx) => (

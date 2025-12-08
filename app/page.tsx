@@ -11,6 +11,8 @@ import AboutUsSection from "@/components/home/AboutUsSection";
 import { TestimonialsSections } from "@/components/home/GallerySection";
 import Stats from "@/components/home/Stats";
 import FooterText from "@/components/home/FooterText";
+import Instruction from "@/components/home/Instruction";
+import FAQs from "@/components/home/FAQs";
 
 // Lazy load the 3D Paraglider component to prevent blocking navigation
 const Paraglider = dynamic(() => import("@/components/home/Paraglider"), {
@@ -57,12 +59,12 @@ const Page = () => {
         })
         .to(modelRef.current, { x: "40vw", y: "20vh" })
         .to(modelRef.current, { x: "40vw" })
+        .to(modelRef.current, { x: "-45vw", duration: 1.5 })
         .to(modelRef.current, { x: "-45vw" })
-        .to(modelRef.current, { x: "-45vw" })
+        .to(modelRef.current, { x: "40vw", duration: 1.5 })
         .to(modelRef.current, { x: "40vw" })
-        .to(modelRef.current, { x: "40vw" })
-        .to(modelRef.current, { x: "-45vw" })
-        .to(modelRef.current, { x: "100vw", delay: 2 });
+        .to(modelRef.current, { x: "-45vw", duration: 1.5 })
+        .to(modelRef.current, { x: "100vw", duration: 1.5 });
     }, mainRef);
 
     return () => ctx.revert();
@@ -85,20 +87,33 @@ const Page = () => {
           </div>
         )}
 
-        {/* <div className="z-40 relative px-4 md:px-8 lg:px-16 mt-8">
+        <div className="">
           <Stats />
-        </div> */}
+        </div>
 
-        <div className="w-full h-dvh">
+        <div className="w-full h-[150vh]">
           <AboutUsSection />
         </div>
 
-        <div className="mt-8">
-          <Stats />
+        <div className="">
+          <Instruction />
         </div>
+        {/* <div className="">
+          <Stats />
+        </div> */}
 
         <div className="w-full overflow-x-hidden">
           <Packages />
+        </div>
+
+        <div className="">
+          <video
+            src="/videos/SUNRISE-PARAGLIDING-NEPAL.mp4"
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            preload="auto"
+          />
         </div>
 
         <div className="w-full">
@@ -107,6 +122,9 @@ const Page = () => {
 
         <div className="w-full h-screen">
           <Testimonials />
+        </div>
+        <div className="w-full h-screen">
+          <FAQs />
         </div>
 
         <div>

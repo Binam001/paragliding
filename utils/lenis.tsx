@@ -27,8 +27,8 @@ export function SmoothScroll({ children }: LenisProviderProps) {
     <ReactLenis
       root
       options={{
-        lerp: 0.1,
-        duration: 1.2,
+        lerp: 0.5,
+        duration: 2,
         smoothWheel: true,
       }}
     >

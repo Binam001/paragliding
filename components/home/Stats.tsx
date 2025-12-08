@@ -1,15 +1,17 @@
 import { Icon } from "@iconify/react";
 import React from "react";
+import CountUp from "../CountUp";
 
 const Stats = () => {
   return (
-    <div className="relative px-4 md:px-8 lg:px-16">
+    // <div className="relative px-4 md:px-8 lg:px-16">
+    <div className="relative w-screen flex items-center justify-center">
       <div
-        className="rounded-lg py-4"
-        style={{
-          background:
-            "linear-gradient(to right, #991b1b 0%, #ef4444 40%, #fde047 100%)",
-        }}
+        className="w-full"
+        // style={{
+        //   background:
+        //     "linear-gradient(to right, #991b1b 0%, #ef4444 40%, #fde047 100%)",
+        // }}
       >
         <div className="flex justify-evenly">
           {[
@@ -21,8 +23,8 @@ const Stats = () => {
             },
             {
               id: 2,
-              title: "Global Ranking",
-              count: "5",
+              title: "Years",
+              count: "30+",
               icon: "ant-design:global-outlined",
             },
             {
@@ -31,14 +33,33 @@ const Stats = () => {
               count: "20+",
               icon: "eos-icons:trusted-organization",
             },
+            {
+              id: 4,
+              title: "Take-off Altitude",
+              count: "1600",
+              icon: "material-symbols:altitude-outline-rounded",
+            },
           ].map((data) => (
             <div
               key={data.id}
-              className="flex flex-col items-center text-white"
+              className={`flex flex-col items-center gap-4 rounded-md px-4 py-6`}
             >
               <Icon icon={data.icon} className="size-12" />
-              <p>{data.count}</p>
-              <p className="text-xl font-medium">{data.title}</p>
+              <div className="flex flex-col items-center">
+                <div className="flex items-center text-5xl font-bold">
+                  <CountUp
+                    from={0}
+                    to={parseInt(data.count)}
+                    separator=","
+                    direction="up"
+                    duration={1.5}
+                    className="count-up-text"
+                  />
+                  {data.id !== 4 && <span>+</span>}
+                  {data.id === 4 && <span>M</span>}
+                </div>
+                <p className="text-xl font-medium">{data.title}</p>
+              </div>
             </div>
           ))}
         </div>
