@@ -58,7 +58,7 @@ const Page = () => {
             },
           },
         })
-        .to(modelRef.current, { x: "40vw", y: "50vh" })
+        .to(modelRef.current, { x: "40vw", y: "20vh" })
         .to(modelRef.current, { x: "40vw" })
         .to(modelRef.current, { x: "-45vw", duration: 1.5 })
         .to(modelRef.current, { x: "-45vw" })
@@ -72,25 +72,27 @@ const Page = () => {
   }, [mounted, load3D]);
 
   return (
-    <div>
+    <div ref={mainRef} className="relative overflow-hidden">
       <div id="next-section" className="w-screen relative">
         <HeroSection />
+
+        {mounted && load3D && (
+          <div
+            ref={modelRef}
+            className="fixed top-1/2 right-0 transform translate-x-full -translate-y-1/2 w-screen h-screen z-100"
+            style={{ pointerEvents: "none" }}
+          >
+            <Suspense fallback={null}>
+              <Paraglider progress={progress} />
+            </Suspense>
+          </div>
+        )}
 
         <div className="">
           <Stats />
         </div>
 
-        <div ref={mainRef} className="relative overflow-hidden">
-          {mounted && load3D && (
-            <div
-              ref={modelRef}
-              className="absolute top-0 -right-0 transform translate-x-[30%] w-screen h-screen z-100 pointer-events-none"
-            >
-              <Suspense fallback={null}>
-                <Paraglider progress={progress} />
-              </Suspense>
-            </div>
-          )}
+        <div className="relative overflow-hidden">
           <div className="w-full">
             <AboutUsSection />
           </div>

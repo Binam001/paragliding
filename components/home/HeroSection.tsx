@@ -82,7 +82,7 @@ const HeroSection = () => {
   return (
     <div>
       <div
-        className="w-screen h-[100vh] relative"
+        className="w-screen h-screen relative"
         // style={{
         //   backgroundImage:
         //     "radial-gradient(circle at top center,#fde047 0%,#ef4444 50%,#991b1b 80%, #ffffff 100%)",
@@ -125,16 +125,6 @@ const HeroSection = () => {
         /> */}
 
         {/* <div className="absolute inset-0 w-full h-full bg-linear-to-b from-blue-600 via-white/50 to-white z-30" /> */}
-
-        <div className="absolute bottom-14 font-bold text-7xl text-center text-black w-full z-40">
-          {/* <p>Experience the Sky</p> */}
-          {/* <SplitText
-            text="Experience the Sky"
-            delay={100}
-            ease="elastic.out(1, 0.3)"
-            duration={2.5}
-          /> */}
-        </div>
 
         {/* {paragliderImages.map((src, idx) => (
           <img

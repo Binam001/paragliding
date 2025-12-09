@@ -19,7 +19,7 @@ const Package = () => {
       </div>
 
       <div className="mt-8 md:mt-16 space-y-4">
-        {/* {packageLists.map((packageItem) => (
+        {packageLists.map((packageItem) => (
           <div
             key={packageItem.id}
             id={packageItem.href}
@@ -57,7 +57,7 @@ const Package = () => {
               </button>
             </div>
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );

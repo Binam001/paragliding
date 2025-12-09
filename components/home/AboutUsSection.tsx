@@ -50,7 +50,7 @@ const AboutUsSection = () => {
           // style={{ clipPath: "polygon(0 25%, 100% 0, 100% 100%, 0% 100%)" }}
         >
           <img src="/images/only-logo.png" alt="" className="" />
-          <p className="text-9xl font-[800] absolute bottom-12 right-0 text-[#f7901e]">
+          <p className="text-9xl font-extrabold absolute bottom-12 right-0 text-(--color-primary)">
             30<span className="text-lg text-black font-medium">years+</span>
           </p>
         </div>
