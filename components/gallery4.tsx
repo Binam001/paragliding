@@ -145,22 +145,26 @@ const Gallery4 = ({
     <section className="">
       <div className="mx-auto">
         <div className="mb-4 flex items-end justify-between px-4 md:px-8 lg:px-16">
-          <div className="flex flex-col gap-4 justify-center items-center w-full">
+          <div className="flex flex-col justify-center items-center w-full">
             {/* <h2 className="text-3xl font-semibold md:text-4xl lg:text-6xl">
               
             </h2> */}
             <div className="">
+              {/* <h2 className="my-2"> */}
               <ScrollFloat
                 animationDuration={1}
                 ease="back.inOut(2)"
                 scrollStart="center bottom+=30%"
                 scrollEnd="bottom bottom-=40%"
                 stagger={0.03}
+                containerClassName="my-0 -mb-1 text-white"
               >
                 {title}
               </ScrollFloat>
+              {/* </h2> */}
             </div>
-            <p className="max-w-lg">{description}</p>
+
+            <p className="text-zinc-600">{description}</p>
           </div>
           <div className="hidden shrink-0 gap-2 md:flex">
             <Button
@@ -170,7 +174,7 @@ const Gallery4 = ({
                 carouselApi?.scrollPrev();
               }}
               disabled={!canScrollPrev}
-              className="disabled:pointer-events-auto"
+              className="disabled:pointer-events-auto hover:bg-white"
             >
               <ArrowLeft className="size-5 " />
             </Button>
@@ -181,7 +185,7 @@ const Gallery4 = ({
                 carouselApi?.scrollNext();
               }}
               disabled={!canScrollNext}
-              className="disabled:pointer-events-auto"
+              className="disabled:pointer-events-auto hover:bg-white"
             >
               <ArrowRight className="size-5" />
             </Button>

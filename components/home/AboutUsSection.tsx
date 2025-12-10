@@ -55,7 +55,7 @@ const AboutUsSection = () => {
           </p>
         </div>
         <div className="text-5xl text-black h-full w-[75%] z-30 flex items-center">
-          <p className="font-light">
+          <p className="font-extralight">
             Over{" "}
             <span className="text-[#f7901e] font-medium">three decades</span> of
             unrivaled expertise. Sunrise is the leading choice for{" "}

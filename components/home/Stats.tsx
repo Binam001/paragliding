@@ -13,7 +13,7 @@ const Stats = () => {
         //     "linear-gradient(to right, #991b1b 0%, #ef4444 40%, #fde047 100%)",
         // }}
       >
-        <div className="flex justify-between">
+        <div className="flex w-full">
           {[
             {
               id: 1,
@@ -43,14 +43,25 @@ const Stats = () => {
           ].map((data) => (
             <div
               key={data.id}
-              className={`flex flex-col items-center gap-4 rounded-md p-4 border-b-4 border-(--color-primary) min-w-64 bg-(--color-primary)/20`}
+              className={`flex-1 flex flex-col items-center justify-center p-4 text-white bg-(--color-primary)/20 ${
+                data.id === 1
+                  ? "h-72 bg-[#d71f27]"
+                  : data.id === 2
+                  ? "h-[245px] bg-[#ec4b25]"
+                  : data.id === 3
+                  ? "h-52 bg-[#f7901e]"
+                  : "h-44 bg-[#fbcc0a]"
+              }`}
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)",
+              }}
             >
-              <Icon
+              {/* <Icon
                 icon={data.icon}
                 className="size-12 text-(--color-primary)"
-              />
+              /> */}
               <div className="flex flex-col items-center">
-                <div className="flex items-center text-5xl font-light">
+                <div className="flex items-center text-7xl font-light">
                   <CountUp
                     from={0}
                     to={parseInt(data.count)}
@@ -59,8 +70,11 @@ const Stats = () => {
                     duration={1.5}
                     className="count-up-text"
                   />
-                  {data.id !== 4 && <span>+</span>}
-                  {data.id === 4 && <span>M</span>}
+                  <sup className="text-3xl -translate-y-4">
+                    {" "}
+                    {data.id !== 4 && <span>+</span>}
+                    {data.id === 4 && <span>M</span>}
+                  </sup>
                 </div>
                 <p className="font-light">{data.title}</p>
               </div>
