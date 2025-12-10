@@ -40,7 +40,11 @@ const Navbar = () => {
             <img
               // src={"/images/light-logo.svg"}
               src={`${
-                scrolled ? "/images/light-logo.svg" : "/images/logo.png"
+                pathname === "/"
+                  ? "/images/light-logo.svg"
+                  : scrolled
+                  ? "/images/light-logo.svg"
+                  : "/images/logo.png"
               }`}
               alt="logo"
               className={`object-contain transition-all duration-500 ease-in-out ${
@@ -61,13 +65,14 @@ const Navbar = () => {
                     ? "text-white hover:text-white bg-[#f7901e]"
                     : ""
                 }
-              ${scrolled ? "text-black" : "text-white"}
+                ${
+                  pathname === "/"
+                    ? "text-black"
+                    : scrolled
+                    ? "text-black"
+                    : "text-white"
+                }
                 `}
-                // className={`text-sm font-medium transition-colors duration-300 hover:text-[#991b1b] ${
-                //   pathname === navItems.href
-                //     ? "text-[#991b1b] border-b-2 border-[#991b1b]"
-                //     : "text-[#ef4444]"
-                // }`}
               >
                 {navItems.name}
                 <Icon
