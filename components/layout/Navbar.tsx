@@ -4,6 +4,7 @@ import { navLists } from "@/constants";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Icon } from "@iconify/react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -50,14 +51,14 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links */}
-        <ul className="flex justify-between gap-8 items-center">
+        <ul className="flex justify-between items-center">
           {navLists.map((navItems) => (
             <li key={navItems.id}>
               <Link
                 href={navItems.href}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-[#f7901e] ${
+                className={`text-sm font-medium px-6 py-2 flex gap-1 items-center rounded-full transition-colors duration-300 hover:text-[#f7901e] ${
                   pathname === navItems.href
-                    ? "text-[#f7901e] border-b-2 border-[#f7901e]"
+                    ? "text-white hover:text-white bg-[#f7901e]"
                     : ""
                 }
               ${scrolled ? "text-black" : "text-white"}
@@ -69,6 +70,12 @@ const Navbar = () => {
                 // }`}
               >
                 {navItems.name}
+                <Icon
+                  icon="mynaui:arrow-up-right"
+                  className={`size-3 ${
+                    pathname === navItems.href ? "hidden" : ""
+                  }`}
+                />
               </Link>
             </li>
           ))}
