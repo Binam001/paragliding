@@ -50,7 +50,7 @@ const ScrollExpandMedia = ({
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      const triggerPoint = window.innerHeight * 0.2; // 20% from the top of the viewport
+      const triggerPoint = window.innerHeight * 0.8; // 20% from the top of the viewport
       const currentSection = sectionRef.current;
       if (!currentSection) return;
 

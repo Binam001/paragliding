@@ -108,7 +108,7 @@ const Page = () => {
             <Instruction />
           </div>
 
-          <div className="w-full overflow-x-hidden">
+          <div className="w-full overflow-x-hidden mb-8">
             <Packages />
           </div>
 
@@ -118,9 +118,7 @@ const Page = () => {
             <TestimonialsSections />
           </div>
 
-          <div className="w-full h-screen">
-            <Testimonials />
-          </div>
+          <Testimonials />
           <div className="w-full h-screen">
             <FAQs />
           </div>

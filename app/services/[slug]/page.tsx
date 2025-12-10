@@ -7,8 +7,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 const tableOfContentLists = [
-  { id: 1, title: "Overview", link: "#overview" },
-  { id: 2, title: "details", link: "#details" },
+  {
+    id: 1,
+    title: "Overview",
+    link: "#overview",
+    icon: "fluent:apps-list-detail-32-regular",
+  },
+  { id: 2, title: "Cost", link: "#cost", icon: "ph:money-wavy" },
+  {
+    id: 3,
+    title: "Essential Info",
+    link: "#essential-info",
+    icon: "material-symbols:info-outline-rounded",
+  },
 ];
 
 const essentialInfo = [
@@ -61,7 +72,7 @@ const PackageDetailsPage = async ({ params }: { params: { slug: string } }) => {
   if (!packageItem) return notFound();
 
   return (
-    <div className="space-y-8 md:space-y-16 bg-[#fbc68a]">
+    <div className="space-y-8 md:space-y-16 bg-[#fbc68a] min-h-screen">
       <HeroSection
         text1={packageItem.title}
         text2="Package Details"
@@ -71,21 +82,28 @@ const PackageDetailsPage = async ({ params }: { params: { slug: string } }) => {
       />
 
       <div className="px-4 md:px-8 lg:px-16 w-full flex relative gap-2">
-        <div className="w-[20%] sticky top-16 h-fit border-r-2 border-[#fcd3a5]">
-          <p>Table of Contents</p>
-          <div className="flex flex-col gap-2 mt-4">
+        <div className="w-[20%] sticky top-24 h-fit">
+          <p className="text-xl font-bold mb-4 text-(--color-primary)">
+            Table of Contents
+          </p>
+          <div className="flex flex-col gap-4 mt-4">
             {tableOfContentLists.map((item) => (
-              <Link key={item.id} href={item.link} className="">
-                {item.title}
+              <Link
+                key={item.id}
+                href={item.link}
+                className="flex items-center gap-2"
+              >
+                <Icon icon={item.icon} className="size-6" />
+                <p className="text-sm">{item.title}</p>
               </Link>
             ))}
           </div>
         </div>
 
-        <div className="w-[80%] space-y-16">
+        <div className="w-[80%] space-y-16 pl-4 border-l-2 border-[#fcd3a5]">
           <h2
             id="overview"
-            className="text-3xl font-bold mb-4 text-(--color-primary)"
+            className="text-3xl font-bold mb-4 text-(--color-primary) scroll-mt-24"
           >
             {packageItem.title}
           </h2>
@@ -213,7 +231,7 @@ const PackageDetailsPage = async ({ params }: { params: { slug: string } }) => {
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div id="cost" className="space-y-4 scroll-mt-24">
             <p className="text-3xl font-bold mb-4 text-(--color-primary)">
               Pricing Details
             </p>
@@ -242,7 +260,7 @@ const PackageDetailsPage = async ({ params }: { params: { slug: string } }) => {
             )}
           </div>
 
-          <div className="space-y-4">
+          <div id="essential-info" className="space-y-4 scroll-mt-24">
             <p className="text-3xl font-bold mb-4 text-(--color-primary)">
               Essential Info
             </p>

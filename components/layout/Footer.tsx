@@ -53,7 +53,11 @@ const Footer = () => {
               <div className="flex flex-col gap-2">
                 {packageLists.map((packageItem) => (
                   // <Link key={packageItem.id} href={packageItem}>
-                  <Link key={packageItem.id} href={"/services"}>
+                  <Link
+                    key={packageItem.id}
+                    href={`/services/${packageItem.slug}`}
+                    className="hover:text-(--color-primary)"
+                  >
                     {packageItem.title}
                   </Link>
                 ))}
@@ -66,7 +70,11 @@ const Footer = () => {
               </p>
               <div className="grid grid-cols-2 gap-x-8 gap-y-2">
                 {navLists.map((navItem) => (
-                  <Link key={navItem.id} href={navItem.href}>
+                  <Link
+                    key={navItem.id}
+                    href={navItem.href}
+                    className="hover:text-(--color-primary)"
+                  >
                     {navItem.name}
                   </Link>
                 ))}

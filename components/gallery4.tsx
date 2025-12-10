@@ -28,58 +28,58 @@ import ScrollFloat from "./WaveAnimation";
 //   items: Gallery4Item[];
 // }
 
-const data = [
-  {
-    id: "shadcn-ui",
-    title: "shadcn/ui: Building a Modern Component Library",
-    description:
-      "Exple how shadcn/ui revolutionized React component libraries by providing a unique approach to component distribution and customization, making it easier for developers to build beautiful, accessible applications.",
-    href: "https://ui.shadcn.com",
-    image:
-      "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjN8fHx8fHwyfHwxNzIzODA2OTM5fA&ixlib=rb-4.0.3&q=80&w=1080",
-  },
-  {
-    id: "tailwind",
-    title: "Tailwind CSS: The Utility-First Revolution",
-    description:
-      "Discover how Tailwind CSS transformed the way developers style their applications, offering a utility-first approach that speeds up development while maintaining complete design flexibility.",
-    href: "https://tailwindcss.com",
-    image:
-      "https://images.unsplash.com/photo-1551250928-e4a05afaed1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjR8fHx8fHwyfHwxNzIzODA2OTM5fA&ixlib=rb-4.0.3&q=80&w=1080",
-  },
-  {
-    id: "astro",
-    title: "Astro: The All-in-One Web Framework",
-    description:
-      "Learn how Astro's innovative 'Islands Architecture' and zero-JS-by-default approach is helping developers build faster websites while maintaining rich interactivity where needed.",
-    href: "https://astro.build",
-    image:
-      "https://images.unsplash.com/photo-1536735561749-fc87494598cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxNzd8fHx8fHwyfHwxNzIzNjM0NDc0fA&ixlib=rb-4.0.3&q=80&w=1080",
-  },
-  {
-    id: "react",
-    title: "React: Pioneering Component-Based UI",
-    description:
-      "See how React continues to shape modern web development with its component-based architecture, enabling developers to build complex user interfaces with reusable, maintainable code.",
-    href: "https://react.dev",
-    image:
-      "https://images.unsplash.com/photo-1548324215-9133768e4094?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMzF8fHx8fHwyfHwxNzIzNDM1MzA1fA&ixlib=rb-4.0.3&q=80&w=1080",
-  },
-  {
-    id: "nextjs",
-    title: "Next.js: The React Framework for Production",
-    description:
-      "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
-    href: "https://nextjs.org",
-    image:
-      "https://images.unsplash.com/photo-1550070881-a5d71eda5800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjV8fHx8fHwyfHwxNzIzNDM1Mjk4fA&ixlib=rb-4.0.3&q=80&w=1080",
-  },
-];
+// const data = [
+//   {
+//     id: "shadcn-ui",
+//     title: "shadcn/ui: Building a Modern Component Library",
+//     description:
+//       "Exple how shadcn/ui revolutionized React component libraries by providing a unique approach to component distribution and customization, making it easier for developers to build beautiful, accessible applications.",
+//     href: "https://ui.shadcn.com",
+//     image:
+//       "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjN8fHx8fHwyfHwxNzIzODA2OTM5fA&ixlib=rb-4.0.3&q=80&w=1080",
+//   },
+//   {
+//     id: "tailwind",
+//     title: "Tailwind CSS: The Utility-First Revolution",
+//     description:
+//       "Discover how Tailwind CSS transformed the way developers style their applications, offering a utility-first approach that speeds up development while maintaining complete design flexibility.",
+//     href: "https://tailwindcss.com",
+//     image:
+//       "https://images.unsplash.com/photo-1551250928-e4a05afaed1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjR8fHx8fHwyfHwxNzIzODA2OTM5fA&ixlib=rb-4.0.3&q=80&w=1080",
+//   },
+//   {
+//     id: "astro",
+//     title: "Astro: The All-in-One Web Framework",
+//     description:
+//       "Learn how Astro's innovative 'Islands Architecture' and zero-JS-by-default approach is helping developers build faster websites while maintaining rich interactivity where needed.",
+//     href: "https://astro.build",
+//     image:
+//       "https://images.unsplash.com/photo-1536735561749-fc87494598cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxNzd8fHx8fHwyfHwxNzIzNjM0NDc0fA&ixlib=rb-4.0.3&q=80&w=1080",
+//   },
+//   {
+//     id: "react",
+//     title: "React: Pioneering Component-Based UI",
+//     description:
+//       "See how React continues to shape modern web development with its component-based architecture, enabling developers to build complex user interfaces with reusable, maintainable code.",
+//     href: "https://react.dev",
+//     image:
+//       "https://images.unsplash.com/photo-1548324215-9133768e4094?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMzF8fHx8fHwyfHwxNzIzNDM1MzA1fA&ixlib=rb-4.0.3&q=80&w=1080",
+//   },
+//   {
+//     id: "nextjs",
+//     title: "Next.js: The React Framework for Production",
+//     description:
+//       "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
+//     href: "https://nextjs.org",
+//     image:
+//       "https://images.unsplash.com/photo-1550070881-a5d71eda5800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjV8fHx8fHwyfHwxNzIzNDM1Mjk4fA&ixlib=rb-4.0.3&q=80&w=1080",
+//   },
+// ];
 
 const Gallery4 = ({
   title = "Testimonial",
   description = "Discover what our flyers say",
-  items = data,
+  items = testimonialLists,
 }) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [groupedItems, setGroupedItems] = useState<any[][]>([]);
@@ -88,7 +88,7 @@ const Gallery4 = ({
   );
 
   useEffect(() => {
-    const itemsPerSlide = 2; // 2 rows * 3 columns
+    const itemsPerSlide = 3; // 2 rows * 3 columns
     const result = [];
     for (let i = 0; i < testimonialLists.length; i += itemsPerSlide) {
       result.push(testimonialLists.slice(i, i + itemsPerSlide));
@@ -160,17 +160,6 @@ const Gallery4 = ({
                 {title}
               </ScrollFloat>
             </div>
-            {/* <div className="text-sm">
-              <ScrollFloat
-                animationDuration={1}
-                ease="back.inOut(2)"
-                scrollStart="center bottom+=0%"
-                scrollEnd="bottom bottom-=40%"
-                stagger={0.03}
-              >
-                {description}
-              </ScrollFloat>
-            </div> */}
             <p className="max-w-lg">{description}</p>
           </div>
           <div className="hidden shrink-0 gap-2 md:flex">
@@ -211,11 +200,13 @@ const Gallery4 = ({
           <CarouselContent>
             {groupedItems.map((group, index) => (
               <CarouselItem key={index}>
-                <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 p-1`}>
+                <div
+                  className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-1 justify-end items-end h-full`}
+                >
                   {group.map((item) => (
                     <div
                       key={item.id}
-                      className="bg-black/50 text-white backdrop-blur-2xl flex p-4 h-full rounded-lg cursor-pointer hover:bg-black/40 transition-colors"
+                      className="p-4 h-max rounded-lg bg-white space-y-4 cursor-pointer"
                       onClick={() => setSelectedTestimonial(item)}
                       role="button"
                       tabIndex={0}
@@ -223,20 +214,49 @@ const Gallery4 = ({
                         e.key === "Enter" && setSelectedTestimonial(item)
                       }
                     >
-                      <div
-                        className="shrink-0 size-10 border rounded-full flex items-center justify-center bg-white/20 backdrop-blur-2xl font-semibold"
-                        aria-hidden="true"
-                      >
-                        {getInitials(item.name)}
+                      <div className="">
+                        <p className="line-clamp-8 pr-4">{item.content}</p>
                       </div>
-                      <div className="pl-4">
-                        <div className="">
-                          <div className="">{item.name}</div>
-                          <div className="text-xs text-gray-300">
-                            {item.date}
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex gap-4">
+                          <div
+                            className="shrink-0 size-10 border rounded-full flex items-center justify-center bg-white/20 backdrop-blur-2xl font-semibold"
+                            aria-hidden="true"
+                          >
+                            {getInitials(item.name)}
+                          </div>
+
+                          <div className="">
+                            <div className="">{item.name}</div>
+                            <div className="text-xs text-zinc-500">
+                              {item.date}
+                            </div>
                           </div>
                         </div>
-                        <p className="line-clamp-4 pr-4">{item.content}</p>
+
+                        <div className="flex">
+                          <Icon
+                            icon="material-symbols-light:star-rounded"
+                            className="size-6"
+                          />
+                          <Icon
+                            icon="material-symbols-light:star-rounded"
+                            className="size-6"
+                          />
+                          <Icon
+                            icon="material-symbols-light:star-rounded"
+                            className="size-6"
+                          />
+                          <Icon
+                            icon="material-symbols-light:star-rounded"
+                            className="size-6"
+                          />
+                          <Icon
+                            icon="material-symbols-light:star-rounded"
+                            className="size-6"
+                          />
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -245,18 +265,32 @@ const Gallery4 = ({
             ))}
           </CarouselContent>
         </Carousel>
-        {/* <div className="mt-8 flex justify-center gap-2">
-          {items.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2 w-2 rounded-full transition-colors cursor-pointer ${
-                currentSlide === index ? "bg-primary" : "bg-primary/20"
-              }`}
-              onClick={() => carouselApi?.scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div> */}
+        <div className="mt-8 flex justify-between gap-2 w-full">
+          <div className="w-1/2 text-white">
+            <div className="flex items-center gap-1">
+              <span>5</span>
+              <Icon
+                icon="material-symbols-light:star-rounded"
+                className="size-6"
+              />
+            </div>
+            <div>
+              <p>stars out of 5</p>
+            </div>
+          </div>
+          <div className="space-x-2 w-1/2">
+            {groupedItems.map((_, index) => (
+              <button
+                key={index}
+                className={`h-2 w-2 rounded-full transition-colors cursor-pointer ${
+                  currentSlide === index ? "bg-white w-5" : "bg-white/50"
+                }`}
+                onClick={() => carouselApi?.scrollTo(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       {selectedTestimonial && (

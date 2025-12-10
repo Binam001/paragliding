@@ -90,7 +90,7 @@ const otherMembers = members.filter(
 );
 export default function TeamSection() {
   return (
-    <section className="py-16">
+    <section className="py-8">
       <div className="">
         <div>
           <h3 className="mb-6 text-lg font-medium">Leadership</h3>
