@@ -5,7 +5,7 @@ import CountUp from "../CountUp";
 const Stats = () => {
   return (
     // <div className="relative px-4 md:px-8 lg:px-16">
-    <div className="relative w-screen flex items-center justify-center px-4 md:px-8 lg:px-16 border-b border-zinc-400">
+    <div className="relative w-screen flex items-center justify-center px-4 md:px-8 lg:px-16 mt-8">
       <div
         className="w-full"
         // style={{
@@ -43,9 +43,12 @@ const Stats = () => {
           ].map((data) => (
             <div
               key={data.id}
-              className={`flex flex-col items-center gap-4 rounded-md py-6`}
+              className={`flex flex-col items-center gap-4 rounded-md p-4 border-b-4 border-(--color-primary) min-w-64 bg-(--color-primary)/20`}
             >
-              {/* <Icon icon={data.icon} className="size-12" /> */}
+              <Icon
+                icon={data.icon}
+                className="size-12 text-(--color-primary)"
+              />
               <div className="flex flex-col items-center">
                 <div className="flex items-center text-5xl font-light">
                   <CountUp
@@ -59,9 +62,7 @@ const Stats = () => {
                   {data.id !== 4 && <span>+</span>}
                   {data.id === 4 && <span>M</span>}
                 </div>
-                <p className="text-xl font-medium text-[#f7901e]">
-                  {data.title}
-                </p>
+                <p className="font-light">{data.title}</p>
               </div>
             </div>
           ))}
