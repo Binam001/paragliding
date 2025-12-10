@@ -52,7 +52,8 @@ const Footer = () => {
               </p>
               <div className="flex flex-col gap-2">
                 {packageLists.map((packageItem) => (
-                  <Link key={packageItem.id} href={packageItem}>
+                  // <Link key={packageItem.id} href={packageItem}>
+                  <Link key={packageItem.id} href={"/services"}>
                     {packageItem.title}
                   </Link>
                 ))}
