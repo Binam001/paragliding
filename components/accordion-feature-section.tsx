@@ -66,26 +66,26 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
   return (
     <section className="py-16 w-full px-4 md:px-8 lg:px-16">
       <div className="">
+        <div className="flex items-center justify-center">
+          <ScrollFloat
+            animationDuration={1}
+            ease="back.inOut(2)"
+            scrollStart="center bottom+=30%"
+            scrollEnd="bottom bottom-=40%"
+            stagger={0.03}
+          >
+            FAQs
+          </ScrollFloat>
+        </div>
         <div className="flex w-full h-full justify-center items-center gap-8">
           <div className="relative m-auto hidden w-1/2 overflow-hidden md:block">
             <img
               src={activeImage}
               alt="Feature preview"
-              className="w-full h-full object-cover pl-4"
+              className="w-full h-[70vh] object-cover pl-4"
             />
           </div>
           <div className="w-full md:w-1/2 h-full flex flex-col items-center justify-center">
-            <div className="">
-              <ScrollFloat
-                animationDuration={1}
-                ease="back.inOut(2)"
-                scrollStart="center bottom+=30%"
-                scrollEnd="bottom bottom-=40%"
-                stagger={0.03}
-              >
-                FAQs
-              </ScrollFloat>
-            </div>
             <Accordion type="single" className="w-full" defaultValue="item-1">
               {features.map((tab) => (
                 <AccordionItem key={tab.id} value={`item-${tab.id}`}>

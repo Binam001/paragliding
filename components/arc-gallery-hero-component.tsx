@@ -130,7 +130,7 @@ export const ArcGalleryHero: React.FC<ArcGalleryHeroProps> = ({
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
             Sky Diaries:
           </h1>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 whitespace-nowrap">
             Sunrise Paragliding Gallery
           </h1>
           <p className="mt-4 text-lg text-gray-600">

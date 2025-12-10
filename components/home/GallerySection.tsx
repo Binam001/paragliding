@@ -57,7 +57,7 @@ const TestimonialsSections = () => {
           </motion.div>
         ))}
       </div>
-      <div className="flex flex-col gap-6 justify-center lg:-translate-y-44 items-center">
+      <div className="flex flex-col gap-6 justify-center lg:-translate-y-36 items-center">
         {/* <span className="bg-zinc-100 px-4 text-zinc-800 rounded-full">
           Testimonials
         </span> */}

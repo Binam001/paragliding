@@ -9,10 +9,10 @@ import { ParagliderModel } from "./Paraglider-orange";
 interface ParagliderProps {
   progress: number;
   // Add a callback to pass the position up
-  setCameraPosition?: (position: THREE.Vector3) => void;
+  // setCameraPosition?: (position: THREE.Vector3) => void;
 }
 
-const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
+const CameraController = ({ progress }: ParagliderProps) => {
   const cameraRef = useRef<THREE.PerspectiveCamera>(null!);
 
   const positions = [
@@ -74,10 +74,10 @@ const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
     cameraRef.current.position.copy(newPos);
 
     // Pass the position to the parent component
-    if (setCameraPosition) {
-      setCameraPosition(cameraRef.current.position.clone());
-    }
-  }, [progress, positions, setCameraPosition]);
+    // if (setCameraPosition) {
+    //   setCameraPosition(cameraRef.current.position.clone());
+    // }
+  }, [progress, positions]);
 
   return (
     <PerspectiveCamera
@@ -92,9 +92,9 @@ const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
 };
 
 const Paraglider = ({ progress }: ParagliderProps) => {
-  const [cameraPosition, setCameraPosition] = useState<THREE.Vector3 | null>(
-    null
-  );
+  // const [cameraPosition, setCameraPosition] = useState<THREE.Vector3 | null>(
+  //   null
+  // );
   return (
     <div className="w-full h-full relative pointer-events-none">
       {/* {cameraPosition && (
@@ -108,7 +108,7 @@ const Paraglider = ({ progress }: ParagliderProps) => {
       <Canvas style={{ pointerEvents: "none" }}>
         <CameraController
           progress={progress}
-          setCameraPosition={setCameraPosition}
+          // setCameraPosition={setCameraPosition}
         />
 
         <ambientLight intensity={2} />

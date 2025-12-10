@@ -79,12 +79,9 @@ const Page = () => {
         {mounted && load3D && (
           <div
             ref={modelRef}
-            className="fixed top-1/2 right-0 transform translate-x-full -translate-y-1/2 w-screen h-screen z-100"
-            style={{ pointerEvents: "none" }}
+            className="fixed top-1/2 right-0 transform translate-x-full -translate-y-1/2 w-screen h-screen z-100 pointer-events-none"
           >
-            <Suspense fallback={null}>
-              <Paraglider progress={progress} />
-            </Suspense>
+            <Paraglider progress={progress} />
           </div>
         )}
 

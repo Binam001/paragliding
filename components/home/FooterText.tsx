@@ -54,7 +54,7 @@ const FooterText = () => {
         </p>
         <Link
           href="/services"
-          className="bg-black text-white px-6 py-3 rounded-full cursor-pointer"
+          className="bg-(--color-primary) text-white px-6 py-3 rounded-full cursor-pointer"
         >
           <button className="cursor-pointer">Book Now</button>
         </Link>

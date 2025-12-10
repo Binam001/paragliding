@@ -27,7 +27,9 @@ const Footer = () => {
       <div className="w-full flex flex-col justify-between h-full z-50">
         <div className="flex items-center">
           <div className="w-1/2 h-full flex flex-col justify-between">
-            <p className="text-4xl">Join us for an adventure</p>
+            <p className="text-4xl text-(--color-primary)">
+              Join us for an adventure
+            </p>
             <div className="flex items-center gap-2">
               <input
                 type="email"
@@ -45,7 +47,7 @@ const Footer = () => {
 
           <div className="w-1/2 flex justify-evenly">
             <div className="">
-              <p className="text-xl font-medium border-b-2 mb-2">
+              <p className="text-xl font-medium border-b-2 mb-2 text-(--color-primary)">
                 Tandem Flights
               </p>
               <div className="flex flex-col gap-2">
@@ -58,8 +60,10 @@ const Footer = () => {
             </div>
 
             <div className="">
-              <p className="text-xl font-medium border-b-2 mb-2 w-max">Links</p>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+              <p className="text-xl font-medium border-b-2 mb-2 w-max text-(--color-primary)">
+                Links
+              </p>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-2">
                 {navLists.map((navItem) => (
                   <Link key={navItem.id} href={navItem.href}>
                     {navItem.name}
