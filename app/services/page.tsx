@@ -1,6 +1,5 @@
 import React from "react";
 import Package from "../../components/services/Package";
-import HikeFlyProcess from "@/components/services/HikeFlyProcess";
 import HeroSection from "@/components/HeroSection";
 
 const page = () => {
@@ -12,7 +11,6 @@ const page = () => {
         link="Services"
       />
       <Package />
-      {/* <HikeFlyProcess /> */}
     </div>
   );
 };
