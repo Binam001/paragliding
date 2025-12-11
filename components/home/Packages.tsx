@@ -28,7 +28,7 @@ const Packages = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {packageLists.map((packageItem) => (
                 <Link
-                  href="/services"
+                  href={`/services/${packageItem.slug}`}
                   key={packageItem.id}
                   className={`group h-96 cursor-pointer relative overflow-hidden rounded-lg`}
                 >

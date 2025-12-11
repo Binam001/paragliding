@@ -14,28 +14,32 @@ const SecondSection = () => {
             <Link
               href={article.slug ? `/blog/${article.slug}` : "#"}
               key={article.id}
-              className={`group h-80 cursor-pointer relative overflow-hidden rounded-lg`}
+              className={`group cursor-pointer relative rounded-lg border border-zinc-300 p-4 space-y-4`}
             >
-              <div className="absolute inset-0 w-full h-full bg-linear-to-b from-black/70 via-transparent to-black/70 hover:bg-black/30 duration-300 transition-colors" />
-              <div className="absolute right-3 top-3">
+              {/* <div className="absolute right-3 top-3">
                 <Icon
                   icon="solar:arrow-right-up-outline"
                   className="size-8 text-black group-hover:size-9 transition-all duration-300 ease-in-out bg-gray-300 rounded-full p-1"
                 />
+              </div> */}
+              <div className="relative w-full h-[70%]">
+                <img
+                  src={article.src}
+                  alt={article.title}
+                  className="w-full h-full object-cover rounded-md"
+                />
+                <div className="absolute inset-0 w-full h-full bg-linear-to-b from-black/70 via-transparent to-black/70 duration-300 transition-colors rounded-md" />
               </div>
-              <img
-                src={article.src}
-                alt={article.title}
-                className="gallery-article w-full h-full object-cover"
-              />
-              <div className="absolute bottom-4 left-4 flex items-end text-white text-lg font-medium">
-                {article.title}
+              <div className="">{article.shortDesc}</div>
+
+              <hr className="h-px text-zinc-300" />
+
+              <div className="">
+                <button className="flex items-center gap-2 group-hover:text-primary">
+                  <span className="text-sm">Read Full Article</span>
+                  <Icon icon="solar:arrow-right-outline" />
+                </button>
               </div>
-              {/* <div className="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <p className="text-white text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                        Read more...
-                      </p>
-                    </div> */}
             </Link>
           ))}
         </div>

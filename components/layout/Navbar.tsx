@@ -32,19 +32,12 @@ const Navbar = () => {
       }`}
     >
       <div className="w-full flex items-center justify-between py-2 whitespace-nowrap">
-        <div
-          id="logo-container"
-          className="w-24 flex justify-center items-center"
-        >
+        <div id="logo-container">
           <Link href="/">
             <img
               // src={"/images/light-logo.svg"}
               src={`${
-                pathname === "/"
-                  ? "/images/light-logo.svg"
-                  : scrolled
-                  ? "/images/light-logo.svg"
-                  : "/images/logo.png"
+                scrolled ? "/images/light-logo.svg" : "/images/logo.png"
               }`}
               alt="logo"
               className={`object-contain transition-all duration-500 ease-in-out ${
@@ -65,13 +58,7 @@ const Navbar = () => {
                     ? "text-white hover:text-white bg-[#f7901e]"
                     : ""
                 }
-                ${
-                  pathname === "/"
-                    ? "text-black"
-                    : scrolled
-                    ? "text-black"
-                    : "text-white"
-                }
+                ${scrolled ? "text-black" : "text-white"}
                 `}
               >
                 {navItems.name}

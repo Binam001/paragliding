@@ -6,13 +6,13 @@ const navLists = [
   },
   {
     id: 2,
-    name: "About",
-    href: "/about",
+    name: "Tandem Flights",
+    href: "/services",
   },
   {
     id: 3,
-    name: "Blog",
-    href: "/blog",
+    name: "About",
+    href: "/about",
   },
   {
     id: 4,
@@ -21,8 +21,8 @@ const navLists = [
   },
   {
     id: 5,
-    name: "Services",
-    href: "/services",
+    name: "Blog",
+    href: "/blog",
   },
   {
     id: 6,
@@ -209,78 +209,187 @@ const socialLinkLists = [
   //   desc: "+977 61 453174, +977 98171 98617",
   // },
 ];
+
 const articleLists = [
   {
     id: 1,
     src: "/images/blog/blog1.jpg",
     slug: "phewa-lake",
     title: "Phewa Lake",
-    desc: "A wide-angle shot showing the iconic lake dotted with colorful boats (doongas) and water lilies, framed by mountains. This is Pokhara's centerpiece, often the landing spot for paragliders.",
     span: "col-span-1",
+    shortDesc:
+      "Pokhara's tranquil centerpiece and our scenic landing approach.",
+    desc: "Behold the serene majesty of Phewa Lake, the soul of Pokhara. This iconic freshwater lake, dotted with the vibrant colors of traditional 'doongas' and framed by the lush green of the surrounding hills, serves as a tranquil mirror to the sky. For our flyers, it's the breathtaking final view on approach, a calm and welcoming sight that marks the gentle end to an exhilarating journey through the clouds.",
+    // Expanded Blog Content
+    descTitle1: "The Mirror of the Mountains",
+    desc1:
+      "There is a reason Phewa Lake is the most photographed spot in Pokhara. On a calm morning, the water becomes a perfect glass mirror, reflecting the jagged, snowy teeth of the Annapurna range and the sharp peak of Machapuchare. From the air, this effect is magnified. As we descend from Sarangkot, the lake acts as our visual anchor. Seeing the clouds and mountains reflected below you while you float above them is a surreal, inception-like experience that flyers never forget.",
+    descTitle2: "The Landing Zone Culture",
+    desc2:
+      "The northern shore of Phewa Lake isn't just a body of water; it's our runway. This specific stretch, known as the Khapaudi or Pame side, is buzzing with energy. As we spiral down for a landing, you'll see children waving from the banks, buffalo grazing near the water, and colorful boats drifting by. It’s a gentle transition from the adrenaline of the high altitude to the laid-back vibe of the lakeside.",
+    descTitle3: "Beyond the Flight: The Tal Barahi Connection",
+    desc3:
+      "Once your feet are back on the ground, the lake offers a different kind of peace. I always recommend our clients take a colorful 'doonga' (boat) to the Tal Barahi temple situated on the island in the middle of the lake. It creates a beautiful symmetry to your day: you’ve seen the temple from the heavens like a bird, and now you can experience it from the water, completing your connection with Pokhara’s spirit.",
   },
   {
     id: 2,
     src: "/images/blog/blog2.jpg",
     slug: "sunrise",
     title: "Sunrise",
-    desc: "A classic view of the Annapurna range (likely from Sarangkot or another viewpoint) bathed in the warm light of dawn, with traditional mountain homes in the foreground. This captures the serene beauty of the region.",
     span: "sm:col-span-2",
+    shortDesc:
+      "A magical sunrise over the Annapurnas from our Sarangkot launch point.",
+    desc: "There's nothing quite like a Himalayan sunrise. From the vantage point of Sarangkot, watch as the first rays of dawn kiss the snow-capped peaks of the Annapurna range, painting them in hues of gold and rose. This magical moment, with traditional mountain homes stirring to life below, is the perfect, awe-inspiring start to a day of high-flying adventure.",
+    // Expanded Blog Content
+    descTitle1: "The 4 AM Wake-Up Call: Is It Worth It?",
+    desc1:
+      "Every traveler asks me this: 'Do I really need to wake up before dawn?' My answer is always a resounding yes. The Sarangkot sunrise isn't just about the sun coming up; it's about the 'Alpenglow.' Before the sun even hits the valley floor, the highest peaks—Annapurna and Dhaulagiri—catch the light. They turn from a cold, ghostly grey to a burning amber and finally to a brilliant white. It’s a light show put on by nature that lasts only 15 minutes, and you have to be there to witness it.",
+    descTitle2: "The Anticipation on the Launchpad",
+    desc2:
+      "Arriving at the launch site early offers a unique atmosphere. The air is crisp and cold, and there is a hush over the mountain. You can see the pilots checking their gear, unfolding the gliders like giant colorful wings on the grass. There is a nervous, excited energy in the air as everyone waits for that first thermal breeze to kick in. It’s the calm before the thrill.",
+    descTitle3: "Photography Tips for the Golden Hour",
+    desc3:
+      "If you're bringing a camera, the dynamic range can be tricky. The mountains are bright, but the valley is still dark. My advice? Expose for the highlights (the snow). Let the valley fall into shadow—it creates a dramatic, moody silhouette that emphasizes the sheer height of the Himalayas. And don't forget to put the camera down for a moment; some things are best captured with your eyes.",
   },
   {
     id: 3,
     src: "/images/blog/blog3.jpg",
     slug: "machapuchare-mountain",
     title: "Machapuchare Mountain",
-    desc: "A close-up of the distinctive, 'fishtail' peak, a sacred and prominent landmark of Pokhara. Its unique shape is visible from almost everywhere in the city, providing a stunning backdrop for activities like paragliding.",
     span: "col-span-1",
+    shortDesc:
+      "Soar beside the sacred 'Fishtail' peak, your breathtaking companion.",
+    desc: "Dominating the skyline is the magnificent Machapuchare, or 'Fishtail' mountain. This sacred, unclimbed peak is a constant, breathtaking companion during your flight. Its distinctive double summit provides a powerful and humbling backdrop, reminding you of the raw, untouched beauty of the Himalayas as you soar through its domain.",
+    // Expanded Blog Content
+    descTitle1: "Why You Can't Climb It (But You Can Fly Near It)",
+    desc1:
+      "Machapuchare is sacred to the god Shiva and remains one of the few unclimbed peaks in the Himalayas. Scaling it is forbidden to preserve its sanctity. This makes paragliding the *only* way to get up close and personal with the Fishtail without disturbing it. Gliding silently on the thermals, you feel a sense of reverence. You are a guest in the domain of the gods, witnessing a view that mountaineers are not allowed to access.",
+    descTitle2: "The Shape-Shifter",
+    desc2:
+      "One thing few people realize is how much Machapuchare changes depending on your angle. From Lakeside, it looks like a sharp triangle. But once we take off and gain altitude, if we catch a cross-country thermal, you might see the 'Fishtail' split—the distinctive double summit that gives the mountain its name. Seeing that split with your own eyes is a badge of honor for any flyer.",
+    descTitle3: "A Vertical Perspective",
+    desc3:
+      "The sheer vertical relief of this mountain is mind-boggling. It rises so sharply from the valley floor that it creates its own weather systems. As pilots, we watch the clouds forming around its tip to judge the wind. It’s not just a beautiful backdrop; it’s our weather beacon. Flying in its shadow makes you realize just how small we really are.",
   },
   {
     id: 4,
     src: "/images/blog/blog4.avif",
     slug: "lakeside-night-view",
     title: "LakeSide night view",
-    desc: "A captivating nighttime shot of the vibrant Lakeside area reflecting on the water, highlighting the Ferris wheel and the area's lively atmosphere after dark.",
     span: "col-span-2",
+    shortDesc:
+      "Vibrant Lakeside nightlife with colorful lights reflecting on the water.",
+    desc: "When the sun sets, Pokhara's Lakeside district transforms into a vibrant hub of energy and light. This captivating view captures the lively atmosphere as colorful lights from cafes, shops, and the local Ferris wheel dance upon the calm surface of Phewa Lake. It's the perfect place to celebrate the day's adventure and soak in the local culture.",
+    // Expanded Blog Content
+    descTitle1: "The Post-Flight Vibe Shift",
+    desc1:
+      "After a day of adrenaline and high altitude, the body craves two things: relaxation and food. Lakeside provides both in abundance. The transition is stark—one moment you are 1,600 meters up in silent air, and the next you are walking down a street alive with live bands, jazz music, and the smell of wood-fired pizza mixed with traditional Dal Bhat. It’s the perfect decompression zone.",
+    descTitle2: "The Ferris Wheel and the Reflection",
+    desc2:
+      "Recently, the addition of the small amusement park near the lake has changed the nightscape. The colorful lights reflecting on the water create a festival-like atmosphere every single night. For photographers, this is a long-exposure paradise. Set up a tripod near the 'Basundhara Park' area to capture the light trails of the boats and the Ferris wheel against the dark silhouette of the hills.",
+    descTitle3: "Where the Pilots Hang Out",
+    desc3:
+      "If you want to hear the best flying stories, follow the pilots. After the gear is packed, the paragliding community gathers at the local Lakeside bars. It’s a global community here; you’ll hear French, Spanish, Russian, and Nepali voices all recounting the day's thermals. It’s a welcoming culture—buy a pilot a beer, and you’ll learn more about the weather and the mountains in one hour than you would in a week of reading.",
   },
   {
     id: 5,
     src: "/images/blog/blog5.webp",
     slug: "white-gumba",
     title: "White Gumba",
-    desc: "A photo of a prominent white Buddhist stupa (Gumba or Gompa), likely the World Peace Pagoda (Shanti Stupa) located on a hilltop. This offers panoramic views of the lake and mountains, including the typical take-off and landing zones.",
     span: "sm:col-span-1",
+    shortDesc:
+      "The iconic World Peace Pagoda, a symbol of tranquility seen from above.",
+    desc: "Perched atop a hill overlooking the entire valley, the World Peace Pagoda (Shanti Stupa) is a monument to tranquility. This brilliant white stupa offers unparalleled panoramic views of Phewa Lake, Pokhara city, and the Annapurna range. It's a key landmark you'll see from the air, representing the profound sense of peace that flying in this incredible landscape inspires.",
+    // Expanded Blog Content
+    descTitle1: "A Beacon of White",
+    desc1:
+      "The Shanti Stupa is the first landmark you spot when you look across the lake, and it's a pivotal waypoint for our cross-country flights. Its brilliant white dome stands in stark contrast to the deep greens of the Raniban forest. When we fly near it, the perspective is entirely different—you don't just see the stupa; you see the circumambulation of the monks and the tourists looking up at you, shielding their eyes from the sun.",
+    descTitle2: "The Hike vs. The Flight",
+    desc2:
+      "Most people hike or drive up to the Peace Pagoda for the view. It’s a steep, sweaty 45-minute climb from the boat station. But when you are paragliding, you arrive at eye level with the golden statues of the Buddha without breaking a sweat. It’s a silent, respectful approach. We often glide silently past, ensuring we don't disturb the peace, offering our flyers a moment of Zen at 1,100 meters.",
+    descTitle3: "The Best Sunset Spot",
+    desc3:
+      "If you aren't flying in the late afternoon, I recommend heading up here for sunset. While Sarangkot owns the sunrise, the Peace Pagoda owns the sunset. You can watch the sun dip behind the Kaskikot hills, casting a long shadow over the lake while the stupa itself glows pink and orange. It’s a spiritual end to a physical day.",
   },
   {
     id: 6,
     src: "/images/blog/blog14.jpg",
     slug: "pilot",
     title: "Pilot",
-    desc: "A selfie or close-up of a paragliding tandem pilot and a client, both wearing helmets and gear, smiling against the mountain backdrop. This humanizes the experience and builds trust.",
     span: "col-span-1",
+    shortDesc:
+      "Meet our experienced pilots, your partners for a safe and thrilling flight.",
+    desc: "The heart of our experience lies with our world-class pilots. This image captures the shared joy and trust between a flyer and their guide. With years of experience and a passion for the sky, our pilots are not just experts in safety and technique; they are your partners in adventure, ensuring your flight is as thrilling as it is secure.",
+    // Expanded Blog Content
+    descTitle1: "More Than Just Drivers",
+    desc1:
+      "A common misconception is that the pilot is just there to steer. In reality, your pilot is a meteorologist, a navigator, a tour guide, and a photographer all rolled into one. They are constantly reading the 'invisible map' of the sky—watching how eagles fly, how leaves rustle on the trees below, and how clouds are forming—to find the invisible elevators of air called thermals.",
+    descTitle2: "The Trust Factor",
+    desc2:
+      "Strapping yourself to a stranger and running off a cliff requires immense trust. We understand that. That's why our pilots are trained not just in flight mechanics, but in psychology. They know how to calm your nerves, when to crack a joke, and when to let you simply float in silence. The bond formed in those 30 minutes is surprisingly strong; many clients stay friends with their pilots for years after.",
+    descTitle3: "Safety is a Lifestyle",
+    desc3:
+      "In Pokhara, paragliding isn't a weekend hobby; it's a full-time profession. Our pilots log hundreds of flights a year. They carry reserve parachutes (which are rarely used but always checked), radios, and GPS trackers. Before you even buckle up, they have already assessed the wind speed and the cloud cycle. If they say 'we wait,' we wait. Your safety is the only metric that matters.",
   },
   {
     id: 7,
     src: "/images/blog/blog7.webp",
     slug: "paragliding",
     title: "Paragliding",
-    desc: "Two action shots showing paragliders in flight. One highlights the vast, green landscape below, and the other shows a pair of gliders soaring over distinct terraced farmlands, illustrating the exhilarating experience and the scenic flight path.",
     span: "col-span-1",
+    shortDesc:
+      "Soar over lush landscapes for an unforgettable eagle's-eye view.",
+    desc: "This is the freedom you've been dreaming of. Soaring gracefully above a patchwork of lush, terraced farmlands and dense green forests, you'll feel the wind lift you higher. This action shot perfectly illustrates the exhilarating feeling of flight, offering an eagle's-eye perspective of the stunning Nepalese countryside unfolding beneath you.",
+    // Expanded Blog Content
+    descTitle1: "The 'Run, Run, Run' Moment",
+    desc1:
+      "The most intense part of paragliding is the first 10 seconds. You are standing on a slope, the wing pulls up, and your pilot yells 'Run, run, run!' Your instinct is to stop at the edge, but you have to push through. Then, suddenly, the running stops. The ground drops away. The noise of footsteps is replaced by the sound of wind. That moment of transition from earth to sky is pure magic.",
+    descTitle2: "It’s Surprisingly Peaceful",
+    desc2:
+      "Movies make flying look loud and chaotic. Real paragliding is surprisingly quiet. Once you are away from the launch site, the only sound is the wind in the lines and the beep of the variometer (the instrument that tells us we are going up). You can talk to your pilot without shouting. You can hear birds calling to each other. It’s a meditative experience, not a terrifying one.",
+    descTitle3: "The Thermal Game",
+    desc3:
+      "The goal of the flight is to find 'thermals'—columns of rising warm air. When we catch one, we circle inside it, spiraling upward just like the vultures and eagles do. It’s a game of chess with nature. Sometimes we gain 500 meters in a few minutes, lifting us high above the takeoff point. This is where you get the 'eagle's eye' view that drones can only dream of.",
   },
   {
     id: 8,
     src: "/images/blog/blog15.jpg",
     slug: "paragliding-second",
     title: "Paragliding",
-    desc: "Two action shots showing paragliders in flight. One highlights the vast, green landscape below, and the other shows a pair of gliders soaring over distinct terraced farmlands, illustrating the exhilarating experience and the scenic flight path.",
     span: "col-span-1",
+    shortDesc:
+      "Share the sky in a collective journey of awe against a Himalayan backdrop.",
+    desc: "Flying in tandem means sharing the sky. Here, two gliders navigate the air currents together, showcasing the social and shared nature of this incredible sport. Whether you're flying alongside friends or making new ones in the air, the experience is a collective journey of awe and excitement against the backdrop of the world's highest peaks.",
+    // Expanded Blog Content
+    descTitle1: "The Sky Party",
+    desc1:
+      "Paragliding in Pokhara is a communal event. At any given time, there might be 50 gliders in the air. This creates a colorful mosaic against the blue sky. We often fly in 'gaggles' (groups), especially when we find a strong thermal. It’s an incredible feeling to look to your left and see your friend in another glider, waving at you from 50 feet away while you both float over a mountain.",
+    descTitle2: "Capturing the Moment",
+    desc2:
+      "Because we often fly close to other gliders, it offers amazing photo opportunities. You can get photos of yourself with other gliders in the background, which adds scale and depth to your pictures. Our pilots are experts at maneuvering to get that perfect shot where the wing, the mountains, and your smile all align.",
+    descTitle3: "Cross-Country Possibilities",
+    desc3:
+      "For the adventurous souls, we don't just float down; we go exploring. This is called 'Cross Country' or XC. We can fly from Sarangkot along the ridge towards the Green Wall and back. It requires teamwork between pilots and a good understanding of the valley winds. It turns a standard flight into a mini-expedition.",
   },
   {
     id: 9,
     src: "/images/blog/blog10.jpg",
     slug: "mountain-range",
     title: "Mountain Range",
-    desc: "A reflection shot across a body of water (likely Phewa Lake) showing the majestic Annapurna and Machhapuchhare peaks clearly defined in the distance. This summarizes the stunning scenery travelers come to enjoy.",
     span: "sm:col-span-2",
+    shortDesc:
+      "Stunning reflections of the Annapurna range on the calm Phewa Lake.",
+    desc: "The perfect summary of Pokhara's unparalleled beauty. This stunning reflection captures the majestic Annapurna and Machhapuchhare peaks mirrored in the tranquil waters of Phewa Lake. It's a view that encapsulates the harmony of water, earth, and sky—a landscape that has captivated adventurers for generations and provides the ultimate reward for every flight.",
+    // Expanded Blog Content
+    descTitle1: "Naming the Giants",
+    desc1:
+      "The view from Pokhara isn't just 'mountains'; it's a specific lineup of legends. From left to right, you have Dhaulagiri (8,167m), Annapurna South (7,219m), Annapurna I (8,091m), and the iconic Machapuchare (6,993m). Seeing two 8,000-meter peaks in a single glance is rare on this planet. During the flight, your pilot will point them out, giving you a guided tour of the roof of the world.",
+    descTitle2: "The Wall of Snow",
+    desc2:
+      "What makes the Annapurna range so special is its proximity to Pokhara. The elevation rises from 800m (Pokhara) to over 8,000m in a span of just 30 kilometers. This creates a vertical wall of rock and ice that looks almost fake because it towers so high above the city. When you are flying, you are suspended right in the middle of this vertical gap, giving you the true scale of the planet.",
+    descTitle3: "Seasonal Secrets",
+    desc3:
+      "The mountains wear different clothes in different seasons. In Autumn (Oct-Dec), the air is scrubbed clean, and the visibility is crystal clear—you can see details in the glaciers. In Spring (March-May), the base of the mountains is hazy with heat, but the peaks float above the mist like islands in the sky, and the rhododendrons bloom red on the lower hills. There is no 'bad' time, just different moods.",
   },
 ];
 

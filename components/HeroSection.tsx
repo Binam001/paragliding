@@ -17,7 +17,7 @@ const HeroSection = ({
   link2Href,
 }: HeroSectionProps) => {
   return (
-    <div
+    <section
       className="w-full h-[70vh] relative flex items-center justify-center"
       style={{
         clipPath:
@@ -38,7 +38,7 @@ const HeroSection = ({
           <p>{text2}</p>
         </div>
 
-        <div className="text-center text-white text-2xl font-semibold">
+        <div className="text-center text-white">
           <Link href="/">Home</Link>
           {link2 && link2Href && (
             <>
@@ -50,7 +50,7 @@ const HeroSection = ({
           <span className="text-(--color-primary)">{link}</span>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

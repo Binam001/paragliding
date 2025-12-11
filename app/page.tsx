@@ -85,9 +85,7 @@ const Page = () => {
           </div>
         )}
 
-        <div className="">
-          <Stats />
-        </div>
+        <Stats />
 
         <div className="relative overflow-hidden">
           <div className="w-full">
@@ -104,9 +102,7 @@ const Page = () => {
             <div className="absolute inset-0 w-full h-screen bg-linear-to-b from-white to-60% to-transparent z-60" />
           </div>
 
-          <div className="">
-            <Instruction />
-          </div>
+          <Instruction />
 
           <div className="w-full overflow-x-hidden mb-8">
             <Packages />
@@ -123,9 +119,9 @@ const Page = () => {
             <FAQs />
           </div>
 
-          <div>
-            <FooterText />
-          </div>
+          <FooterText />
+
+          {/* <div className="h-[50dvh]"></div> */}
         </div>
       </div>
     </div>

@@ -1,21 +1,10 @@
 "use client";
 
 import React from "react";
-import { Testimonial, TestimonialCarousel } from "@/components/ui/testimonial";
-import { Play } from "lucide-react";
+import { Testimonial } from "@/components/ui/testimonial";
 import { motion } from "motion/react";
-import Link from "next/link";
-import { testimonialLists } from "@/constants";
 
 const TestimonialsSections = () => {
-  const testimonialData: Testimonial[] = testimonialLists.map((t) => ({
-    id: t.id,
-    name: t.name,
-    description: t.content,
-    // Generating a placeholder avatar from the name
-    avatar: `https://api.dicebear.com/8.x/initials/svg?seed=${t.name}`,
-  }));
-
   return (
     <section className=" h-full mt-8 md:mt-16">
       <div className="grid grid-cols-2 lg:grid-cols-8 gap-1 md:gap-2 px-4 md:px-8 lg:px-16 py-8 pt-8">
@@ -62,11 +51,9 @@ const TestimonialsSections = () => {
           Testimonials
         </span> */}
         <h2 className="text-2xl md:text-4xl text-center font-semibold  sm:max-w-xl uppercase">
-          <span className="bg-orange-500 text-white px-2">
-            Globally Ranked,
-          </span>{" "}
+          <span className="bg-primary text-white px-2">Globally Ranked,</span>{" "}
           Loved by Thousands of
-          <span className="bg-orange-500 text-white px-2 ml-2">Flyers</span>
+          <span className="bg-primary text-white px-2 ml-2">Flyers</span>
         </h2>
         <p className="w-[45%] text-center px-4 xl:px-0">
           Pokhara is recognized as one of the Top 5 Paragliding Destinations in

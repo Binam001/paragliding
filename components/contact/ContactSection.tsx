@@ -3,9 +3,9 @@
 import { socialLinkLists } from "@/constants";
 import Link from "next/link";
 import React, { useState } from "react";
-import { SingleValue } from "react-select";
-import Select from "@/components/ReactSelectNoSSR";
-import { Datepicker } from "flowbite-react";
+// import { SingleValue } from "react-select";
+// import Select from "@/components/ReactSelectNoSSR";
+// import { Datepicker } from "flowbite-react";
 
 type OptionType = { value: string; label: string };
 
@@ -20,13 +20,13 @@ const ContactSection = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   // State for the floating label on the "No. of people" Select component
-  const [isPackageFocused, setIsPackageFocused] = useState(false);
-  const [packageValue, setPackageValue] =
-    useState<SingleValue<OptionType>>(null);
-  const [isPeopleFocused, setIsPeopleFocused] = useState(false);
-  const [peopleValue, setPeopleValue] = useState<SingleValue<OptionType>>(null);
+  // const [isPackageFocused, setIsPackageFocused] = useState(false);
+  // const [packageValue, setPackageValue] =
+  //   useState<SingleValue<OptionType>>(null);
+  // const [isPeopleFocused, setIsPeopleFocused] = useState(false);
+  // const [peopleValue, setPeopleValue] = useState<SingleValue<OptionType>>(null);
   return (
-    <div className="h-full px-4 md:px-8 lg:px-16">
+    <section className="h-full px-4 md:px-8 lg:px-16">
       <div className="w-full flex items-center">
         <div className="w-2/3">
           <p className="text-6xl font-bold mb-4">
@@ -43,13 +43,13 @@ const ContactSection = () => {
                   <input
                     type="text"
                     id="name"
-                    className="w-full p-2 text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-primary) appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    className="w-full p-2 text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
                     placeholder=" "
                     required
                   />
                   <label
                     htmlFor="name"
-                    className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
+                    className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
                   >
                     Name<span className="text-red-500">*</span>
                   </label>
@@ -59,13 +59,13 @@ const ContactSection = () => {
                   <input
                     type="text"
                     id="phone"
-                    className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
                     placeholder=" "
                     required
                   />
                   <label
                     htmlFor="phone"
-                    className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
+                    className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
                   >
                     Phone<span className="text-red-500 text-lg">*</span>
                   </label>
@@ -76,12 +76,12 @@ const ContactSection = () => {
                 <input
                   type="email"
                   id="email"
-                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
                   placeholder=" "
                 />
                 <label
                   htmlFor="email"
-                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
+                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
                 >
                   Email
                 </label>
@@ -109,7 +109,7 @@ const ContactSection = () => {
 
                         // 2. Set the border color
                         borderColor: state.isFocused
-                          ? "var(--color-blue-600)" // Match focus color of other inputs
+                          ? "var(--color-primary)" // Match focus color of other inputs
                           : "var(--color-accent)",
 
                         // Optional: Ensure the border radius and padding match your other inputs
@@ -173,7 +173,7 @@ const ContactSection = () => {
                     className={`absolute text-sm text-gray-500 duration-300 transform origin-left bg-white px-2 start-2.5 z-10
                     ${
                       isPackageFocused || packageValue
-                        ? "top-2 scale-75 -translate-y-5 text-blue-600"
+                        ? "top-2 scale-75 -translate-y-5 text-primary"
                         : "top-1/2 scale-100 -translate-y-1/2"
                     }
                   `}
@@ -186,19 +186,19 @@ const ContactSection = () => {
               <div className="relative w-full flex flex-col justify-center">
                 <textarea
                   id="message"
-                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-(--color-accent) appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
                   placeholder=" "
                 />
                 <label
                   htmlFor="message"
-                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
+                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 origin-left bg-white px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1"
                 >
                   Message
                 </label>
               </div>
 
               <div className="">
-                <button className="rounded-lg px-5 py-2 bg-(--color-primary) text-white cursor-pointer">
+                <button className="rounded-full px-5 py-2 bg-(--color-primary) text-white cursor-pointer">
                   Submit
                 </button>
               </div>
@@ -206,7 +206,7 @@ const ContactSection = () => {
           </div>
         </div>
         <div className="w-1/3 h-full space-y-4">
-          <div className="bg-(--color-primary) p-2 rounded-2xl space-y-2">
+          <div className="bg-(--color-primary)/80 p-2 rounded-2xl space-y-2">
             <div className="bg-white rounded-xl flex flex-col items-center justify-center py-4 font-medium">
               <p>Get in touch with us!</p>
               <p>Lets talk!</p>
@@ -264,7 +264,7 @@ const ContactSection = () => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -4,6 +4,7 @@ import { packageLists } from "@/constants";
 import React, { useState } from "react";
 import BookingModal from "./BookingModal";
 import Link from "next/link";
+import { Icon } from "@iconify/react";
 
 type PackageItem = (typeof packageLists)[0];
 
@@ -27,7 +28,7 @@ const Package = () => {
     <div className="px-4 md:px-8 lg:px-16 mt-16">
       <div className="text-center space-y-2">
         <p className="text-4xl font-bold">Tandem Flights</p>
-        <p className="text-xl font-medium">The ultimate flying adventure</p>
+        <p className="mb-4">The ultimate flying adventure</p>
         <p>
           Tandem flight involves flying along with an instructor as a passenger.
           Both the pilot and passenger have separate harnesses, which feels like
@@ -43,7 +44,7 @@ const Package = () => {
         {packageLists.map((packageItem) => (
           <div
             key={packageItem.id}
-            className={`flex gap-4 ${
+            className={`flex gap-8 ${
               packageItem.id % 2 === 0 ? "flex-row-reverse" : ""
             }`}
           >
@@ -54,38 +55,68 @@ const Package = () => {
                 className="object-cover"
               />
             </div>
-            <div className="w-1/2 flex flex-col justify-between">
+            <div className="w-1/2 flex flex-col justify-center">
               <div className="space-y-2">
-                <p className="text-xl font-semibold">{packageItem.title}</p>
-                <div className="">
+                <p className="text-xl text-primary font-semibold">
+                  {packageItem.title}
+                </p>
+
+                <p className="text-zinc-600">{packageItem.desc}</p>
+                <div className="space-y-2">
                   {packageItem.time && (
-                    <p className="">Time: {packageItem.time.join(", ")}</p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="font-bold">Time:</span>
+                      {packageItem.time.map((t) => (
+                        <span
+                          key={t}
+                          className="flex items-center gap-1 px-3 py-1 rounded-full text-sm"
+                        >
+                          <Icon
+                            icon="ion:time-outline"
+                            className="size-5 text-primary"
+                          />
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   )}
                   {packageItem.time && (
-                    <p className="">Duration: {packageItem.duration}min</p>
+                    <p className="flex items-center gap-2 ">
+                      <span className="font-bold">Duration:</span>{" "}
+                      <span className="flex items-center gap-1 px-3 py-1 rounded-full text-sm w-max">
+                        <Icon
+                          icon="game-icons:duration"
+                          className="size-5 text-primary"
+                        />
+                        {packageItem.duration}min
+                      </span>
+                    </p>
                   )}
-                  <p>
-                    NRs. {packageItem.cost}
-                    {packageItem.optional &&
-                      ` (+ ${packageItem.optional} for photos & videos)`}
+                  <p className="flex items-center gap-2 ">
+                    <span className="font-bold">Price:</span>{" "}
+                    <span className="flex items-center gap-1 px-3 py-1 rounded-full text-sm w-max">
+                      <Icon
+                        icon="ph:money-wavy-light"
+                        className="size-6 text-primary"
+                      />
+                      NPR. {packageItem.cost}
+                    </span>
                   </p>
                 </div>
-                <p className="">{packageItem.desc}</p>
               </div>
-              <div className="flex w-full gap-4">
+              <div className="flex gap-4 mt-4">
                 <Link
                   href={
                     packageItem.slug ? `/services/${packageItem.slug}` : "#"
                   }
-                  className="w-1/2"
                 >
-                  <button className="w-full px-6 py-2 rounded-md bg-(--color-primary) text-white cursor-pointer">
+                  <button className="w-fit px-6 py-2 rounded-full bg-(--color-primary) hover:bg-primary/80 duration-300 transition-colors text-white cursor-pointer">
                     View Details
                   </button>
                 </Link>
                 <button
                   onClick={() => openModal(packageItem)}
-                  className="w-1/2 border rounded-md px-6 py-2 cursor-pointer hover:bg-gray-100 transition-colors"
+                  className="w-fit border rounded-full px-6 py-2 cursor-pointer duration-300 transition-colors"
                 >
                   Book Now
                 </button>

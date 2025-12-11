@@ -26,6 +26,11 @@ body {
   src: url("/fonts/Poppins-Regular.ttf");
   font-style: regular;
 }
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("/fonts/Poppins-ExtraLight.ttf");
+  /* font-style: regular; */
+}
 
 @theme inline {
   --color-primary: var(--primary);

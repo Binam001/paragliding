@@ -3,7 +3,7 @@ import ScrollFloat from "../WaveAnimation";
 
 const AboutSection = () => {
   return (
-    <div>
+    <section>
       <div className="">
         <div className="text-center">
           <ScrollFloat
@@ -16,7 +16,7 @@ const AboutSection = () => {
             About Us
           </ScrollFloat>
         </div>
-        <div>
+        <div className="text-lg">
           <p>
             Sunrise Paragliding is a family run company and has been offering
             tandem flights in the Annapurna region of Nepal since 1996. As the
@@ -36,7 +36,7 @@ const AboutSection = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

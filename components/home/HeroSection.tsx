@@ -6,18 +6,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
-  useGSAP(() => {
-    gsap.from("#video", {
-      scale: 0.4,
-      scrollTrigger: {
-        trigger: "#video-container",
-        start: "top top",
-        end: "+=600",
-        scrub: true,
-        pin: true,
-      },
-    });
-  });
+  // useGSAP(() => {
+  //   gsap.from("#video", {
+  //     scale: 0.4,
+  //     scrollTrigger: {
+  //       trigger: "#video-container",
+  //       start: "top top",
+  //       end: "+=600",
+  //       scrub: true,
+  //       pin: true,
+  //     },
+  //   });
+  // });
   return (
     <div>
       <div
