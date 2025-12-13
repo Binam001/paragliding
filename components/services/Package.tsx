@@ -25,7 +25,7 @@ const Package = () => {
   };
 
   return (
-    <div className="px-4 md:px-8 lg:px-16 mt-16">
+    <section className="px-4 md:px-8 lg:px-16 mt-16">
       <div className="text-center space-y-2">
         <p className="text-4xl font-bold">Tandem Flights</p>
         <p className="mb-4">The ultimate flying adventure</p>
@@ -69,7 +69,7 @@ const Package = () => {
                       {packageItem.time.map((t) => (
                         <span
                           key={t}
-                          className="flex items-center gap-1 px-3 py-1 rounded-full text-sm"
+                          className="flex items-center gap-1 text-sm"
                         >
                           <Icon
                             icon="ion:time-outline"
@@ -105,21 +105,22 @@ const Package = () => {
                 </div>
               </div>
               <div className="flex gap-4 mt-4">
+                <button
+                  onClick={() => openModal(packageItem)}
+                  className="w-fit px-6 py-2 rounded-full bg-(--color-primary) hover:bg-primary/80 duration-300 transition-colors text-white text-sm cursor-pointer"
+                >
+                  Book Now
+                </button>
+
                 <Link
                   href={
                     packageItem.slug ? `/services/${packageItem.slug}` : "#"
                   }
                 >
-                  <button className="w-fit px-6 py-2 rounded-full bg-(--color-primary) hover:bg-primary/80 duration-300 transition-colors text-white cursor-pointer">
+                  <button className="w-fit border rounded-full px-6 py-2 cursor-pointer duration-300 transition-colors text-sm">
                     View Details
                   </button>
                 </Link>
-                <button
-                  onClick={() => openModal(packageItem)}
-                  className="w-fit border rounded-full px-6 py-2 cursor-pointer duration-300 transition-colors"
-                >
-                  Book Now
-                </button>
               </div>
             </div>
           </div>
@@ -128,7 +129,7 @@ const Package = () => {
       {isModalOpen && selectedPackage && (
         <BookingModal packageItem={selectedPackage} onClose={closeModal} />
       )}
-    </div>
+    </section>
   );
 };
 

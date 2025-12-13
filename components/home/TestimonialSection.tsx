@@ -3,10 +3,11 @@
 import React from "react";
 import { Testimonial } from "@/components/ui/testimonial";
 import { motion } from "motion/react";
+import Testimonials from "./Testimonials";
 
-const TestimonialsSections = () => {
+const TestimonialSections = () => {
   return (
-    <section className=" h-full mt-8 md:mt-16">
+    <section className="h-full mt-8 md:mt-16">
       <div className="grid grid-cols-2 lg:grid-cols-8 gap-1 md:gap-2 px-4 md:px-8 lg:px-16 py-8 pt-8">
         {[
           "/images/blog/blog10.jpg",
@@ -41,27 +42,23 @@ const TestimonialsSections = () => {
             <img
               src={src}
               alt={`Testimonial ${index + 1}`}
-              className="w-full h-full object-cover object-center rounded-xs"
+              className="w-full h-full object-cover object-center rounded-md"
             />
           </motion.div>
         ))}
       </div>
-      <div className="flex flex-col gap-6 justify-center lg:-translate-y-36 items-center">
-        {/* <span className="bg-zinc-100 px-4 text-zinc-800 rounded-full">
-          Testimonials
-        </span> */}
-        <h2 className="text-2xl md:text-4xl text-center font-semibold  sm:max-w-xl uppercase">
-          <span className="bg-primary text-white px-2">Globally Ranked,</span>{" "}
-          Loved by Thousands of
-          <span className="bg-primary text-white px-2 ml-2">Flyers</span>
-        </h2>
-        <p className="w-[45%] text-center px-4 xl:px-0">
-          Pokhara is recognized as one of the Top 5 Paragliding Destinations in
-          the World. Our experienced pilots have safely flown thousands of
-          passengers from every corner of the globe. We combine rigorous safety
-          standards with the sheer thrill of soaring over Phewa Lake,
-          guaranteeing an unmatched, world-class flying experience you will
-          never forget.
+      <div className="flex justify-center items-center lg:-translate-y-36">
+        <p className="w-[45%] px-4 xl:px-0 text-3xl font-[Poppins-Light] text-center">
+          Read the unfiltered{" "}
+          <span className="text-[#f7901e] font-bold">
+            reviews from thousands of flyers
+          </span>{" "}
+          who have trusted us to deliver the{" "}
+          <span className="text-[#f7901e] font-bold">world-class thrill</span>{" "}
+          of soaring over{" "}
+          <span className="text-[#f7901e] font-bold">
+            Pokhara and the Himalayas.
+          </span>
         </p>
         {/* <Link
           href={
@@ -80,8 +77,12 @@ const TestimonialsSections = () => {
           </button>
         </Link> */}
       </div>
+
+      <div className="lg:-translate-y-24">
+        <Testimonials />
+      </div>
     </section>
   );
 };
 // export default TestimonialsSections;
-export { TestimonialsSections, type Testimonial };
+export { TestimonialSections, type Testimonial };

@@ -31,6 +31,10 @@ body {
   src: url("/fonts/Poppins-ExtraLight.ttf");
   /* font-style: regular; */
 }
+@font-face {
+  font-family: "Priestacy";
+  src: url("/fonts/Priestacy.otf");
+}
 
 @theme inline {
   --color-primary: var(--primary);

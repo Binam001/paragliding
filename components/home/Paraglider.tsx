@@ -9,10 +9,10 @@ import { ParagliderModel } from "./Paraglider-orange";
 interface ParagliderProps {
   progress: number;
   // Add a callback to pass the position up
-  // setCameraPosition?: (position: THREE.Vector3) => void;
+  setCameraPosition?: (position: THREE.Vector3) => void;
 }
 
-const CameraController = ({ progress }: ParagliderProps) => {
+const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
   const cameraRef = useRef<THREE.PerspectiveCamera>(null!);
 
   const positions = [
@@ -33,7 +33,7 @@ const CameraController = ({ progress }: ParagliderProps) => {
     new THREE.Vector3(8, 1, 6),
 
     new THREE.Vector3(8, 3, 5),
-    new THREE.Vector3(7, 0, 2),
+    new THREE.Vector3(9, 0, -1),
     new THREE.Vector3(8, 0, -3),
     // new THREE.Vector3(9, 0, 5),
 
@@ -41,15 +41,20 @@ const CameraController = ({ progress }: ParagliderProps) => {
     new THREE.Vector3(9, 0, -3),
     // new THREE.Vector3(7, 0, 5),
     // new THREE.Vector3(6, 0, 5),
-    new THREE.Vector3(4, 1, 6),
+    new THREE.Vector3(7, 1, 6),
 
     new THREE.Vector3(4, 1, 7),
     new THREE.Vector3(4, 3, 6),
-    new THREE.Vector3(7, 0, 8),
+    new THREE.Vector3(8, 0, 8),
 
-    new THREE.Vector3(-1, 1, 8),
-    new THREE.Vector3(-1, 1, 8),
-    new THREE.Vector3(-1, 1, 8),
+    new THREE.Vector3(8, 1, -3),
+    new THREE.Vector3(8, 1, -4),
+    new THREE.Vector3(7, 1, -3),
+
+    new THREE.Vector3(10, 5, 0),
+    // new THREE.Vector3(5, 1, 10),
+    new THREE.Vector3(7, 3, 4),
+    new THREE.Vector3(15, 5, 0),
   ];
   useFrame(() => {
     cameraRef.current?.lookAt(0, 0, 0);
@@ -77,7 +82,7 @@ const CameraController = ({ progress }: ParagliderProps) => {
     // if (setCameraPosition) {
     //   setCameraPosition(cameraRef.current.position.clone());
     // }
-  }, [progress, positions]);
+  }, [progress, positions, setCameraPosition]);
 
   return (
     <PerspectiveCamera
@@ -114,6 +119,16 @@ const Paraglider = ({ progress }: ParagliderProps) => {
         <ambientLight intensity={2} />
         <directionalLight
           position={[5, 5, 5]}
+          intensity={3}
+          color={"#ffffff"}
+        />
+        <directionalLight
+          position={[0, 8, 0]}
+          intensity={1}
+          color={"#ffffff"}
+        />
+        <directionalLight
+          position={[0, 0, -10]}
           intensity={4}
           color={"#ffffff"}
         />

@@ -6,14 +6,19 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div
-      className="pt-20 pb-4 px-4 md:px-8 lg:px-16 mt-8 md:mt-16 relative h-[70vh] text-white"
+    <section
+      className="pb-4 px-4 md:px-8 lg:px-16 relative h-[70vh] text-white"
       style={{
-        clipPath:
-          "polygon(67% 3%, 74% 0, 79% 4%, 100% 0, 100% 100%, 0 100%, 0 4%, 14% 0, 26% 3%, 43% 0)",
+        // clipPath:
+        //   "polygon(67% 3%, 74% 0, 79% 4%, 100% 0, 100% 100%, 0 100%, 0 4%, 14% 0, 26% 3%, 43% 0)",
+        backgroundImage: `url(/images/mountains/ground.png)`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 w-full h-full -z-10">
+      {/* <div className="absolute inset-0 w-full h-full bg-linear-to-b from-blue-500 to-white z-0" /> */}
+      {/* <div className="absolute inset-0 w-full h-full -z-10">
         <video
           src="/videos/SUNRISE-PARAGLIDING-NEPAL.mp4"
           className="w-full h-full object-cover"
@@ -21,25 +26,23 @@ const Footer = () => {
           muted
           loop
         />
-      </div>
-      <div className="absolute inset-0 w-full h-full bg-black/50 -z-10" />
+      </div> */}
+      <div className="absolute inset-0 w-full h-full bg-white -z-10" />
 
-      <div className="w-full flex flex-col justify-between h-full z-50">
+      <div className="w-full flex flex-col justify-between h-full z-50 pt-24">
         <div className="flex items-center">
           <div className="w-1/2 h-full flex flex-col justify-between">
-            <p className="text-4xl text-(--color-primary)">
-              Join us for an adventure
-            </p>
+            <p className="text-4xl">Join us for an adventure</p>
             <div className="flex items-center gap-2">
               <input
                 type="email"
                 placeholder="Email"
-                className="px-3 py-1 border-b-2 placeholder:text-white focus:border-b focus:outline-none w-full md:w-1/2"
+                className="px-3 py-1 border-b-2 placeholder:text-white focus:border-b-2 focus:border-primary focus:outline-none w-full md:w-1/2"
               />
-              <button className="cursor-pointer">
+              <button className="cursor-pointer group">
                 <Icon
                   icon="tabler:send"
-                  className="size-10 bg-white rounded-full p-2 text-black"
+                  className="size-10 bg-white rounded-full p-2 text-black group-hover:bg-primary group-hover:text-white duration-150"
                 />
               </button>
             </div>
@@ -47,7 +50,7 @@ const Footer = () => {
 
           <div className="w-1/2 flex justify-evenly">
             <div className="">
-              <p className="text-xl font-medium border-b-2 mb-2 text-(--color-primary)">
+              <p className="text-xl font-medium border-b-2 mb-2">
                 Tandem Flights
               </p>
               <div className="flex flex-col gap-2">
@@ -56,7 +59,7 @@ const Footer = () => {
                   <Link
                     key={packageItem.id}
                     href={`/services/${packageItem.slug}`}
-                    className="hover:text-(--color-primary)"
+                    className="hover:text-(--color-primary) text-center"
                   >
                     {packageItem.title}
                   </Link>
@@ -65,7 +68,7 @@ const Footer = () => {
             </div>
 
             <div className="">
-              <p className="text-xl font-medium border-b-2 mb-2 w-max text-(--color-primary)">
+              <p className="text-xl font-medium border-b-2 mb-2 w-fit mx-auto text-center">
                 Links
               </p>
               <div className="grid grid-cols-2 gap-x-8 gap-y-2">
@@ -73,7 +76,9 @@ const Footer = () => {
                   <Link
                     key={navItem.id}
                     href={navItem.href}
-                    className="hover:text-(--color-primary)"
+                    className={`hover:text-(--color-primary) ${
+                      navItem.id % 2 === 0 ? "" : "text-right"
+                    }`}
                   >
                     {navItem.name}
                   </Link>
@@ -113,7 +118,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -8,7 +8,7 @@ import HeroSection from "@/components/home/HeroSection";
 import Packages from "@/components/home/Packages";
 import Testimonials from "@/components/home/Testimonials";
 import AboutUsSection from "@/components/home/AboutUsSection";
-import { TestimonialsSections } from "@/components/home/GallerySection";
+import { TestimonialSections } from "@/components/home/TestimonialSection";
 import Stats from "@/components/home/Stats";
 import FooterText from "@/components/home/FooterText";
 import Instruction from "@/components/home/Instruction";
@@ -52,7 +52,7 @@ const Page = () => {
             trigger: mainRef.current,
             start: "top top",
             end: "bottom bottom",
-            scrub: 2,
+            scrub: 3,
             onUpdate: (self) => {
               setProgress(self.progress);
             },
@@ -65,7 +65,9 @@ const Page = () => {
         .to(modelRef.current, { x: "40vw", duration: 1.5 })
         .to(modelRef.current, { x: "40vw" })
         .to(modelRef.current, { x: "-45vw", duration: 1.5 })
-        .to(modelRef.current, { x: "100vw", duration: 1.5 });
+        .to(modelRef.current, { x: "40vw", duration: 1.5 })
+        .to(modelRef.current, { x: "0vw", y: "-10vh", duration: 1.5 });
+      // .to(modelRef.current, { x: "100vw", duration: 1.5 });
     }, mainRef);
 
     return () => ctx.revert();
@@ -109,15 +111,12 @@ const Page = () => {
           </div>
 
           <VideoSection />
+          <TestimonialSections />
 
-          <div className="w-full">
-            <TestimonialsSections />
-          </div>
-
-          <Testimonials />
-          <div className="w-full h-screen">
-            <FAQs />
-          </div>
+          {/* <Testimonials /> */}
+          {/* <div className="w-full h-screen"> */}
+          <FAQs />
+          {/* </div> */}
 
           <FooterText />
 

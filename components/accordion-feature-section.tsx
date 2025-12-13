@@ -64,20 +64,18 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
   const [activeImage, setActiveImage] = useState(features[0].image);
 
   return (
-    <section className="py-16 w-full px-4 md:px-8 lg:px-16">
+    <section className="py-8 w-full px-4 md:px-8 lg:px-16">
       <div className="">
-        <div className="flex items-center justify-center">
-          <ScrollFloat
-            animationDuration={1}
-            ease="back.inOut(2)"
-            scrollStart="center bottom+=30%"
-            scrollEnd="bottom bottom-=40%"
-            stagger={0.03}
-          >
-            FAQs
-          </ScrollFloat>
+        <div className="mb-8">
+          <p className="text-5xl font-[Poppins-Light] text-center">
+            Get <span className="text-primary font-bold">answers</span> to your
+            most{" "}
+            <span className="text-primary font-bold">common questions</span> in
+            our detailed{" "}
+            <span className="text-primary font-bold">FAQ section.</span>
+          </p>
         </div>
-        <div className="flex w-full h-full justify-center items-center gap-8">
+        <div className="flex w-full h-full justify-center items-center gap-8 mt-8">
           <div className="relative m-auto hidden w-1/2 overflow-hidden md:block">
             <img
               src={activeImage}
@@ -94,7 +92,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                       setActiveImage(tab.image);
                       setActiveTabId(tab.id);
                     }}
-                    className="cursor-pointer py-5 !no-underline transition"
+                    className="cursor-pointer py-5 no-underline! transition"
                   >
                     <h6
                       className={`text-xl font-semibold ${

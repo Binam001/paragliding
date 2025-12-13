@@ -4,28 +4,25 @@ import React from "react";
 
 const Instruction = () => {
   return (
-    <div>
-      <div className="w-full h-[50vh] px-4 md:px-8 lg:px-16">
-        <div className="flex h-full">
+    <section className="py-16">
+      <div className="w-full flex flex-col items-center justify-center gap-8 px-4 md:px-8 lg:px-16">
+        <div className="flex gap-4">
           {aboutUs.map((about) => (
             <div
               key={about.id}
-              className="relative text-center flex flex-col justify-center items-center"
+              className={`w-1/4 h-40 relative p-4 rounded-md text-center flex gap-4 flex-col justify-center items-center border border-zinc-300`}
             >
               <div className="">
-                <Icon icon={about.icon} className="size-10 text-[#f7901e]" />
+                <Icon icon={about.icon} className={`size-12 text-primary`} />
               </div>
-              <div className="space-y-4">
-                <p className="text-3xl uppercase font-semibold text-[#f7901e]">
-                  {about.title}
-                </p>
-                <p>{about.desc}</p>
+              <div className="">
+                <p className="text-xl">{about.title}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

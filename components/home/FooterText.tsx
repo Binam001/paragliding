@@ -1,50 +1,21 @@
-import React from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import ScrollFloat from "../WaveAnimation";
 import Link from "next/link";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const FooterText = () => {
-  // const container = React.useRef<HTMLDivElement>(null);
-  // useGSAP(
-  //   () => {
-  //     gsap.from("#seeYouSoonText", {
-  //       xPercent: -400,
-  //       scrollTrigger: {
-  //         trigger: container.current,
-  //         start: "top top",
-  //         end: "bottom top",
-  //         scrub: 2,
-  //         pin: true,
-  //       },
-  //     });
-  //   },
-  //   { scope: container }
-  // );
   return (
-    <div
-      // ref={container}
-      className="h-dvh flex items-center justify-center overflow-hidden relative mt-8"
-    >
-      {/* <p id="seeYouSoonText" className="text-6xl font-semibold text-center">
-        SEE YOU SOON...
-      </p> */}
-      {/* <div id="seeYouSoonText" className="text-center">
-        <ScrollFloat
-          animationDuration={1}
-          ease="back.inOut(2)"
-          scrollStart="center bottom+=30%"
-          scrollEnd="bottom bottom-=40%"
-          stagger={0.03}
-          textClassName="text-7xl font-bold"
-        >
-          SEE YOU SOON...
-        </ScrollFloat>
-      </div> */}
-      <div className="absolute inset-0 w-full h-screen bg-linear-to-b from-blue-500 to-transparent" />
+    <div className="h-dvh flex items-center justify-center overflow-hidden relative mt-8">
+      <div className="absolute inset-0 w-full h-screen bg-linear-to-b from-blue-500 to-white" />
+      <div className="absolute bottom-0 w-full h-screen">
+        <img
+          src="/images/mountains/vectorMountain.png"
+          alt="mountain"
+          className="invert"
+        />
+      </div>
+      <div
+      // className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      // style={{ backgroundImage: `url("/images/mountains/mountains3.jpg")` }}
+      />
+      {/* <div className="absolute inset-0 w-full h-screen bg-black/30 z-10" /> */}
       <div className="w-1/2 mx-auto flex flex-col items-center justify-center text-center gap-4 z-10">
         <p className="text-2xl">
           Experience the Pokhara skyline like never before

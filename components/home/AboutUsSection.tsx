@@ -26,34 +26,15 @@ const AboutUsSection = () => {
         </div>
         <div className="text-5xl text-black h-full w-[75%] z-30 flex items-center">
           <p className="font-[Poppins-Light]">
-            Over <span className="text-[#f7901e] font-bold">three decades</span>{" "}
+            Over <span className="text-primary font-bold">three decades</span>{" "}
             of unrivaled expertise. Sunrise is the leading choice for{" "}
-            <span className="text-[#f7901e] font-bold">
+            <span className="text-primary font-bold">
               professional tandem flights
             </span>{" "}
             in the Annapurna region.{" "}
-            <span className="text-[#f7901e] font-bold">Experience</span> the
+            <span className="text-primary font-bold">Experience</span> the
             amazing glide.
           </p>
-          {/* <div className="font-light">
-            <p>
-              Over{" "}
-              <span className="text-[#f7901e] font-medium">three decades</span>{" "}
-              of unrivaled expertise.
-            </p>
-            <p>Sunrise is the leading choice for</p>
-            <p></p>
-            <p>
-              <span className="text-[#f7901e] font-medium">
-                professional tandem flights
-              </span>
-            </p>
-            <p>
-              in the Annapurna region.{" "}
-              <span className="text-[#f7901e] font-medium">Experience</span>
-            </p>
-            <p> the amazing glide.</p>
-          </div> */}
         </div>
       </div>
     </section>
