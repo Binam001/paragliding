@@ -31,7 +31,7 @@ export default async function BlogPostPage({
       />
       <div className="mt-16 px-4 md:px-8 lg:px-16">
         <main className="px-4 md:px-8 lg:px-16">
-          <div className="flex justify-between px-4 mx-auto max-w-7xl ">
+          <div className="flex justify-between">
             <article className="">
               <header className="mb-4 lg:mb-6">
                 {/* Post Title */}

@@ -16,8 +16,8 @@ const AboutSection = () => {
             About Us
           </ScrollFloat>
         </div>
-        <div className="text-lg">
-          <p>
+        <div className="md:text-lg">
+          <p className="">
             Sunrise Paragliding is a family run company and has been offering
             tandem flights in the Annapurna region of Nepal since 1996. As the
             most experienced paragliding company in Nepal, we are unrivaled in

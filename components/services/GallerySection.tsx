@@ -32,7 +32,7 @@ const GallerySection = () => {
         unforgettable memories of paragliding over Pokhara's stunning
         landscapes. Get a glimpse of the adventure that awaits you!
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
         {articleLists.map((img) => (
           <div
             key={img.id}

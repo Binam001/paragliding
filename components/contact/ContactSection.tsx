@@ -27,9 +27,9 @@ const ContactSection = () => {
   // const [peopleValue, setPeopleValue] = useState<SingleValue<OptionType>>(null);
   return (
     <section className="h-full px-4 md:px-8 lg:px-16">
-      <div className="w-full flex items-center">
-        <div className="w-2/3">
-          <p className="text-6xl font-bold mb-4">
+      <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-0">
+        <div className="md:w-2/3">
+          <p className="text-5xl md:text-6xl font-bold mb-4">
             Get in <span className="text-(--color-primary)">Touch</span>
           </p>
           <p className="text-lg text-gray-600 mb-4">
@@ -197,15 +197,15 @@ const ContactSection = () => {
                 </label>
               </div>
 
-              <div className="">
-                <button className="rounded-full px-5 py-2 bg-(--color-primary) text-white cursor-pointer">
+              <div className="w-full">
+                <button className="w-full md:w-max rounded-full px-5 py-2 bg-(--color-primary) text-white cursor-pointer">
                   Submit
                 </button>
               </div>
             </form>
           </div>
         </div>
-        <div className="w-1/3 h-full space-y-4">
+        <div className="w-full md:w-1/3 h-full space-y-4">
           <div className="bg-(--color-primary)/80 p-2 rounded-2xl space-y-2">
             <div className="bg-white rounded-xl flex flex-col items-center justify-center py-4 font-medium">
               <p>Get in touch with us!</p>
@@ -252,7 +252,7 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-      <div className="h-full flex-1 relative min-h-[500px] mt-16">
+      <div className="h-full flex-1 relative min-h-[300px] md:min-h-[500px] mt-16">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.0135214614056!2d83.95600477427296!3d28.206901775899837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995951e3d520047%3A0x8731ef408affb9c0!2sSunrise%20Paragliding!5e0!3m2!1sen!2snp!4v1764331279344!5m2!1sen!2snp"
           // width={400}

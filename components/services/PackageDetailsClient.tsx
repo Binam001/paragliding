@@ -2,12 +2,18 @@
 
 import React, { useState, useEffect } from "react";
 import { notFound } from "next/navigation";
-import { articleLists, packageLists } from "@/constants";
+import { articleLists, FAQsLists, packageLists } from "@/constants";
 import HeroSection from "@/components/HeroSection";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import Image from "next/image";
 import GallerySection from "./GallerySection";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 const baseTableOfContentLists = [
   {
@@ -35,6 +41,18 @@ const baseTableOfContentLists = [
     title: "Essential Info",
     link: "#essential-info",
     icon: "material-symbols:info-outline-rounded",
+  },
+  {
+    id: 7,
+    title: "Safety Guidelines",
+    link: "#safety-guide",
+    icon: "ant-design:safety-outlined",
+  },
+  {
+    id: 8,
+    title: "FAQs",
+    link: "#faqs",
+    icon: "streamline-ultimate:contact-us-faq",
   },
 ];
 
@@ -83,6 +101,51 @@ const essentialInfo = [
   },
 ];
 
+const safetyGuidelines = [
+  {
+    id: 1,
+    icon: "mdi:whistle-outline",
+    title: "Listen to Your Pilot",
+    content:
+      "Your pilot is an experienced professional. Follow all instructions given during the briefing, takeoff, flight, and landing. Your cooperation is crucial for a safe and enjoyable experience.",
+  },
+  {
+    id: 2,
+    icon: "ion:shirt-outline",
+    title: "Wear Appropriate Clothing",
+    content:
+      "Wear sturdy, closed-toe shoes (like trainers or hiking boots), long trousers, and a windproof jacket, even on a warm day, as it can be cooler at altitude.",
+  },
+  {
+    id: 3,
+    icon: "tabler:run",
+    title: "Commit to the Takeoff Run",
+    content:
+      "When your pilot says 'run,' you must run forward without stopping or sitting down until your feet have left the ground. This is essential for a smooth and safe launch.",
+  },
+  {
+    id: 4,
+    icon: "material-symbols:weight-outline",
+    title: "Respect Weight Limits",
+    content:
+      "Adhere to the specified weight limits (typically 35kg to 95kg). These limits are in place to ensure the paraglider performs correctly and safely within its certified range.",
+  },
+  {
+    id: 5,
+    icon: "solar:chat-round-like-linear",
+    title: "Communicate with Your Pilot",
+    content:
+      "If you feel unwell, scared, or uncomfortable at any point during the flight, inform your pilot immediately. They can adjust the flight to make it more comfortable for you.",
+  },
+  {
+    id: 6,
+    icon: "ph:camera-slash",
+    title: "Secure Personal Belongings",
+    content:
+      "Ensure your phone, camera, and any other personal items are securely attached. It's best to use a wrist strap or secure pockets. Anything dropped during the flight will be lost forever.",
+  },
+];
+
 type PackageItem = (typeof packageLists)[0];
 
 interface PackageDetailsClientProps {
@@ -96,6 +159,7 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
       : baseTableOfContentLists;
 
   const [activeLink, setActiveLink] = useState(tableOfContentLists[0]?.link);
+  const [activeTabId, setActiveTabId] = useState<number | null>(1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -135,13 +199,13 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
         link={`${packageItem.title}`}
       />
 
-      <div className="px-4 md:px-8 lg:px-16 w-full flex relative gap-2">
+      <div className="px-4 md:px-8 lg:px-16 w-full flex flex-col md:flex-row relative md:gap-2">
         {/* left section*/}
-        <div className="w-[20%] sticky top-24 h-fit">
+        <div className="md:w-[20%] sticky top-17 md:top-24 h-fit bg-white py-4 md:py-0 shadow-md">
           <p className="text-xl font-bold mb-4 text-(--color-primary) border-b border-zinc-200">
             Table of Contents
           </p>
-          <div className="flex flex-col gap-4 mt-4">
+          <div className="flex md:flex-col gap-4 mt-4">
             {tableOfContentLists.map((item) => (
               <Link
                 key={item.id}
@@ -153,14 +217,14 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
                 }`}
               >
                 <Icon icon={item.icon} className="size-6" />
-                <p className="text-sm">{item.title}</p>
+                <p className="text-sm whitespace-nowrap">{item.title}</p>
               </Link>
             ))}
           </div>
         </div>
 
         {/* middle content */}
-        <div className="w-[60%] space-y-16 px-4 border-x border-zinc-200">
+        <div className="md:w-[60%] space-y-16 mt-4 md:mt-0 px-4 border-x border-zinc-200">
           <h2
             id="quickInfo"
             className="text-3xl font-bold mb-4 text-(--color-primary) scroll-mt-24"
@@ -168,7 +232,7 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
             Quick Info
           </h2>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {packageItem.duration && (
               <div className="border border-zinc-200 p-4 rounded-md flex justify-evenly">
                 <Image
@@ -243,7 +307,7 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
                   midday flights often have stronger thermals, ideal for longer
                   soaring.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   {packageItem.time.map((t) => (
                     <div
                       key={t}
@@ -311,10 +375,65 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
               ))}
             </div>
           </div>
+
+          {/* safety guidelines */}
+          <div id="safety-guide" className="space-y-4 scroll-mt-24">
+            <p className="text-3xl font-bold mb-4 text-(--color-primary)">
+              Safety Guidelines
+            </p>
+            <div className="">
+              {safetyGuidelines.map((info) => (
+                <div
+                  key={info.id}
+                  className="flex gap-4 mb-4 border border-zinc-200 p-4 rounded-md"
+                >
+                  <Icon icon={info.icon} className="size-8 shrink-0" />
+                  <div>
+                    <p className="font-semibold text-lg mb-2">{info.title}</p>
+                    <p className="text-gray-700">{info.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div id="faqs" className="space-y-4 scroll-mt-24">
+            <p className="text-3xl font-bold mb-4 text-(--color-primary)">
+              FAQs
+            </p>
+            <Accordion type="single" className="w-full">
+              {FAQsLists.map((tab) => (
+                <AccordionItem key={tab.id} value={`item-${tab.id}`}>
+                  <AccordionTrigger
+                    onClick={() => {
+                      setActiveTabId(tab.id);
+                    }}
+                    className="cursor-pointer py-5 no-underline! transition"
+                  >
+                    <h6
+                      className={`text-xl font-semibold ${
+                        tab.id === activeTabId
+                          ? "text-foreground"
+                          : "text-muted-foreground"
+                      }`}
+                    >
+                      {tab.title}
+                    </h6>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="mt-3 text-muted-foreground">
+                      {tab.description}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
 
         {/* right section */}
-        <div className="w-[20%] sticky top-24 h-fit">
+        <div className="md:w-[20%] mt-16 md:sticky top-24 h-fit">
           <div className="">
             <div className="border border-zinc-200 rounded-sm p-2">
               <div className=" text-center font-semibold">
@@ -345,7 +464,7 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
               </div>
             </div>
 
-            <div className="mt-8 border border-zinc-200 rounded-sm p-2 flex gap-2 items-center">
+            <div className="mt-8 border border-zinc-200 rounded-sm p-2 flex gap-2 items-center justify-center md:justify-start">
               <div className="">
                 <img
                   src="/images/team/Biru-Bomjan.jpg"

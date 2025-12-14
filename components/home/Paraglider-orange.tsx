@@ -8,6 +8,7 @@ import React, { useRef, useImperativeHandle, forwardRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { useMediaQuery } from "react-responsive";
 
 interface ParagliderModelProps {
   scale: number;
@@ -15,11 +16,12 @@ interface ParagliderModelProps {
 
 export const ParagliderModel = forwardRef<ParagliderModelProps>(
   ({ ...props }, ref) => {
+    const isMobile = useMediaQuery({ maxWidth: 430 });
     const { nodes, materials } = useGLTF(
       "/models/paraglider-orange-transformed.glb"
     );
     return (
-      <group scale={0.15} {...props} dispose={null}>
+      <group scale={isMobile ? 0.08 : 0.15} {...props} dispose={null}>
         <mesh
           geometry={(nodes.Mesh_0 as THREE.Mesh).geometry}
           material={materials["Material.001"]}

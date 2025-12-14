@@ -15,6 +15,43 @@ interface ParagliderProps {
 const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
   const cameraRef = useRef<THREE.PerspectiveCamera>(null!);
 
+  // const positions = [
+  //   new THREE.Vector3(10, 2, -4),
+  //   new THREE.Vector3(8, 3, 0),
+  //   new THREE.Vector3(8, 3, -3),
+  //   new THREE.Vector3(8, 3, -2),
+
+  //   new THREE.Vector3(9, 3, 2),
+  //   new THREE.Vector3(9, 2, 4),
+
+  //   new THREE.Vector3(9, 2, 4),
+  //   new THREE.Vector3(8, 1, 6),
+
+  //   new THREE.Vector3(8, 3, 0),
+  //   new THREE.Vector3(9, 0, -1),
+  //   new THREE.Vector3(8, 0, -3),
+
+  //   new THREE.Vector3(8, 0, -4),
+  //   new THREE.Vector3(9, 0, -3),
+  //   new THREE.Vector3(8, 1, 3),
+
+  //   new THREE.Vector3(8, 1, 7),
+  //   new THREE.Vector3(8, 3, 0),
+  //   new THREE.Vector3(9, 0, -4),
+
+  //   new THREE.Vector3(10, 1, -6),
+  //   new THREE.Vector3(9, 1, 5),
+  //   new THREE.Vector3(10, 1, 5),
+
+  //   new THREE.Vector3(15, 5, 8),
+  //   new THREE.Vector3(20, 3, 15),
+  //   new THREE.Vector3(8, 10, 20),
+
+  //   new THREE.Vector3(15, 8, 10),
+  //   new THREE.Vector3(20, 3, 15),
+  //   new THREE.Vector3(8, 5, 0),
+  // ];
+
   const positions = [
     // new THREE.Vector3(14, 2, 3),
     new THREE.Vector3(10, 2, -4),
@@ -41,21 +78,22 @@ const CameraController = ({ progress, setCameraPosition }: ParagliderProps) => {
     new THREE.Vector3(9, 0, -3),
     // new THREE.Vector3(7, 0, 5),
     // new THREE.Vector3(6, 0, 5),
-    new THREE.Vector3(7, 1, 6),
+    new THREE.Vector3(8, 1, 3),
 
     new THREE.Vector3(4, 1, 7),
     new THREE.Vector3(4, 3, 6),
     new THREE.Vector3(8, 0, 8),
 
-    new THREE.Vector3(8, 1, -3),
-    new THREE.Vector3(8, 1, -4),
-    new THREE.Vector3(7, 1, -3),
+    new THREE.Vector3(10, 1, 0),
+    new THREE.Vector3(9, 1, -4),
+    new THREE.Vector3(10, 1, -3),
 
-    new THREE.Vector3(10, 5, 0),
+    new THREE.Vector3(15, 5, -10),
     // new THREE.Vector3(5, 1, 10),
-    new THREE.Vector3(7, 3, 4),
-    new THREE.Vector3(15, 5, 0),
+    new THREE.Vector3(20, 3, 15),
+    new THREE.Vector3(8, 5, 0),
   ];
+
   useFrame(() => {
     cameraRef.current?.lookAt(0, 0, 0);
   });

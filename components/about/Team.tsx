@@ -54,14 +54,14 @@ const Team = () => {
           className="w-full"
           onValueChange={setActiveTab}
         >
-          <TabsList className="w-full flex gap-8 items-center bg-white mb-4">
+          <TabsList className="w-full flex md:gap-8 items-center bg-white mb-4">
             <TabsTrigger value="tab-1">
               All{" "}
               <span
                 className={`rounded-full ml-2 text-xs size-5 flex items-center justify-center transition-colors ${
                   activeTab === "tab-1"
                     ? "bg-white text-gray-800"
-                    : "bg-gray-400 text-white"
+                    : "bg-black text-white"
                 }`}
               >
                 {memberLists.length}
@@ -73,7 +73,7 @@ const Team = () => {
                 className={`rounded-full ml-2 text-xs size-5 flex items-center justify-center transition-colors ${
                   activeTab === "tab-2"
                     ? "bg-white text-gray-800"
-                    : "bg-gray-400 text-white"
+                    : "bg-black text-white"
                 }`}
               >
                 {leadershipMembers.length}
@@ -85,7 +85,7 @@ const Team = () => {
                 className={`rounded-full ml-2 text-xs size-5 flex items-center justify-center transition-colors ${
                   activeTab === "tab-3"
                     ? "bg-white text-gray-800"
-                    : "bg-gray-400 text-white"
+                    : "bg-black text-white"
                 }`}
               >
                 {otherMembers.length}
@@ -95,7 +95,7 @@ const Team = () => {
           {/* <div key={member.id}> */}
           <TabsContent
             value="tab-1"
-            className="grid grid-cols-4 gap-x-4 gap-y-8"
+            className="grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8"
           >
             {memberLists.map((member) => (
               <div className="w-full" key={member.id}>
@@ -113,7 +113,7 @@ const Team = () => {
           </TabsContent>
           <TabsContent
             value="tab-2"
-            className="grid grid-cols-4 gap-x-4 gap-y-8"
+            className="grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8"
           >
             {leadershipMembers.map((member) => (
               <div className="w-full" key={member.id}>
@@ -131,7 +131,7 @@ const Team = () => {
           </TabsContent>
           <TabsContent
             value="tab-3"
-            className="grid grid-cols-4 gap-x-4 gap-y-8"
+            className="grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8"
           >
             {otherMembers.map((member) => (
               <div className="w-full" key={member.id}>

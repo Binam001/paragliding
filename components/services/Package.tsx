@@ -29,7 +29,7 @@ const Package = () => {
       <div className="text-center space-y-2">
         <p className="text-4xl font-bold">Tandem Flights</p>
         <p className="mb-4">The ultimate flying adventure</p>
-        <p>
+        <p className="text-sm md:text-base">
           Tandem flight involves flying along with an instructor as a passenger.
           Both the pilot and passenger have separate harnesses, which feels like
           an armchair. Once after take off the passenger sits back and enjoys
@@ -40,22 +40,22 @@ const Package = () => {
         </p>
       </div>
 
-      <div className="mt-8 md:mt-16 space-y-4">
+      <div className="mt-8 md:mt-16 space-y-8">
         {packageLists.map((packageItem) => (
           <div
             key={packageItem.id}
-            className={`flex gap-8 ${
-              packageItem.id % 2 === 0 ? "flex-row-reverse" : ""
+            className={`md:flex gap-8 border md:border-none border-zinc-300 p-2 md:p-0 ${
+              packageItem.id % 2 === 0 ? "md:flex-row-reverse" : ""
             }`}
           >
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <img
                 src={packageItem.image}
                 alt={packageItem.title}
                 className="object-cover"
               />
             </div>
-            <div className="w-1/2 flex flex-col justify-center">
+            <div className="md:w-1/2 flex flex-col justify-center">
               <div className="space-y-2">
                 <p className="text-xl text-primary font-semibold">
                   {packageItem.title}
@@ -104,10 +104,10 @@ const Package = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4 mt-4">
+              <div className="flex flex-col md:flex-row gap-4 mt-4">
                 <button
                   onClick={() => openModal(packageItem)}
-                  className="w-fit px-6 py-2 rounded-full bg-(--color-primary) hover:bg-primary/80 duration-300 transition-colors text-white text-sm cursor-pointer"
+                  className="w-full md:w-fit px-6 py-2 rounded-full bg-(--color-primary) hover:bg-primary/80 text-white text-sm cursor-pointer hover:scale-[0.95] duration-300 transition-all"
                 >
                   Book Now
                 </button>
@@ -117,7 +117,7 @@ const Package = () => {
                     packageItem.slug ? `/services/${packageItem.slug}` : "#"
                   }
                 >
-                  <button className="w-fit border rounded-full px-6 py-2 cursor-pointer duration-300 transition-colors text-sm">
+                  <button className="w-full md:w-fit border rounded-full px-6 py-2 cursor-pointer text-sm hover:scale-[0.95] duration-300 transition-all">
                     View Details
                   </button>
                 </Link>

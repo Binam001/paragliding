@@ -77,10 +77,10 @@ const BookingModal = ({ packageItem, onClose }: BookingModalProps) => {
               required
             />
           </div>
-          <div className="flex justify-end">
+          <div className="flex justify-end w-full">
             <button
               type="submit"
-              className="px-4 py-2 bg-(--color-primary) text-white rounded-md hover:bg-opacity-90 cursor-pointer"
+              className="w-full md:w-max px-4 py-2 bg-(--color-primary) text-white rounded-full hover:bg-opacity-90 cursor-pointer"
             >
               Submit
             </button>

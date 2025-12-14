@@ -235,7 +235,7 @@ const articleLists = [
     src: "/images/blog/blog2.jpg",
     slug: "sunrise",
     title: "Sunrise",
-    span: "sm:col-span-2",
+    span: "md:col-span-2",
     shortDesc:
       "A magical sunrise over the Annapurnas from our Sarangkot launch point.",
     desc: "There's nothing quite like a Himalayan sunrise. From the vantage point of Sarangkot, watch as the first rays of dawn kiss the snow-capped peaks of the Annapurna range, painting them in hues of gold and rose. This magical moment, with traditional mountain homes stirring to life below, is the perfect, awe-inspiring start to a day of high-flying adventure.",
@@ -273,7 +273,7 @@ const articleLists = [
     src: "/images/blog/blog4.avif",
     slug: "lakeside-night-view",
     title: "LakeSide night view",
-    span: "col-span-2",
+    span: "md:col-span-2",
     shortDesc:
       "Vibrant Lakeside nightlife with colorful lights reflecting on the water.",
     desc: "When the sun sets, Pokhara's Lakeside district transforms into a vibrant hub of energy and light. This captivating view captures the lively atmosphere as colorful lights from cafes, shops, and the local Ferris wheel dance upon the calm surface of Phewa Lake. It's the perfect place to celebrate the day's adventure and soak in the local culture.",
@@ -480,6 +480,37 @@ const memberLists = [
   },
 ];
 
+const FAQsLists = [
+  {
+    id: 1,
+    title: "What is paragliding?",
+    image: "/images/faqs/faq1.png",
+    description:
+      "Paragliding is the recreational and competitive adventure sport of flying paragliders: lightweight, free-flying, foot-launched glider aircraft with no rigid primary structure. The pilot sits in a harness suspended below a fabric wing.",
+  },
+  {
+    id: 2,
+    title: "Is paragliding safe?",
+    image: "/images/faqs/faq2.png",
+    description:
+      "Yes, paragliding is very safe when conducted with certified and experienced pilots. We use modern, certified equipment that undergoes daily checks. Our pilots are internationally licensed and have thousands of hours of flight experience, making your safety our top priority.",
+  },
+  {
+    id: 3,
+    title: "Do I need experience to paraglide?",
+    image: "/images/faqs/faq3.png",
+    description:
+      "No prior experience is necessary for a tandem flight! You will be flying with a professional pilot who will handle all aspects of the flight. You just need to relax and enjoy the breathtaking views. A short briefing is provided before takeoff.",
+  },
+  {
+    id: 4,
+    title: "What should I wear for paragliding?",
+    image: "/images/faqs/faq4.png",
+    description:
+      "We recommend wearing comfortable, sturdy, closed-toe shoes (like sneakers or hiking boots), long trousers, and a windproof jacket. The temperature can be cooler at higher altitudes, so dressing in layers is a good idea. Sunglasses are also highly recommended.",
+  },
+];
+
 export {
   navLists,
   whyUs,
@@ -489,4 +520,5 @@ export {
   articleLists,
   aboutUs,
   memberLists,
+  FAQsLists,
 };

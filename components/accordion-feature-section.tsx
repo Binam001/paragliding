@@ -67,7 +67,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
     <section className="py-8 w-full px-4 md:px-8 lg:px-16">
       <div className="">
         <div className="mb-8">
-          <p className="text-5xl font-[Poppins-Light] text-center">
+          <p className="text-3xl md:text-5xl font-[Poppins-Light] text-center">
             Get <span className="text-primary font-bold">answers</span> to your
             most{" "}
             <span className="text-primary font-bold">common questions</span> in
@@ -95,7 +95,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                     className="cursor-pointer py-5 no-underline! transition"
                   >
                     <h6
-                      className={`text-xl font-semibold ${
+                      className={`text-xl font-semibold text-left ${
                         tab.id === activeTabId
                           ? "text-foreground"
                           : "text-muted-foreground"
@@ -108,13 +108,13 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                     <p className="mt-3 text-muted-foreground">
                       {tab.description}
                     </p>
-                    <div className="mt-4 md:hidden">
+                    {/* <div className="mt-4 md:hidden">
                       <img
                         src={tab.image}
                         alt={tab.title}
                         className="h-full w-full rounded-md object-cover"
                       />
-                    </div>
+                    </div> */}
                   </AccordionContent>
                 </AccordionItem>
               ))}

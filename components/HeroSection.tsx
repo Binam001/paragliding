@@ -33,7 +33,7 @@ const HeroSection = ({
       </div>
       <div className="absolute inset-0 w-full h-full bg-black/60" />
       <div className="z-10 space-y-8 px-4 md:px-8 lg:px-16">
-        <div className="text-white text-center text-3xl font-bold">
+        <div className="text-white text-center text-2xl md:text-3xl font-bold">
           <p>{text1}</p>
           <p>{text2}</p>
         </div>

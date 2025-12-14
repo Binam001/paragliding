@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import { testimonialLists } from "@/constants";
 import { Icon } from "@iconify/react";
+import { useMediaQuery } from "react-responsive";
 
 const Gallery4 = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
@@ -19,9 +20,12 @@ const Gallery4 = () => {
   const [selectedTestimonial, setSelectedTestimonial] = useState<any | null>(
     null
   );
+  // const isMobile = window.innerWidth <= 768;
+  const isMobile = useMediaQuery({ maxWidth: 430 });
 
   useEffect(() => {
-    const itemsPerSlide = 3; // 2 rows * 3 columns
+    // const itemsPerSlide = 3; // 2 rows * 3 columns
+    const itemsPerSlide = isMobile ? 1 : 3;
     const result = [];
     for (let i = 0; i < testimonialLists.length; i += itemsPerSlide) {
       result.push(testimonialLists.slice(i, i + itemsPerSlide));
@@ -116,7 +120,7 @@ const Gallery4 = () => {
                   {group.map((item) => (
                     <div
                       key={item.id}
-                      className="p-4 h-max rounded-lg border border-primary/20 flex flex-col items-center gap-4"
+                      className="p-4 rounded-lg border border-primary/20 flex flex-col items-center gap-4"
                       role="button"
                       tabIndex={0}
                     >
@@ -131,7 +135,10 @@ const Gallery4 = () => {
                         </div>
                       </div>
                       <div className="text-center">
-                        <p className="line-clamp-8 pr-4">{item.content}</p>
+                        <p className="text-lg">{item.name}</p>
+                        <p className="line-clamp-8 px-4 text-zinc-500">
+                          {item.content}
+                        </p>
                       </div>
 
                       {/* <div className="flex items-center justify-between">

@@ -24,7 +24,7 @@ export function Gallery({ data, onImageClick }: GalleryProps) {
     <section id="portfolio" className="py-8 md:py-16">
       <div className="">
         <h2 className="text-4xl font-bold text-center mb-8">Gallery</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {data.map((img) => (
             <div
               key={img.id}
@@ -75,7 +75,7 @@ export function ImageModal({ data, onClose }: ImageModalProps) {
       <img
         src={data.src}
         alt={data.title}
-        className="rounded-lg w-[70%] h-[90%]"
+        className="rounded-lg w-[70%] md:h-[90%]"
         onClick={(e) => e.stopPropagation()}
       />
       {/* <div className="text-white">

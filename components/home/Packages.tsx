@@ -28,7 +28,7 @@ const Packages = () => {
         <div id="packageSection">
           <div className="">
             <div className="mb-12 w-full">
-              <p className="text-5xl font-[Poppins-Light] text-center">
+              <p className="text-3xl md:text-5xl font-[Poppins-Light] text-center">
                 Explore our{" "}
                 <span className="text-primary font-bold">
                   tandem flight packages
@@ -40,7 +40,7 @@ const Packages = () => {
                 of the Himalayas.
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {packageLists.map((packageItem) => (
                 <div
                   key={packageItem.id}

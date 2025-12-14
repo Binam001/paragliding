@@ -5,7 +5,7 @@ import CountUp from "../CountUp";
 const Stats = () => {
   return (
     // <div className="relative px-4 md:px-8 lg:px-16">
-    <div className="relative w-screen flex items-center justify-center px-4 md:px-8 lg:px-16 mt-8">
+    <div className="relative w-screen flex items-center justify-center px-0 md:px-8 lg:px-16 mt-8">
       <div
         className="w-full"
         // style={{
@@ -43,14 +43,14 @@ const Stats = () => {
           ].map((data) => (
             <div
               key={data.id}
-              className={`flex-1 flex flex-col items-center justify-center p-4 text-white bg-(--color-primary)/20 ${
+              className={`flex-1 flex flex-col items-center justify-center p-4 text-white ${
                 data.id === 1
-                  ? "h-72 bg-[#d71f27]"
+                  ? "h-40 md:h-72 bg-[#d71f27]"
                   : data.id === 2
-                  ? "h-[245px] bg-[#ec4b25]"
+                  ? "h-[135px] md:h-[245px] bg-[#ec4b25]"
                   : data.id === 3
-                  ? "h-52 bg-[#f7901e]"
-                  : "h-44 bg-[#fbcc0a]"
+                  ? "h-[115px] md:h-52 bg-[#f7901e]"
+                  : "h-24 md:h-44 bg-[#fbcc0a]"
               }`}
               style={{
                 clipPath: "polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)",
@@ -61,7 +61,7 @@ const Stats = () => {
                 className="size-12 text-(--color-primary)"
               /> */}
               <div className="flex flex-col items-center">
-                <div className="flex items-center text-7xl font-light">
+                <div className="flex items-center text-3xl md:text-7xl font-light">
                   <CountUp
                     from={0}
                     to={parseInt(data.count)}
@@ -70,13 +70,13 @@ const Stats = () => {
                     duration={1.5}
                     className="count-up-text"
                   />
-                  <sup className="text-3xl -translate-y-4">
+                  <sup className="text-xl md:text-3xl md:-translate-y-4">
                     {" "}
                     {data.id !== 4 && <span>+</span>}
                     {data.id === 4 && <span>M</span>}
                   </sup>
                 </div>
-                <p className="font-light">{data.title}</p>
+                <p className="font-light text-xs md:text-base">{data.title}</p>
               </div>
             </div>
           ))}

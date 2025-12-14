@@ -14,6 +14,7 @@ import FooterText from "@/components/home/FooterText";
 import Instruction from "@/components/home/Instruction";
 import FAQs from "@/components/home/FAQs";
 import VideoSection from "@/components/home/VideoSection";
+import ImageSection from "@/components/home/ImageSection";
 
 // Lazy load the 3D Paraglider component to prevent blocking navigation
 const Paraglider = dynamic(() => import("@/components/home/Paraglider"), {
@@ -66,8 +67,12 @@ const Page = () => {
         .to(modelRef.current, { x: "40vw" })
         .to(modelRef.current, { x: "-45vw", duration: 1.5 })
         .to(modelRef.current, { x: "40vw", duration: 1.5 })
+
         .to(modelRef.current, { x: "0vw", y: "-10vh", duration: 1.5 });
-      // .to(modelRef.current, { x: "100vw", duration: 1.5 });
+
+      // .to(modelRef.current, { x: "-45vw", duration: 1.5 })
+      // .to(modelRef.current, { x: "0vw", duration: 1.5 })
+      // .to(modelRef.current, { x: "100vw", y: "50vh", duration: 1.5 });
     }, mainRef);
 
     return () => ctx.revert();
@@ -94,15 +99,7 @@ const Page = () => {
             <AboutUsSection />
           </div>
 
-          <div className="relative w-full h-screen">
-            <img
-              src="/images/blog/blog10.jpg"
-              alt="pokhara"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 w-full h-full bg-black/60" />
-            <div className="absolute inset-0 w-full h-screen bg-linear-to-b from-white to-60% to-transparent z-60" />
-          </div>
+          <ImageSection />
 
           <Instruction />
 
@@ -112,15 +109,9 @@ const Page = () => {
 
           <VideoSection />
           <TestimonialSections />
-
-          {/* <Testimonials /> */}
-          {/* <div className="w-full h-screen"> */}
           <FAQs />
-          {/* </div> */}
 
           <FooterText />
-
-          {/* <div className="h-[50dvh]"></div> */}
         </div>
       </div>
     </div>
