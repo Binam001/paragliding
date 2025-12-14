@@ -201,7 +201,7 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
 
       <div className="px-4 md:px-8 lg:px-16 w-full flex flex-col md:flex-row relative md:gap-2">
         {/* left section*/}
-        <div className="md:w-[20%] sticky top-17 md:top-24 h-fit bg-white py-4 md:py-0 shadow-md">
+        <div className="md:w-[20%] sticky top-17 md:top-24 h-fit bg-white py-4 md:py-0 shadow-md overflow-x-scroll">
           <p className="text-xl font-bold mb-4 text-(--color-primary) border-b border-zinc-200">
             Table of Contents
           </p>
@@ -217,7 +217,13 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
                 }`}
               >
                 <Icon icon={item.icon} className="size-6" />
-                <p className="text-sm whitespace-nowrap">{item.title}</p>
+                <p
+                  className={`text-sm whitespace-nowrap ${
+                    activeLink === item.link ? "block" : "hidden"
+                  }`}
+                >
+                  {item.title}
+                </p>
               </Link>
             ))}
           </div>
