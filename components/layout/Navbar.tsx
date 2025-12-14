@@ -88,7 +88,7 @@ const Navbar = () => {
           </ul>
 
           {/* Hamburger Menu for Mobile */}
-          <div className="lghidden">
+          <div className="lg:hidden">
             <button onClick={() => setIsMenuOpen(true)}>
               <Icon
                 icon="ci:menu-alt-02"
