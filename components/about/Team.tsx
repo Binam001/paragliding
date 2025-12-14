@@ -1,6 +1,5 @@
 "use client";
 
-import TeamSection from "@/components/team";
 import React from "react";
 import ScrollFloat from "../WaveAnimation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
