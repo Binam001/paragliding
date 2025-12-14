@@ -48,7 +48,7 @@ const TestimonialSections = () => {
         ))}
       </div>
       <div className="flex justify-center items-center lg:-translate-y-36">
-        <p className="md:w-[45%] px-4 xl:px-0 text-xl md:text-3xl font-[Poppins-Light] text-center">
+        <p className="lg:w-[45%] px-4 xl:px-0 text-xl md:text-3xl font-[Poppins-Light] text-center">
           Read the unfiltered{" "}
           <span className="text-[#f7901e] font-bold">
             reviews from thousands of flyers

@@ -62,7 +62,7 @@ const Navbar = () => {
           </div>
 
           {/* Navigation Links */}
-          <ul className="hidden md:flex justify-between items-center">
+          <ul className="hidden lg:flex justify-between items-center">
             {navLists.map((navItems) => (
               <li key={navItems.id}>
                 <Link
@@ -88,7 +88,7 @@ const Navbar = () => {
           </ul>
 
           {/* Hamburger Menu for Mobile */}
-          <div className="md:hidden">
+          <div className="lghidden">
             <button onClick={() => setIsMenuOpen(true)}>
               <Icon
                 icon="ci:menu-alt-02"
@@ -103,7 +103,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-white z-100 flex flex-col items-center justify-center md:hidden">
+        <div className="fixed inset-0 bg-white z-120 flex flex-col items-center justify-center lg:hidden">
           <button
             onClick={() => setIsMenuOpen(false)}
             className="absolute top-6 right-6"

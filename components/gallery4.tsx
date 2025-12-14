@@ -22,10 +22,11 @@ const Gallery4 = () => {
   );
   // const isMobile = window.innerWidth <= 768;
   const isMobile = useMediaQuery({ maxWidth: 430 });
+  const isTablet = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
     // const itemsPerSlide = 3; // 2 rows * 3 columns
-    const itemsPerSlide = isMobile ? 1 : 3;
+    const itemsPerSlide = isMobile ? 1 : isTablet ? 2 : 3;
     const result = [];
     for (let i = 0; i < testimonialLists.length; i += itemsPerSlide) {
       result.push(testimonialLists.slice(i, i + itemsPerSlide));

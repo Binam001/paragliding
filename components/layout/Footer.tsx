@@ -7,7 +7,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <section
-      className="pb-4 px-4 md:px-8 lg:px-16 relative h-dvh md:h-[70vh] text-white"
+      className="pb-4 px-4 md:px-8 lg:px-16 relative h-dvh lg:h-[70vh] text-white"
       style={{
         // clipPath:
         //   "polygon(67% 3%, 74% 0, 79% 4%, 100% 0, 100% 100%, 0 100%, 0 4%, 14% 0, 26% 3%, 43% 0)",
@@ -29,7 +29,7 @@ const Footer = () => {
       </div> */}
       <div className="absolute inset-0 w-full h-full bg-white -z-10" />
 
-      <div className="w-full flex flex-col justify-end md:justify-between h-full z-50 md:pt-24">
+      <div className="w-full flex flex-col justify-end lg:justify-between h-full z-50 lg:pt-24">
         <div className="flex flex-col gap-8 md:gap-0 md:flex-row items-center">
           <div className="w-full md:w-1/2 h-full flex flex-col gap-4 md:gap-8">
             <p className="text-2xl md:text-4xl text-center md:text-left">
@@ -86,8 +86,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="my-8 md:my-0">
-          <div className="flex gap-2 w-fit mx-auto md:w-full">
+        <div className="my-8 lg:my-0">
+          <div className="flex gap-2 w-fit mx-auto lg:w-full">
             {socialLinkLists.map((socialLink) => (
               <Link key={socialLink.id} href={socialLink.link}>
                 <img
@@ -101,16 +101,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center">
-          {/* <div className="">
-            <p>General Inquiry</p>
-            <Link
-              href="mailto:info@sunrise-paragliding.com"
-              className="hover:underline"
-            >
-              info@sunrise-paragliding.com
-            </Link>
-          </div> */}
+        <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between items-center">
           <div className="">
             <div className="text-xs">© 2025 Sunrise Paragliding</div>
             {/* <Link href="">Privacy Policy</Link> */}

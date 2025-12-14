@@ -199,13 +199,13 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
         link={`${packageItem.title}`}
       />
 
-      <div className="px-4 md:px-8 lg:px-16 w-full flex flex-col md:flex-row relative md:gap-2">
+      <div className="px-4 md:px-8 lg:px-16 w-full flex flex-col lg:flex-row relative lg:gap-2">
         {/* left section*/}
-        <div className="md:w-[20%] sticky top-17 md:top-24 h-fit bg-white py-4 md:py-0 shadow-md md:shadow-none z-50">
+        <div className="lg:w-[20%] sticky top-17 lg:top-24 h-fit bg-white py-4 lg:py-0 shadow-md lg:shadow-none z-50">
           <p className="text-xl font-bold mb-4 text-(--color-primary) border-b border-zinc-200">
             Table of Contents
           </p>
-          <div className="flex md:flex-col gap-4 mt-4 overflow-x-scroll">
+          <div className="flex lg:flex-col gap-4 mt-4 overflow-x-scroll">
             {tableOfContentLists.map((item) => (
               <Link
                 key={item.id}
@@ -219,7 +219,7 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
                 <Icon icon={item.icon} className="size-6" />
                 <p
                   className={`text-sm whitespace-nowrap ${
-                    activeLink === item.link ? "block" : "hidden md:block"
+                    activeLink === item.link ? "block" : "hidden lg:block"
                   }`}
                 >
                   {item.title}
@@ -230,7 +230,7 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
         </div>
 
         {/* middle content */}
-        <div className="md:w-[60%] space-y-16 mt-4 md:mt-0 px-4 border-x border-zinc-200">
+        <div className="lg:w-[60%] space-y-16 mt-4 lg:mt-0 px-4 border-x border-zinc-200">
           <h2
             id="quickInfo"
             className="text-3xl font-bold mb-4 text-(--color-primary) scroll-mt-24"
@@ -439,7 +439,7 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
         </div>
 
         {/* right section */}
-        <div className="md:w-[20%] mt-16 md:sticky top-24 h-fit">
+        <div className="lg:w-[20%] mt-16 lg:sticky top-24 h-fit">
           <div className="">
             <div className="border border-zinc-200 rounded-sm p-2">
               <div className=" text-center font-semibold">
@@ -470,7 +470,7 @@ const PackageDetailsClient = ({ packageItem }: PackageDetailsClientProps) => {
               </div>
             </div>
 
-            <div className="mt-8 border border-zinc-200 rounded-sm p-2 flex gap-2 items-center justify-center md:justify-start">
+            <div className="mt-8 border border-zinc-200 rounded-sm p-2 flex gap-2 items-center justify-center lg:justify-start">
               <div className="">
                 <img
                   src="/images/team/Biru-Bomjan.jpg"

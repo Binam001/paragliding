@@ -44,7 +44,7 @@ const Package = () => {
         {packageLists.map((packageItem) => (
           <div
             key={packageItem.id}
-            className={`md:flex gap-8 border md:border-none border-zinc-300 p-2 md:p-0 ${
+            className={`md:flex items-center gap-8 rounded-md border lg:border-none border-zinc-300 p-2 lg:p-0 ${
               packageItem.id % 2 === 0 ? "md:flex-row-reverse" : ""
             }`}
           >
@@ -61,7 +61,9 @@ const Package = () => {
                   {packageItem.title}
                 </p>
 
-                <p className="text-zinc-600">{packageItem.desc}</p>
+                <p className="text-zinc-600 text-sm lg:text-base">
+                  {packageItem.desc}
+                </p>
                 <div className="space-y-2">
                   {packageItem.time && (
                     <div className="flex items-center gap-2 flex-wrap">

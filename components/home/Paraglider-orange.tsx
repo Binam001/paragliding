@@ -17,11 +17,16 @@ interface ParagliderModelProps {
 export const ParagliderModel = forwardRef<ParagliderModelProps>(
   ({ ...props }, ref) => {
     const isMobile = useMediaQuery({ maxWidth: 430 });
+    const isTablet = useMediaQuery({ maxWidth: 1000 });
     const { nodes, materials } = useGLTF(
       "/models/paraglider-orange-transformed.glb"
     );
     return (
-      <group scale={isMobile ? 0.08 : 0.15} {...props} dispose={null}>
+      <group
+        scale={isMobile ? 0.08 : isTablet ? 0.1 : 0.15}
+        {...props}
+        dispose={null}
+      >
         <mesh
           geometry={(nodes.Mesh_0 as THREE.Mesh).geometry}
           material={materials["Material.001"]}

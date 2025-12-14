@@ -18,7 +18,7 @@ const FooterText = () => {
         <p className="text-2xl">
           Experience the Pokhara skyline like never before
         </p>
-        <p className="text-3xl md:text-5xl font-bold leading-normal">
+        <p className="text-3xl lg:text-5xl font-bold leading-normal">
           Sit back in your harness, our pilots will do the rest.
         </p>
         <Link
@@ -99,16 +99,7 @@ const FooterText = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center">
-          {/* <div className="">
-            <p>General Inquiry</p>
-            <Link
-              href="mailto:info@sunrise-paragliding.com"
-              className="hover:underline"
-            >
-              info@sunrise-paragliding.com
-            </Link>
-          </div> */}
+        <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between items-center">
           <div className="">
             <div className="text-xs">© 2025 Sunrise Paragliding</div>
             {/* <Link href="">Privacy Policy</Link> */}
