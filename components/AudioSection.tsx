@@ -30,10 +30,10 @@ const AudioSection = () => {
   }, [isAudioOn]);
 
   return (
-    <div className="fixed right-4 bottom-12 md:bottom-4 text-foreground z-50">
+    <div className="fixed right-4 bottom-12 md:bottom-4 text-foreground z-60">
       <button
         onClick={() => setIsAudioOn(!isAudioOn)}
-        className="p-1 rounded-full bg-white/20 backdrop-blur-2xl ring cursor-pointer"
+        className="p-1 rounded-full bg-white ring cursor-pointer"
       >
         <img
           src={
