@@ -3,9 +3,6 @@
 import { socialLinkLists } from "@/constants";
 import Link from "next/link";
 import React, { useState } from "react";
-// import { SingleValue } from "react-select";
-// import Select from "@/components/ReactSelectNoSSR";
-// import { Datepicker } from "flowbite-react";
 
 type OptionType = { value: string; label: string };
 
