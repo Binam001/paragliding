@@ -59,7 +59,7 @@ const FooterText = () => {
                   <Link
                     key={packageItem.id}
                     href={`/services/${packageItem.slug}`}
-                    className="hover:text-(--color-primary)"
+                    className="hover:text-(--color-primary) w-max"
                   >
                     {packageItem.title}
                   </Link>
@@ -74,7 +74,7 @@ const FooterText = () => {
                   <Link
                     key={navItem.id}
                     href={navItem.href}
-                    className={`hover:text-(--color-primary)`}
+                    className={`hover:text-(--color-primary) w-max`}
                   >
                     {navItem.name}
                   </Link>

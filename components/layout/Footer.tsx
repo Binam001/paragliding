@@ -31,8 +31,10 @@ const Footer = () => {
 
       <div className="w-full flex flex-col justify-end md:justify-between h-full z-50 md:pt-24">
         <div className="flex flex-col gap-8 md:gap-0 md:flex-row items-center">
-          <div className="md:w-1/2 h-full flex flex-col gap-4 md:gap-8">
-            <p className="text-2xl md:text-4xl">Join us for an adventure</p>
+          <div className="w-full md:w-1/2 h-full flex flex-col gap-4 md:gap-8">
+            <p className="text-2xl md:text-4xl text-center md:text-left">
+              Join us for an adventure
+            </p>
             <div className="relative flex items-center w-full md:w-1/2">
               <input
                 type="email"
@@ -59,7 +61,7 @@ const Footer = () => {
                   <Link
                     key={packageItem.id}
                     href={`/services/${packageItem.slug}`}
-                    className="hover:text-(--color-primary)"
+                    className="hover:text-(--color-primary) w-max"
                   >
                     {packageItem.title}
                   </Link>
@@ -74,7 +76,7 @@ const Footer = () => {
                   <Link
                     key={navItem.id}
                     href={navItem.href}
-                    className={`hover:text-(--color-primary)`}
+                    className={`hover:text-(--color-primary) w-max`}
                   >
                     {navItem.name}
                   </Link>
