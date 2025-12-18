@@ -1,20 +1,9 @@
-import React from "react";
-import ScrollFloat from "../WaveAnimation";
-
 const AboutSection = () => {
   return (
     <section>
       <div className="">
         <div className="text-center">
-          <ScrollFloat
-            animationDuration={1}
-            ease="back.inOut(2)"
-            scrollStart="center bottom+=30%"
-            scrollEnd="bottom bottom-=40%"
-            stagger={0.03}
-          >
-            About Us
-          </ScrollFloat>
+          <h2 className="text-4xl font-bold text-center mb-12">About Us</h2>
         </div>
         <div className="md:text-lg">
           <p className="">

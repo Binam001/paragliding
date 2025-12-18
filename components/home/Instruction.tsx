@@ -10,7 +10,7 @@ const Instruction = () => {
           {aboutUs.map((about) => (
             <div
               key={about.id}
-              className={`lg:w-1/4 md:h-40 relative p-4 rounded-md text-center flex gap-4 flex-col justify-center items-center border border-zinc-300`}
+              className={`md:h-40 relative p-4 rounded-md text-center flex gap-4 flex-col justify-center items-center border border-zinc-300`}
             >
               <div className="">
                 <Icon icon={about.icon} className={`size-12 text-primary`} />

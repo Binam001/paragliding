@@ -24,16 +24,8 @@ const Team = () => {
   return (
     <div className="mt-8 md:mt-16">
       <div className="space-y-2">
-        <div className="text-center text-6xl font-bold">
-          <ScrollFloat
-            animationDuration={1}
-            ease="back.inOut(2)"
-            scrollStart="center bottom+=30%"
-            scrollEnd="bottom bottom-=40%"
-            stagger={0.03}
-          >
-            Our Team
-          </ScrollFloat>
+        <div className="">
+          <h2 className="text-4xl font-bold text-center mb-12">Our Team</h2>
         </div>
         <p className="text-center font-semibold text-lg">
           “Over 100 years of Flying experience combined”

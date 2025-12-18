@@ -2,10 +2,10 @@ import { navLists, packageLists, socialLinkLists } from "@/constants";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
-const FooterText = () => {
+const Footer = () => {
   return (
     <div
-      className="h-[200dvh] flex flex-col justify-between overflow-hidden relative mt-8 px-4 md:px-8 lg:px-16"
+      className="h-[200dvh] xl:h-[140dvh] flex flex-col justify-between overflow-hidden relative mt-8 px-4 md:px-8 lg:px-16"
       style={{
         // backgroundImage: `url(/images/mountains/phewa-lake.jpg)`,
         backgroundImage: `url(/images/mountains/pokhara-landscape3.jpg)`,
@@ -29,7 +29,7 @@ const FooterText = () => {
         </Link>
       </div>
 
-      <div className="w-full h-[70dvh] p-4 rounded-md mb-4 text-white flex flex-col justify-between z-50 bg-black/30 backdrop-blur-xs border border-white/30">
+      <div className="w-full h-[70dvh] xl:h-[50dvh] p-4 rounded-md mb-4 text-white flex flex-col justify-between z-50 bg-black/30 backdrop-blur-xs border border-white/30">
         <div className="flex flex-col gap-8 md:gap-0 md:flex-row items-center">
           <div className="md:w-1/2 h-full flex flex-col gap-4 md:gap-8">
             <p className="text-2xl md:text-4xl">Join us for an adventure</p>
@@ -184,4 +184,4 @@ const FooterText = () => {
   );
 };
 
-export default FooterText;
+export default Footer;

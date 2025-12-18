@@ -1,40 +1,38 @@
-"use client";
-
 import { navLists, packageLists, socialLinkLists } from "@/constants";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <section
-      className="pb-4 px-4 md:px-8 lg:px-16 relative h-dvh lg:h-[70vh] text-white"
+    <div
+      className="h-[200dvh] xl:h-[140dvh] flex flex-col justify-between overflow-hidden relative mt-8 px-4 md:px-8 lg:px-16"
       style={{
-        // clipPath:
-        //   "polygon(67% 3%, 74% 0, 79% 4%, 100% 0, 100% 100%, 0 100%, 0 4%, 14% 0, 26% 3%, 43% 0)",
-        backgroundImage: `url(/images/mountains/ground.png)`,
+        // backgroundImage: `url(/images/mountains/phewa-lake.jpg)`,
+        backgroundImage: `url(/images/mountains/pokhara-landscape3.jpg)`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
       }}
     >
-      {/* <div className="absolute inset-0 w-full h-full bg-linear-to-b from-blue-500 to-white z-0" /> */}
-      {/* <div className="absolute inset-0 w-full h-full -z-10">
-        <video
-          src="/videos/SUNRISE-PARAGLIDING-NEPAL.mp4"
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-        />
-      </div> */}
-      <div className="absolute inset-0 w-full h-full bg-white -z-10" />
+      <div className="md:w-1/2 mx-auto pt-48 flex flex-col items-center justify-center text-center gap-4 z-10">
+        <p className="text-2xl">
+          Experience the Pokhara skyline like never before
+        </p>
+        <p className="text-3xl lg:text-5xl font-bold leading-normal">
+          Sit back in your harness, our pilots will do the rest.
+        </p>
+        <Link
+          href="/services"
+          className="bg-(--color-primary) text-white px-6 py-3 rounded-full cursor-pointer"
+        >
+          <button className="cursor-pointer">Book Now</button>
+        </Link>
+      </div>
 
-      <div className="w-full flex flex-col justify-end lg:justify-between h-full z-50 lg:pt-24">
+      <div className="w-full h-[70dvh] xl:h-[50dvh] p-4 rounded-md mb-4 text-white flex flex-col justify-between z-50 bg-black/30 backdrop-blur-xs border border-white/30">
         <div className="flex flex-col gap-8 md:gap-0 md:flex-row items-center">
-          <div className="w-full md:w-1/2 h-full flex flex-col gap-4 md:gap-8">
-            <p className="text-2xl md:text-4xl text-center md:text-left">
-              Join us for an adventure
-            </p>
+          <div className="md:w-1/2 h-full flex flex-col gap-4 md:gap-8">
+            <p className="text-2xl md:text-4xl">Join us for an adventure</p>
             <div className="relative flex items-center w-full md:w-1/2">
               <input
                 type="email"
@@ -86,8 +84,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="my-8 lg:my-0">
-          <div className="flex gap-2 w-fit mx-auto lg:w-full">
+        <div className="my-8 md:my-0">
+          <div className="flex gap-2 w-fit mx-auto md:w-full">
             {socialLinkLists.map((socialLink) => (
               <Link key={socialLink.id} href={socialLink.link}>
                 <img
@@ -182,7 +180,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
